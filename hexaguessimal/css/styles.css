@@ -1,0 +1,224 @@
+* {
+    /* Removes default margin/padding from browser? */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+*/
+#container {
+    display: flex;
+    /*background-color: black;*/
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.tooltip {
+    position: relative;
+ }
+ .tooltip::before {
+    background-color: white;
+    border: 1px solid #888;
+    border-radius: 2px;
+    color: #444;
+    content: attr(data-title);
+    display: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 100%;    
+    margin-top: 5px;
+    margin-left: 50%; /* Use half of the width (120/2 = 60), to center the tooltip */
+    z-index: 1;
+ }
+ .tooltip:hover::before {
+    display: flex;
+ }
+
+.buttons-left {
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem 6rem 0.4rem 0;
+    left: 0;
+    float: left;
+}
+
+.buttons-right {
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem 0 0.4rem 6rem;
+    right: 0;
+    float:right;
+}
+
+.text-button {
+    background-color: transparent;
+    border: 2px solid ;
+    font-family: inherit;
+    font-weight: bold;
+    width: 36px;
+    height: 36px;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    border-radius: 50%;    
+}
+.text-button:hover{
+    background-color: attr(data-color);
+}
+
+header {
+    /*border-bottom: 1px solid rgb(58,58,60);*/
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title {
+    /*color: gainsboro;*/
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    margin:0.4rem 0rem 0.4rem 0;
+    box-sizing: border-box;
+}
+
+.row {
+    min-width: 420px;
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.square {
+    /*border: 2px solid rgb(58,58,60);*/
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    font-weight: bold;
+    /*color: gainsboro;*/
+    text-transform: uppercase;
+    margin: 6px;
+
+    display:inline-flex;
+    align-items: inherit;
+    justify-content:inherit;
+}
+.square#pound {
+     /*border: 2px solid rgb(58,58,60);*/
+     width: 48px;
+     height: 48px;
+     font-size: 2rem;
+     font-weight: bold;
+     /*color: gainsboro;*/
+     text-transform: uppercase;
+     margin: 0;
+ 
+     display:inline-flex;
+     align-items: inherit;
+     justify-content:inherit;
+
+}
+
+
+#keyboard-container {
+    height: 150px;    
+    margin:0.4rem 4rem 0.4rem 4rem;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 2px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+
+}
+
+#end-buttons {
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.4rem;
+}
+
+#results-button {
+    width: 60%;
+    opacity: 0;
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+    height: 48px;
+    background-color: transparent;
+    border: 2px solid ;
+    margin-bottom: 8px;
+}
+
+#retry-button {
+    width: 60%;  
+    opacity: 0;
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+    height: 48px; 
+    border: 2px solid ;
+    background-color: transparent;
+}

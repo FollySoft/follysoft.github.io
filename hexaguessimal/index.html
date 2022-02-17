@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Hexaguessimal</title>
+
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+
+    <!-- AnimateCSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="css/modal.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+
+</head>
+<body>
+    <div id="container">
+        <div id="game">          
+            <header>   
+                <div class="buttons-left" id="buttons-left">
+                    <button class="text-button tooltip" id="help-button" data-title="Instructions">?</button>
+                </div>   
+                <h1 id="title" class="title">HEXAGUESSIMAL</h1>              
+                <div class="buttons-right" id="buttons-right">
+                    <button class="text-button tooltip" id="tips-button" data-title="Disable Hints">!</button>
+                </div>
+            </header>  
+
+            <div id="board-container">
+                <div id="board">
+                </div>                
+            </div>
+
+            <div id="keyboard-container">
+                <div class="keyboard-container">
+                    <div class="keyboard-row">
+                        <button data-key="0">0</button>
+                        <button data-key="1">1</button>
+                        <button data-key="2">2</button>
+                        <button data-key="3">3</button>
+                        <button data-key="4">4</button>
+                        <button data-key="5">5</button>
+                        <button data-key="6">6</button>
+                        <button data-key="7">7</button>
+                        <button data-key="8">8</button>
+                        <button data-key="9">9</button>
+                    </div>
+                    <div class="keyboard-row">
+                        <button data-key="A">A</button>
+                        <button data-key="B">B</button>
+                        <button data-key="C">C</button>
+                        <button data-key="D">D</button>
+                        <button data-key="E">E</button>
+                        <button data-key="F">F</button>
+                        <button data-key="del" class="wide-button">DEL</button>
+                        <button data-key="enter" class="wide-button">ENTER</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Results/Retry Buttons -->
+            <div class="end-buttons" id="end-buttons">
+                <button class="end-button" id="results-button" onclick=toggleEndModalDisplay()>SHOW RESULTS</button>
+                <button class="end-button" id="retry-button" onclick=location.reload()>RETRY</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">    
+        <div class="modal-content">                
+            <div class="modal-header">
+                <span class="help-modal-close">&times;</span>
+                <h2>How To Play</h2>
+            </div>
+            <div class="modal-body">
+                <p>Guess the hexadecimal-based color of the background of this page.</p>
+                <p>You have 6 tries to get it right.</p>
+                <br>
+                <p>Each guess must be a valid hexadecimal number, using characters 0-9 and A-F.</p>
+                <p>Press the Enter button when you are ready to submit a guess.</p>
+                <br>
+                <p>Each guess will provide you with hints, informing you how close you are to the solution.</p>
+                <hr>
+                <h3>Examples</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Win/Lose Modal -->
+    <div id="endModal" class="modal">    
+        <div class="modal-content">                
+            <div class="modal-header">
+                <span class="end-modal-close">&times;</span>
+                <h2 id="end-modal-header"></h2>
+            </div>
+            <div id="end-modal-body">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
