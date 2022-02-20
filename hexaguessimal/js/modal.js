@@ -1,16 +1,24 @@
 
 var helpModal = null;
+
 var endModal = null;
 var endModalHeader = null;
 var endModalBody = null;
+var endModalAnswerDiv = null;
+var endModalAnswerText = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
     // Get the modal
     helpModal = document.getElementById("helpModal");
+    
+    // End Modal elements
     endModal = document.getElementById("endModal");
     endModalHeader = document.getElementById("end-modal-header")
-    endModalBody = document.getElementById("end-modal-body")
+    endModalBody = document.getElementById("end-modal-body");
+    endModalAnswerDiv = document.getElementById("answer-div");
+    endModalAnswerText = document.getElementById("answer-text");
+
 
     // Get the button that opens the modal
     var helpBtn = document.getElementById("help-button");
@@ -48,26 +56,18 @@ function toggleEndModalDisplay() {
 }
 
 
-function setEndModalContent(condition, hexCode) {
+function setEndModalContent(condition, hexCode, textColor) {
 
     if (condition == true) {
         endModalHeader.innerHTML = "Well Done!"
-        var correctAnswerDiv = document.createElement("div")
-        var correctAnswerText = document.createTextNode(hexCode);
-        correctAnswerDiv.style = `padding:12px;border-radius: 2px; color:${hexCode}`
-        correctAnswerDiv.appendChild(correctAnswerText);
-        endModalBody.appendChild(correctAnswerDiv);
+        endModalAnswerDiv.style.backgroundColor = "#"+hexCode;
+        endModalAnswerText.innerHTML ="#"+hexCode;
     }
     else {
         endModalHeader.innerHTML = "Try Again?"
-        var correctAnswerDiv = document.createElement("div")
-        var correctAnswerText = document.createTextNode(hexCode);
-        correctAnswerDiv.style = `padding:12px;border-radius: 2px; color:${hexCode}; justify-content: center; align-items: center`
-        correctAnswerDiv.appendChild(correctAnswerText);
-        endModalBody.appendChild(correctAnswerDiv);
-
-        
+        endModalAnswerDiv.style.backgroundColor = "#"+hexCode;
+        endModalAnswerDiv.style.color = textColor;
+        endModalAnswerText.innerHTML ="#"+hexCode;
     }
-
     endModal.style.display = "block";
 }

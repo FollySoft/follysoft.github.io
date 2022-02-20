@@ -6,6 +6,7 @@
 
 html, body {
     height: 100%;
+    width: 100%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -215,6 +216,16 @@ header {
 #retry-button {
     width: 60%;  
     opacity: 0;
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+    height: 48px; 
+    border: 2px solid ;
+    background-color: transparent;
+}
+
+#retry-button-modal {
+    width: 60%;  
     font-family: inherit;
     font-size: medium;
     font-weight: bold;

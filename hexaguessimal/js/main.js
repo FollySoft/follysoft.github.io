@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
             showEndButtons();
             var delayInMilliseconds = 300;
             setTimeout(function() {
-                setEndModalContent(true, hexCode);
+                setEndModalContent(true, hexCode, textColor);
             }, delayInMilliseconds);
         }
 
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
             showEndButtons();
             var delayInMilliseconds = 300;
             setTimeout(function() {
-                setEndModalContent(false, hexCode);                
+                setEndModalContent(false, hexCode, textColor);                
             }, delayInMilliseconds);
         }
         else

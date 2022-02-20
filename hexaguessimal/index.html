@@ -80,18 +80,30 @@
                 <h2>How To Play</h2>
             </div>
             <div class="modal-body">
-                <p>Guess the hexadecimal-based color of the background of this page.</p>
-                <p>You have 6 tries to get it right.</p>
+                <p>Guess the background color of of this page in 6 tries.</p>
                 <br>
-                <p>Each guess must be a valid hexadecimal number, using characters 0-9 and A-F.</p>
-                <p>Press the Enter button when you are ready to submit a guess.</p>
+                <p>Each guess must be a valid hexadecimal number, using 0-9 and A-F.</p>
                 <br>
-                <p>Each guess will provide you with hints, informing you how close you are to the solution.</p>
+                <p>Press Enter to submit a guess.</p>
+                <br>
+                <p>Each incorrect guess will provide you with hints, informing you how close you are to the solution.</p>
+                <br>
                 <hr>
+                <br>
                 <h3>Examples</h3>
+                <br>
+                <img src="images/correct_place.png">
+                <p>The character <b>3</b> is in the solution, and is in the correct place.</p>
+                <br>
+                <img src="images/wrong_place.png">
+                <p>The character <b>3</b> is in the solution, but is currently in the wrong place.</p>
+                <br>
+                <img src="images/none_correct.png">
+                <p>None of these characters are in the solution.</p>
             </div>
         </div>
     </div>
+
     <!-- Win/Lose Modal -->
     <div id="endModal" class="modal">    
         <div class="modal-content">                
@@ -100,8 +112,12 @@
                 <h2 id="end-modal-header"></h2>
             </div>
             <div id="end-modal-body">
-
-            </div>
+                <div id="answer-div">
+                    <p id="answer-text"></p>
+                </div>
+                <br>                
+                <button class="end-button" id="retry-button-modal" onclick=location.reload()>RETRY</button>
+            </div>            
         </div>
     </div>
 </body>
