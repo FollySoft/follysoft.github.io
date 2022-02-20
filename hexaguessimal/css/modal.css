@@ -21,9 +21,10 @@
     background-color: #3A3A3C;
     color: gainsboro;
     font-size: small;
-    margin: 20% auto; /* 15% from the top and centered */
-    padding: 20px;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;    
     width: 40%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
   }
   
   /* The Close Button */
