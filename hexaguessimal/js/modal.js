@@ -6,6 +6,7 @@ var endModalHeader = null;
 var endModalBody = null;
 var endModalAnswerDiv = null;
 var endModalAnswerText = null;
+var endModalGuessText = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     endModalBody = document.getElementById("end-modal-body");
     endModalAnswerDiv = document.getElementById("answer-div");
     endModalAnswerText = document.getElementById("answer-text");
+    endModalGuessText = document.getElementById("answer-attempts");
 
 
     // Get the button that opens the modal
@@ -56,12 +58,15 @@ function toggleEndModalDisplay() {
 }
 
 
-function setEndModalContent(condition, hexCode, textColor) {
+function setEndModalContent(condition, hexCode, guessedHexCount, textColor) {
 
     if (condition == true) {
         endModalHeader.innerHTML = "Well Done!"
         endModalAnswerDiv.style.backgroundColor = "#"+hexCode;
+        endModalAnswerDiv.style.color = textColor;
         endModalAnswerText.innerHTML ="#"+hexCode;
+
+        endModalGuessText.innerHTML = guessedHexCount + "/6 Attempts"
     }
     else {
         endModalHeader.innerHTML = "Try Again?"

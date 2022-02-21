@@ -29,14 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("title").style.color = textColor;
     document.getElementById("title").style = `border-bottom: 1px solid ${borderColor}; color:${textColor}`;
 
-    buttons = document.getElementsByClassName("text-button");
+    var buttons = document.getElementsByClassName("text-button");
     for (var i = 0; i < buttons.length; i++) {
         //buttons[i].style.color = getContrastYIQ(borderColor, "text");
+        var buttonTextColor = getContrastYIQ(borderColor, "text");
         buttons[i].style.color = textColor;
-        buttons[i].setAttribute("data-color", borderColor)
     }
     
     // Add listener to toggle tips
+    var helpBtn = document.getElementById("help-button");
     var tipsBtn = document.getElementById("tips-button");
     tipsBtn.onclick = function() {
         if (tipsEnabled) {
@@ -52,6 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
             tipsEnabled = true;
         }
     }
+
+    helpBtn.addEventListener('mouseenter', e => {
+        helpBtn.style = `transition:background-color 0.3s;background-color:${borderColor};transition:color 0.3s; color:${buttonTextColor}`;
+      }); 
+      helpBtn.addEventListener('mouseleave', e => {
+        helpBtn.style = `transition:background-color 0.3s;background-color:transparent;transition:color 0.3s; color:${textColor}`;
+    });
+    tipsBtn.addEventListener('mouseenter', e => {
+        tipsBtn.style = `transition:background-color 0.3s;background-color:${borderColor};transition:color 0.3s; color:${buttonTextColor}`;                
+      }); 
+      tipsBtn.addEventListener('mouseleave', e => {
+        tipsBtn.style = `transition:background-color 0.3s;background-color:transparent;transition:color 0.3s; color:${textColor}`;                
+    });
     
 
     // Create Board
@@ -170,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
             showEndButtons();
             var delayInMilliseconds = 300;
             setTimeout(function() {
-                setEndModalContent(true, hexCode, textColor);
+                setEndModalContent(true, hexCode, guessedHexCount, textColor);
             }, delayInMilliseconds);
         }
 

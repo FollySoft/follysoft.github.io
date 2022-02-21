@@ -81,23 +81,15 @@
             </div>
             <div class="modal-body">
                 <p>Guess the background color of of this page in 6 tries.</p>
-                <br>
                 <p>Each guess must be a valid hexadecimal number, using 0-9 and A-F.</p>
-                <br>
                 <p>Press Enter to submit a guess.</p>
-                <br>
                 <p>Each incorrect guess will provide you with hints, informing you how close you are to the solution.</p>
-                <br>
                 <hr>
-                <br>
                 <h3>Examples</h3>
-                <br>
                 <img src="images/correct_place.png">
                 <p>The character <b>3</b> is in the solution, and is in the correct place.</p>
-                <br>
                 <img src="images/wrong_place.png">
                 <p>The character <b>3</b> is in the solution, but is currently in the wrong place.</p>
-                <br>
                 <img src="images/none_correct.png">
                 <p>None of these characters are in the solution.</p>
             </div>
@@ -114,6 +106,11 @@
             <div id="end-modal-body">
                 <div id="answer-div">
                     <p id="answer-text"></p>
+                </div>
+                <br>
+                <div id="answer-attempts"></div>
+                <div id="answer-gradient">
+                    <canvas id="gradient-canvas"></canvas>
                 </div>
                 <br>                
                 <button class="end-button" id="retry-button-modal" onclick=location.reload()>RETRY</button>

@@ -69,16 +69,13 @@ html, body {
     font-weight: bold;
     width: 36px;
     height: 36px;
-    padding: 20px;
+    padding: 18px;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
     font-size: 16px;
     border-radius: 50%;    
-}
-.text-button:hover{
-    background-color: attr(data-color);
 }
 
 header {
@@ -94,7 +91,7 @@ header {
     /*color: gainsboro;*/
     display: inline-flex;
     margin: auto;
-    font-size: 2rem;
+    font-size: min(8vw,2rem);
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

@@ -25,6 +25,7 @@
     padding: 20px;    
     width: 40%; /* Could be more or less, depending on screen size */
     max-width: 500px;
+    min-width: 250px;
   }
   
   /* The Close Button */
