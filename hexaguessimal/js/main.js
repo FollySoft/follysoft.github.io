@@ -83,57 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function getTileStyle(letter, index) {
-        var styleObj = {};        
-
-        // Check First if Letter is in correct position
-        const letterInPosition = hexCode.charAt(index);
-        const isCorrectPosition = (letter === letterInPosition);
-
-        if (isCorrectPosition) {
-            styleObj = {
-                tileStyle: `border:2px solid ${borderColor};`,
-                animType: "animate__bounce"
-            }
-            correctLetters++;
-            return styleObj;
-            //return "rgb(83, 141, 78)"
-        }
-
-        // Check if letter is in word at all
-        const isCorrectLetter = hexCode.includes(letter);        
-        if (isCorrectLetter) {
-            const currentWordArray = getCurrentWordArray();
-            var guessDoubles = currentWordArray.join().split(letter).length - 1;
-            var answerDoubles = hexCode.split(letter).length - 1;
-            if (guessDoubles <= answerDoubles)
-            {
-                styleObj = {
-                    tileStyle: `opacity:1;transition:border 0.3s;border:2px solid transparent;`,
-                    animType: "animate__flash"
-                }
-                return styleObj;
-            }
-            else
-            {
-                styleObj = {
-                    tileStyle: `transition:opacity 0.3s;opacity:0.2;transition:border 0.3s;border:2px solid transparent;`,
-                    animType: "animate__flipX"
-                }
-                return styleObj;
-            }        
-        }
-        else
-        {
-            styleObj = {
-                tileStyle: `transition:opacity 0.3s;opacity:0.2;transition:border 0.3s;border:2px solid transparent;`,
-                animType: "animate__flipX"
-            }
-            return styleObj;
-        }        
-        //return "rgb(181, 159, 59)"
-    }
-
     function handleDeleteLetter() {
         const currentWordArray = getCurrentWordArray();
         const removedLetter = currentWordArray.pop();
@@ -165,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const currentWord = currentWordArray.join('');
-        row.style = `background-color:#${currentWord};transition: background-color 0.3s linear;
+        row.style = `display:inline-flex;background-color:#${currentWord};transition: background-color 0.3s linear;
         justify-content:center;align-items:center;border-radius: 2px`;
         let letterColor = getContrastYIQ(currentWord, "text");
         
