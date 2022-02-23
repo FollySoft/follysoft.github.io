@@ -6,6 +6,11 @@ html, body {
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
 #game {
     width: auto;
     max-width: 100%;

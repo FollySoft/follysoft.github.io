@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let styles = new Array(6);
         let guess = getCurrentWordArray();
-        let remainingChars = hexCode.split("");
+        let remainingChars = hexCode.split("");        
       
         // First we determine correctly positioned letters
         for (let i = 0; i < styles.length; i++) {
@@ -281,6 +281,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 tileStyle: `border:2px solid ${borderColor};`,
                 animType: "animate__bounce"
               };
+            //var key = document.querySelectorAll("[data-key=\'"+guessedChar+"/']");    // Key appropriate Key from keyboard
+            //key.style.borderColor="white";
             remainingChars[i] = null;
           }
       
