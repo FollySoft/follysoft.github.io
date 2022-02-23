@@ -92,5 +92,17 @@
     background-color: gainsboro;
     color: #3A3A3C;
   }
+
+  #answer-attempts {
+      margin-top: 2rem;
+      margin-bottom: 0.4rem;
+  }
+
+  #answer-gradient {
+      display: none;
+      width: 90%;
+      height: 24px;
+      border-radius: 2px;
+  }
   
   img {max-width:100%;}

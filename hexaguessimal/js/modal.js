@@ -58,7 +58,7 @@ function toggleEndModalDisplay() {
 }
 
 
-function setEndModalContent(condition, hexCode, guessedHexCount, textColor) {
+function setEndModalContent(condition, hexCode, guessedHexCount, guessedWords, textColor) {
 
     if (condition == true) {
         endModalHeader.innerHTML = "Well Done!"
@@ -67,6 +67,24 @@ function setEndModalContent(condition, hexCode, guessedHexCount, textColor) {
         endModalAnswerText.innerHTML ="#"+hexCode;
 
         endModalGuessText.innerHTML = guessedHexCount + "/6 Attempts"
+
+        let answerGradientDiv = document.getElementById("answer-gradient");
+        let gradientColorLiteral = ``;
+        for (var i = 0; i < guessedWords.length; i++) {
+            if (i == guessedWords.length - 1) {
+                gradientColorLiteral += ("#" + guessedWords[i].toString().replaceAll(',', ''));
+            }
+            else {
+                gradientColorLiteral += ("#" + guessedWords[i].toString().replaceAll(',', '') + ",");
+            }            
+        };
+        console.log(gradientColorLiteral);
+        answerGradientDiv.style.display = "flex";
+        answerGradientDiv.style.backgroundImage = 'linear-gradient(to right, ' + gradientColorLiteral + ')'
+        console.log(answerGradientDiv.style.backgroundImage);
+        //answerGradientDiv.style = `display:flex;background-image:linear-gradient(to right, ${gradientColorLiteral})`;
+        //drawGradient(guessedWords);
+
     }
     else {
         endModalHeader.innerHTML = "Try Again?"
@@ -75,4 +93,18 @@ function setEndModalContent(condition, hexCode, guessedHexCount, textColor) {
         endModalAnswerText.innerHTML ="#"+hexCode;
     }
     endModal.style.display = "block";
+}
+
+function drawGradient(guessedWords) {
+    var c = document.getElementById("gradient-canvas");
+    var ctx = c.getContext("2d");
+
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 150, 80); 
 }

@@ -69,7 +69,7 @@ html, body {
     font-weight: bold;
     width: 36px;
     height: 36px;
-    padding: 18px;
+    padding: 16px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -90,6 +90,7 @@ header {
 .title {
     /*color: gainsboro;*/
     display: inline-flex;
+    padding: 4px;
     margin: auto;
     font-size: min(8vw,2rem);
     font-weight: bold;
@@ -229,3 +230,4 @@ header {
     border: 2px solid ;
     background-color: transparent;
 }
+

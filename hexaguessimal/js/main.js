@@ -64,7 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         tipsBtn.style = `transition:background-color 0.3s;background-color:${borderColor};transition:color 0.3s; color:${buttonTextColor}`;                
       }); 
       tipsBtn.addEventListener('mouseleave', e => {
-        tipsBtn.style = `transition:background-color 0.3s;background-color:transparent;transition:color 0.3s; color:${textColor}`;                
+          if (tipsEnabled)
+          {
+            tipsBtn.style = `transition:background-color 0.3s;background-color:transparent;transition:color 0.3s; color:${textColor}`;                
+          }   
     });
     
 
@@ -184,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
             showEndButtons();
             var delayInMilliseconds = 300;
             setTimeout(function() {
-                setEndModalContent(true, hexCode, guessedHexCount, textColor);
+                setEndModalContent(true, hexCode, guessedHexCount, guessedWords, textColor);
             }, delayInMilliseconds);
         }
 
