@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.style.backgroundColor = "#" + hexCode;
     console.log("Aw come on, this is cheating.");    
-    console.log("Color: #" + hexCode);
+    //console.log("Color: #" + hexCode);
 
     document.getElementById("title").style.color = textColor;
     document.getElementById("title").style = `border-bottom: 1px solid ${borderColor}; color:${textColor}`;
