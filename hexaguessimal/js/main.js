@@ -302,31 +302,34 @@ document.addEventListener("DOMContentLoaded", () => {
           const guessedChar = guess[i];
           const index = remainingChars.indexOf(guessedChar);
           if (index !== -1) {
+              // Partial Guess
             styles[i] = {
                 tileStyle: `opacity:1;transition:border 0.3s;border:2px solid transparent;`,
                 animType: "animate__flash"
             }
-            var key = document.getElementById("key-"+guessedChar);    // Key appropriate Key from keyboard            
-            if (key.classList.contains("correct-guess"))
-            {
-                key.classList.remove("correct-guess");
-                key.classList.add("partial-guess");
-                key.style.borderColor = "transparent";
-                key.style.textDecoration = "none";
-            }          
+            var key = document.getElementById("key-"+guessedChar);    // Key appropriate Key from keyboard                           
+            key.classList.add("partial-guess");
+            key.style.borderColor = "transparent";
+            key.style.textDecoration = "none";
             key.style.backgroundColor=getContrastYIQ(borderColor, "border");
             key.style.color=textColor;       
             remainingChars[index] = null;
-          } else {
-            styles[i] = {
-                tileStyle: `transition:opacity 0.3s;opacity:0.2;transition:border 0.3s;border:2px solid transparent;`,
-                animType: "animate__flipX"
-            }            
-            var key = document.getElementById("key-"+guessedChar);    // Key appropriate Key from keyboard
-            if (!key.classList.contains("correct-guess") && !key.classList.contains("partial-guess"))
-            {
-                key.style=`transition:opacity 0.3s;opacity:0.4;`;
-            }            
+            } 
+            else {
+                // Wrong char
+                styles[i] = {
+                    tileStyle: `transition:opacity 0.3s;opacity:0.2;transition:border 0.3s;border:2px solid transparent;`,
+                    animType: "animate__flipX"
+                }            
+                var key = document.getElementById("key-"+guessedChar);    // Key appropriate Key from keyboard
+                if (key.classList.contains("correct-guess") || key.classList.contains("partial-guess"))
+                {
+                    // Do nothing?
+                    //key.style=`transition:opacity 0.3s;opacity:0.4;`;
+                }
+                else {
+                    key.style=`transition:opacity 0.3s;opacity:0.4;`;
+                }
           }
         }
         return styles;
