@@ -176,7 +176,7 @@ header {
 
 .keyboard-row button {
     font-family: inherit;
-    font-weight: bold;
+    /* font-weight: bold; */
     border: 2px solid;
     border-color: transparent;
     padding: 0;

@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
             key.style.borderColor=borderColor;
             key.style.backgroundColor=getContrastYIQ(borderColor, "border")
             key.style.color=textColor;  
-            key.style.textDecoration = "bold";
+            key.style.fontWeight = "bold";
             key.classList.add("correct-guess");
             remainingChars[i] = null;
           }
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 animType: "animate__flipX"
             }            
             var key = document.getElementById("key-"+guessedChar);    // Key appropriate Key from keyboard
-            if (!key.classList.contains("correct-guess") && !key.classList.contains("partial-guess"))
+            if (!(key.classList.contains("correct-guess") || key.classList.contains("partial-guess")))
             {
                 key.style=`transition:opacity 0.3s;opacity:0.4;`;
             }            
