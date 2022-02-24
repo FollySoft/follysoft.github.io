@@ -177,7 +177,8 @@ header {
 .keyboard-row button {
     font-family: inherit;
     font-weight: bold;
-    border: 0;
+    border: 2px solid;
+    border-color: transparent;
     padding: 0;
     height: 58px;
     cursor: pointer;
