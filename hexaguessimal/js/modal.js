@@ -70,6 +70,13 @@ function setEndModalContent(condition, hexCode, guessedHexCount, guessedWords, t
 
         let answerGradientDiv = document.getElementById("answer-gradient");
         let gradientColorLiteral = ``;
+        if (guessedWords.length < 6) {
+            // Append answer color to rest of array
+            for (var j = 0; j < (6 - guessedWords.length); j++)
+            {
+                guessedWords.push(hexCode);
+            }
+        }
         for (var i = 0; i < guessedWords.length; i++) {
             if (i == guessedWords.length - 1) {
                 gradientColorLiteral += ("#" + guessedWords[i].toString().replaceAll(',', ''));
