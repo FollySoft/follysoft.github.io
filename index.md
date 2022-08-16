@@ -1,2 +1,0 @@
-## JWEST
-Website coming soon!
