@@ -13,6 +13,8 @@
 <body style="text-align: center"></body>
     <br>
     <div class="ballThrow" id="ballThrow">
+        <img id="mad-left" src="./images/mad_left.png"/>
+        <img id="mad-right" src="./images/mad_right.png"/>
         <div id="ball-buffer">
             <div class="ball" id='ball'></div>
         </div>        
@@ -36,6 +38,8 @@
         $('#ballThrow').click(function() {
             if ($('#ball-buffer:hover').length > 0) {
                 $('#ball-buffer').remove();
+                $('#mad-right').css('visibility', 'visible');
+                $('#mad-left').css('visibility', 'visible');
             }
         })
     </script>
