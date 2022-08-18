@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jwest's space</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+
 <body style="text-align: center"></body>
     <br>
-    <div class="ballThrow">
-        <div class="ball"></div>
+    <div class="ballThrow" id="ballThrow">
+        <div id="ball-buffer">
+            <div class="ball" id='ball'></div>
+        </div>        
     </div>
     <div class="full-height" style="background-color: #275b36;">        
         <img src="./images/jwest.png"></h1>
@@ -26,5 +31,13 @@
             <button class="home-button">ABOUT</button>
         </div>        
     </div>
+
+    <script>
+        $('#ballThrow').click(function() {
+            if ($('#ball-buffer:hover').length > 0) {
+                $('#ball-buffer').remove();
+            }
+        })
+    </script>
 </body>
 </html>
