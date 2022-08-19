@@ -80,3 +80,29 @@ html, body {
     font-size: 16px;
     cursor: pointer;
 }
+
+
+.explosion {
+  position: absolute; 
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+.particle {
+    position: absolute; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: pop 0.3s reverse linear;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+}
