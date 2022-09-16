@@ -1,10 +1,44 @@
 html, body {
     height: 100%;
+    width: 100%;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font: arial;
     background-color: #275b36;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-areas: 
+            "border-left main border-right";
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    grid-area: main;
     justify-content: center;    /* Center Horizontally            */
+}
+
+.border-left {
+    position: absolute;
+    left: 0px;
+    grid-area: border-left;
+    z-index: 100;
+    width: 15%;
+    height: 100%;
+    box-shadow: 10px 0px 25px 0.1px black;
+    background-color: #21502e;
+}
+
+
+.border-right {
+    position: absolute;
+    right: 0px;
+    grid-area: border-right;
+    z-index: 100;
+    width: 15%;
+    height: 100%;
+    box-shadow: -10px 0px 25px 0.1px black;
+    background-color: #21502e;
 }
 
 .ball {
@@ -28,6 +62,7 @@ html, body {
 
 #mad-left {
     position: absolute;
+    margin-left: 20%;
     top: 20%;
     left: 0px;
     width: 64px;
@@ -37,6 +72,7 @@ html, body {
 
 #mad-right {
     position: absolute;
+    margin-right: 20%;
     right: 0px;
     top: 20%;
     width: 64px;
@@ -56,15 +92,16 @@ html, body {
 
 .ballThrow {
     width: 100%;
+    top: 0px;
     max-width: 100%;
     height: 400px;
     position: absolute;
     overflow: hidden;
-
+    right: 0px;
 }
 
 .full-height {
-    margin-top: 20%;
+    /* margin-top: 20%; */
     height: 100%;
     width: 100%;
     align-items: center;
@@ -79,6 +116,15 @@ html, body {
     color: #A2AD59;
     font-size: 16px;
     cursor: pointer;
+}
+
+.current-button {
+    border: none;
+    /* border-radius: 4px; */
+    background-color: transparent;
+    padding-top: 3px;
+    color: white;
+    font-size: 16px;
 }
 
 
