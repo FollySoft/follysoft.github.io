@@ -181,8 +181,9 @@ html {
 @media screen and (max-width: 600px) {
 
     .full-height {
-        width: 50%;
+        /* margin-top: 20%; */
         height: 100%;
+        width: 100%;
         align-items: center;
         justify-content: center;
     }
