@@ -4,7 +4,7 @@ html, body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font: arial;
-    background-color: #275b36;
+    /* background-color: #275b36; */
     display: grid;
     /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-areas: 
@@ -13,12 +13,26 @@ html, body {
     justify-content: center;
 }
 
+a { 
+    text-decoration: none; 
+    text-shadow: 2px 2px #2b2b2b; 
+    color: white;
+    padding: 4px;
+}
+
+a:hover { text-decoration:underline}
+
+html {
+    background-image: url("./images/DSC_0076.jpg");
+}
+
 .main-content {
     grid-area: main;
     justify-content: center;    /* Center Horizontally            */
 }
 
 .border-left {
+    background-image: url("./images/DSC_0071.jpg");
     position: absolute;
     left: 0px;
     grid-area: border-left;
@@ -26,11 +40,12 @@ html, body {
     width: 15%;
     height: 100%;
     box-shadow: 10px 0px 25px 0.1px black;
-    background-color: #21502e;
+    /* background-color: #21502e; */
 }
 
 
 .border-right {
+    background-image: url("./images/DSC_0071.jpg");
     position: absolute;
     right: 0px;
     grid-area: border-right;
@@ -38,7 +53,7 @@ html, body {
     width: 15%;
     height: 100%;
     box-shadow: -10px 0px 25px 0.1px black;
-    background-color: #21502e;
+    /* background-color: #21502e; */
 }
 
 .ball {
@@ -108,6 +123,13 @@ html, body {
     justify-content: center;
 }
 
+.home-button-group {
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .home-button {
     border: none;
     /* border-radius: 4px; */
@@ -152,3 +174,37 @@ html, body {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 600px) {
+
+    .full-height {
+        width: 50%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .border-left {
+        background-image: url("./images/1024px-Bricks-4147.jpg");
+        position: absolute;
+        left: 0px;
+        grid-area: border-left;
+        z-index: 100;
+        width: 8%;
+        height: 100%;
+        box-shadow: 10px 0px 25px 0.1px black;
+        /* background-color: #21502e; */
+    }
+    
+    
+    .border-right {
+        background-image: url("./images/1024px-Bricks-4147.jpg");
+        position: absolute;
+        right: 0px;
+        grid-area: border-right;
+        z-index: 100;
+        width: 8%;
+        height: 100%;
+        box-shadow: -10px 0px 25px 0.1px black;
+        /* background-color: #21502e; */
+    }
+  }

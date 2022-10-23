@@ -1,11 +1,3 @@
-html, body {
-    height: 100%;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font: arial;
-    background-color: #275b36;
-    justify-content: center;    /* Center Horizontally            */
-}
 
 a {
     color:#A2AD59;
@@ -15,6 +7,13 @@ a {
 a:hover {
     color: gold;
 }
+.full-height {
+    /* margin-top: 20%; */
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 
 .text-box {
     margin-left: 20%;
@@ -22,6 +21,7 @@ a:hover {
 }
 
 .home-button-group {
+    background-color: rgba(0, 0, 0, 0.3);
     align-items: center;
     justify-content: center;
     text-align: center;
