@@ -184,7 +184,7 @@ html {
         justify-content: center;
     }
     .border-left {
-        background-image: url("./images/1024px-Bricks-4147.jpg");
+        background-image: url("./images/DSC_0071.jpg");
         position: absolute;
         left: 0px;
         grid-area: border-left;
@@ -197,7 +197,7 @@ html {
     
     
     .border-right {
-        background-image: url("./images/1024px-Bricks-4147.jpg");
+        background-image: url("./images/DSC_0071.jpg");
         position: absolute;
         right: 0px;
         grid-area: border-right;
