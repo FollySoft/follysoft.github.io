@@ -189,6 +189,7 @@ html {
     }
     .border-left {
         background-image: url("./images/DSC_0071.jpg");
+        background-size: cover;
         position: absolute;
         left: 0px;
         grid-area: border-left;
@@ -202,6 +203,7 @@ html {
     
     .border-right {
         background-image: url("./images/DSC_0071.jpg");
+        background-size: cover;
         position: absolute;
         right: 0px;
         grid-area: border-right;
