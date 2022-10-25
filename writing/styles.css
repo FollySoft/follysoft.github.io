@@ -1,23 +1,50 @@
 
-a {
-    color:#A2AD59;
-    text-decoration: none;
+html, body {
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font: arial;
+    /* background-color: #275b36; */
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-areas: 
+            "border-left main border-right";
+    align-items: center;
+    justify-content: center;
 }
 
-a:hover {
-    color: gold;
+hr {
+    color: white;
 }
+
+a { 
+    text-decoration: none; 
+    text-shadow: 2px 2px #2b2b2b; 
+    color: white;
+    padding: 4px;
+}
+
+a:hover { text-decoration:underline}
+
+body {
+    background-image: url("../images/DSC_0095.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+.main-content {
+    grid-area: main;
+    justify-content: center;    /* Center Horizontally            */
+}
+
 .full-height {
     /* margin-top: 20%; */
     height: 100%;
     width: 100%;
     align-items: center;
     justify-content: center;
-}
-
-.text-box {
-    margin-left: 20%;
-    margin-right: 20%;
 }
 
 .home-button-group {
@@ -27,12 +54,14 @@ a:hover {
     text-align: center;
 }
 
+
 .home-button {
+    text-decoration: none; 
+    text-shadow: 2px 2px #2b2b2b;
+    background-color: transparent; 
     border: none;
-    /* border-radius: 4px; */
-    background-color: transparent;
-    padding-top: 3px;
-    color: #A2AD59;
+    color: white;
+    padding: 4px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -45,3 +74,65 @@ a:hover {
     color: white;
     font-size: 16px;
 }
+
+.explosion {
+  position: absolute; 
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+.particle {
+    position: absolute; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: pop 0.3s reverse linear;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+    .full-height {
+        /* margin-top: 20%; */
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .border-left {
+        background-image: url("./images/DSC_0071.jpg");
+        background-size: cover;
+        position: absolute;
+        left: 0px;
+        grid-area: border-left;
+        z-index: 100;
+        width: 8%;
+        height: 100%;
+        box-shadow: 10px 0px 25px 0.1px black;
+        /* background-color: #21502e; */
+    }
+    
+    
+    .border-right {
+        background-image: url("./images/DSC_0071.jpg");
+        background-size: cover;
+        position: absolute;
+        right: 0px;
+        grid-area: border-right;
+        z-index: 100;
+        width: 8%;
+        height: 100%;
+        box-shadow: -10px 0px 25px 0.1px black;
+        /* background-color: #21502e; */
+    }
+  }

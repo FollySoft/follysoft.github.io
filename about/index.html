@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jwest's space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+
+<div class="border-left"></div>
+
+<div class="main-content">
+    <body>
+        <br>  
+            <div>
+                <h2>What about 
+                    <select class="about-selector" data-target=".about-box">
+                        <option value="website" data-show=".website-text">this website</option>
+                        <option value="inspirations" data-show=".inspirations-text">your inspirations</option>
+                        <option value="tools" data-show=".tools-text">your tools</option>
+                    </select>
+                    ?
+                </h2>
+            </div>
+            <div class="about-box">
+                <div id="website" class="website-text hide">Citrus is...</div>
+                <div id="inspirations" class="inspirations-text hide">A pome is...</div>
+                <div id="tools" class="tools-text hide">A pome is...</div>
+            </div>
+            <br>
+    </body>
+</div>
+
+<div class="border-right"></div>
+
+<script>
+    $(document).on('change', '.about-selector', function() {
+    var target = $(this).data('target');
+    var show = $("option:selected", this).data('show');
+    $(target).children().addClass('hide');
+    $(show).removeClass('hide');
+    });
+    $(document).ready(function(){
+        $('.about-selector').trigger('change');
+});
+</script>
+
+</html>
