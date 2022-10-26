@@ -1,49 +1,16 @@
-/********* GLOBALS ***********/
-
-body{
-    margin: 0;
+html, body {
+    height: 100%;
+    width: 100%;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font: arial;
     /* background-color: #275b36; */
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
+    /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-areas: 
             "border-left main border-right";
-    grid-template-columns: 1fr 2fr 1fr;
-    /* align-items: center;
-    justify-content: center; */
-}
-
-h2 {
-    text-decoration: none; 
-    font-size: 28px;
-    font-weight: bold;
-    text-shadow: 2px 2px #2b2b2b; 
-    color: white;
-    padding: 4px;
-}
-
-.about-selector {
-    align-items: left;
-    border: #fff;
-    border-style: solid;
-    border-width: 2px;
-    padding: 4px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-select {
-    text-shadow: 2px 2px #2b2b2b; 
-    font-weight: bold;
-    color: white;
-    font: arial;
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
-    background-color: transparent;
-    font-size: 28px;
+    align-items: center;
+    justify-content: center;
 }
 
 a { 
@@ -55,8 +22,8 @@ a {
 
 a:hover { text-decoration:underline}
 
-body {
-    background-image: url("./images/DSC_0173.jpg");
+html {
+    background-image: url("./images/DSC_0076.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
@@ -68,11 +35,11 @@ body {
 }
 
 .border-left {
-    background-image: url("./images/DSC_0033.jpg");
+    background-image: url("./images/DSC_0071.jpg");
     position: absolute;
     left: 0px;
     grid-area: border-left;
-    /* z-index: 100; */
+    z-index: 100;
     width: 15%;
     height: 100%;
     box-shadow: 10px 0px 25px 0.1px black;
@@ -81,15 +48,74 @@ body {
 
 
 .border-right {
-    background-image: url("./images/DSC_0033.jpg");
+    background-image: url("./images/DSC_0071.jpg");
     position: absolute;
     right: 0px;
     grid-area: border-right;
-    /* z-index: 100; */
+    z-index: 100;
     width: 15%;
     height: 100%;
     box-shadow: -10px 0px 25px 0.1px black;
     /* background-color: #21502e; */
+}
+
+.ball {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;         /* Turns a square into a circle   */
+    background-color: white;  /* Sets color to Orange           */
+}
+
+#ball-buffer {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    animation: ballThrow 2s linear;
+    /* animation-delay: 2s; */
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    padding: 32px;
+}
+
+#mad-left {
+    position: absolute;
+    margin-left: 20%;
+    top: 20%;
+    left: 0px;
+    width: 64px;
+    height: 64px;
+    visibility: hidden;
+}
+
+#mad-right {
+    position: absolute;
+    margin-right: 20%;
+    right: 0px;
+    top: 20%;
+    width: 64px;
+    height: 64px;
+    visibility: hidden;
+}
+
+@keyframes ballThrow { 
+    0%   {left: -64px; top: 20%}
+    30%   {left: -64px; top: 20%}
+    40%  {left:25%; top:7%; }
+    50%  {left:50%; top:5%;}
+    60%  {left: 75%; top: 7%}
+    70% { display: none; left: 100%; top: 20%;}
+    100% { display: none; left: 100%; top: 20%;}
+}
+
+.ballThrow {
+    width: 100%;
+    top: 0px;
+    max-width: 100%;
+    height: 400px;
+    position: absolute;
+    overflow: hidden;
+    right: 0px;
 }
 
 .full-height {
@@ -108,10 +134,11 @@ body {
 }
 
 .home-button {
-    text-decoration: none; 
-    text-shadow: 2px 2px #2b2b2b; 
-    color: white;
-    padding: 4px;
+    border: none;
+    /* border-radius: 4px; */
+    background-color: transparent;
+    padding-top: 3px;
+    color: #A2AD59;
     font-size: 16px;
     cursor: pointer;
 }
@@ -125,19 +152,30 @@ body {
     font-size: 16px;
 }
 
-.hide {
-    display: none;
+
+.explosion {
+  position: absolute; 
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+.particle {
+    position: absolute; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: pop 0.3s reverse linear;
 }
 
-.about-box {
-    overflow-y: scroll;
-    height: 100%;
-    border: #fff;
-    border-style: solid;
-    border-width: 2px;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -150,8 +188,7 @@ body {
         justify-content: center;
     }
     .border-left {
-        background-image: url("./images/DSC_0033.jpg");
-        background-size: cover;
+        background-image: url("./images/DSC_0071.jpg");
         position: absolute;
         left: 0px;
         grid-area: border-left;
@@ -164,8 +201,7 @@ body {
     
     
     .border-right {
-        background-image: url("./images/DSC_0033.jpg");
-        background-size: cover;
+        background-image: url("./images/DSC_0071.jpg");
         position: absolute;
         right: 0px;
         grid-area: border-right;
