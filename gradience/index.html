@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <!-- Credit to: https://www.the-art-of-web.com/css/fading-slideshow-no-jquery/ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <html lang="en">
 
@@ -13,6 +14,10 @@
         <img src="./images/DSC_0280.png" >
         <img src="./images/DSC_0281.png" >
         <img src="./images/DSC_0282.png" >
+        <img src="./images/DSC_1623.png" >
+        <img src="./images/DSC_1628.png" >
+        <img src="./images/DSC_1631.png" >
+        <p id="speed-indicator" style="font-family:Arial; color:white">Speed: 5s</p>
     </div>
 
     <style>
@@ -54,6 +59,14 @@
         #stage img:nth-of-type(n+3) {
             display: none;
         }
+
+        #speed-indicator {
+            opacity: 0;
+            z-index: 30;
+            position: fixed;
+            left: 2%;
+            transition: opacity 1s;
+        }
         
         @keyframes fader {
             from { opacity: 1.0; }
@@ -63,7 +76,36 @@
     </style>
 
     <script>
+        var anim_speed = 5;
+        var detail_on = false;
+        document.onkeydown = function (event) {
+            switch (event.keyCode) {
+                case 38: // Up Key            
+                    if (anim_speed < 10) {
+                        anim_speed++;
+                    }
+                    $("#stage img" ).css("animationDuration", anim_speed + "s");
+                    $("#speed-indicator").text("Speed: " + anim_speed + "s");
+                    $("#speed-indicator").css("opacity", 1);
+                    //console.log("Speed: " + anim_speed);
+                break;
+                case 40:    // Down Key
+                    if (anim_speed > 1) {
+                        anim_speed--;
+                    }
+                    $("#stage img").css("animationDuration", anim_speed + "s");
+                    $("#speed-indicator").text("Speed: " + anim_speed + "s");
+                    $("#speed-indicator").css("opacity", 1);
+                    //console.log("Speed: " + anim_speed);
+                break;
+                case 68: // D Key
 
+                    detail_on = !detail_on;
+                    // Locate info box and toggle display.
+                break;
+            }
+           setTimeout( function() { $("#speed-indicator").css("opacity", 0)}, 2000);
+        };
         window.addEventListener("DOMContentLoaded", function(e) {
         
             // Original JavaScript code by Chirp Internet: chirpinternet.eu
