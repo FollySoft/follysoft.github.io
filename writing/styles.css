@@ -14,6 +14,7 @@ html, body {
     justify-content: center;
 }
 
+
 hr {
     color: white;
 }
@@ -27,8 +28,8 @@ a {
 
 a:hover { text-decoration:underline}
 
-body {
-    background-image: url("../images/DSC_0095.jpg");
+html {
+    background-color: #1B4636;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
@@ -75,64 +76,7 @@ body {
     font-size: 16px;
 }
 
-.explosion {
-  position: absolute; 
-  width: 10px;
-  height: 10px;
-  pointer-events: none;
+.text-box {
+    margin-left: 20%;
+    margin-right: 20%;
 }
-.particle {
-    position: absolute; 
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    animation: pop 0.3s reverse linear;
-}
-
-@keyframes pop {
-  from {
-    opacity: 0;
-  }
-  to {
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 600px) {
-
-    .full-height {
-        /* margin-top: 20%; */
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    .border-left {
-        background-image: url("./images/DSC_0071.jpg");
-        background-size: cover;
-        position: absolute;
-        left: 0px;
-        grid-area: border-left;
-        z-index: 100;
-        width: 8%;
-        height: 100%;
-        box-shadow: 10px 0px 25px 0.1px black;
-        /* background-color: #21502e; */
-    }
-    
-    
-    .border-right {
-        background-image: url("./images/DSC_0071.jpg");
-        background-size: cover;
-        position: absolute;
-        right: 0px;
-        grid-area: border-right;
-        z-index: 100;
-        width: 8%;
-        height: 100%;
-        box-shadow: -10px 0px 25px 0.1px black;
-        /* background-color: #21502e; */
-    }
-  }
