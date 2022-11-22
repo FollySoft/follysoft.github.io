@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jwest's space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+
+<img id="works-foreground" src="./images/works_page-items.png" >
+
+<div class="main-content">    
+    <body>
+        <br>
+        <div class="home-button-group">
+            <Button class="home-button">HOME</Button> //
+            <Button class="home-button">WORK</Button> //
+            <Button class="home-button">BLOG</Button> //
+            <button class="home-button">ABOUT</button>
+        </div> 
+        <br>
+        <h1 style="text-align: center";>ASSORTED WORKS</h1>
+        <div id="works-container">
+            <div id="works-list">
+                <dl>
+                    <dt>CURRENT</dt>
+                        <dd><a>Plaster</a></dd>
+                        <dd><a>Photography</a></dd>                        
+                    <dt>2022</dt>
+                        <dd><a>Gradience</a></dd>
+                        <dd><a>Debugging Session</a></dd>
+                        <dd><a>A Creative Fool's Manifesto</a></dd>
+                        <dd><a>Hexaguessimal</a></dd>
+                        <dd><a>SUSTENANCE</a></dd>
+                    <dt>2021</dt>
+                        <dd><a>Shuriken</a></dd>
+                    <dt>2020</dt>
+                        <dd><a>Dynamo</a></dd>
+                        <dd><a>Havoc</a></dd>
+                        <dd><a>Hunt n' Peck</a></dd>
+                    <dt>OLDER</dt>
+                        <dd><a>Gamanteau</a></dd>
+                        <dd><a>Hatch!</a></dd>
+                        <dd><a>Breakdown</a></dd>
+                        <dd><a>Gravity Hatchet</a></dd>
+            </div>
+            <div id="works-content">
+                <div>
+                    HELLO IDS THIS CONTENT????????
+                </div>
+            </div>
+        </div>
+    </body>
+</div>
+
+<img id="works-background" src="./images/works_page-desk.png" >
+
+<script>
+    $(document).on('change', '.about-selector', function() {
+    var target = $(this).data('target');
+    var show = $("option:selected", this).data('show');
+    $(target).children().addClass('hide');
+    $(show).removeClass('hide');
+    });
+    $(document).ready(function(){
+        $('.about-selector').trigger('change');
+});
+</script>
+
+</html>
