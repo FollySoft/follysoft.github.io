@@ -18,6 +18,7 @@ body{
 
 .home-button-group {
     bottom: 2%;
+    padding: 2px;
     /* position: fixed; */
     z-index: 200;
     background-color: rgba(0, 0, 0, 0.3);
@@ -31,20 +32,31 @@ body{
     border: none;
     /* border-radius: 4px; */
     background-color: transparent;
-    padding-top: 3px;
-    color: #A2AD59;
+    text-decoration: none; 
+    text-shadow: 2px 2px #2b2b2b; 
+    color: white;
+    padding: 4px;
     font-size: 16px;
     cursor: pointer;
 }
 
+.home-button:hover {
+    text-decoration: underline;
+}
+
 .current-button {
-    border: none;
+    /* border: none; */
     /* border-radius: 4px; */
     background-color: transparent;
-    padding-top: 3px;
     color: white;
     font-size: 16px;
+    border: #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
 }
+
+
 
 body::-webkit-scrollbar {
     width: 0.7em;
@@ -152,30 +164,6 @@ body {
     justify-content: center;
 }
 
-.home-button-group {
-    background-color: rgba(0, 0, 0, 0.3);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.home-button {
-    text-decoration: none; 
-    text-shadow: 2px 2px #2b2b2b; 
-    color: white;
-    padding: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.current-button {
-    border: none;
-    /* border-radius: 4px; */
-    background-color: transparent;
-    padding-top: 3px;
-    color: white;
-    font-size: 16px;
-}
 
 .hide {
     display: none;
@@ -183,12 +171,14 @@ body {
 
 #works-container {
     /* height: 100%; */
+    width: 70vw;
     border: #fff;
     border-style: solid;
     border-width: 2px;
     padding: 8px;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.5);
+    height: 65vh;
 }
 
 #works-foreground {
@@ -212,23 +202,32 @@ body {
     display: inline-flex;
     margin-left: 2%;
     width: 30%;
-    max-height: 400px;
+    height: 65vh;
     overflow-y: scroll;
     overflow-x: hidden;
     border-right-style: solid;
 }
 #works-content {
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
+    /* align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 10%;
+    margin-left: 10%; */
+    position: absolute;
+    max-width: 45%;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    overflow-y: scroll;
 }
 
 dd {
     margin-left: 12px;
 }
 
+.hide {
+    display: none;
+}
 
 dd a {
     margin-left: 0;
