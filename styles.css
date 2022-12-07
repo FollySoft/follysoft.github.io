@@ -23,7 +23,8 @@ a {
 a:hover { text-decoration:underline}
 
 html {
-    background-image: url("./images/DSC_0076.jpg");
+    background-image: url("./images/DSC_0076.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
@@ -165,6 +166,7 @@ html {
     align-items: center;
     justify-content: center;
 }
+
 
 
 .explosion {
