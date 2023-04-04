@@ -237,6 +237,10 @@ dd a:hover {
     background: transparent url('../img/basket.png') no-repeat 3px 170px;
 }
 
+hr {
+    color: white;
+}
+
 @media screen and (max-width: 600px) {
 
     .full-height {
