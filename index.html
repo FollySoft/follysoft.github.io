@@ -13,91 +13,176 @@
     />
 </head>
 
-<div class="border-left"></div>
+<img id="image-foreground" src="./images/works_page-items.png" >
 
 <div class="main-content">
-    <body style="text-align: center"></body>
+    <div id="header-div">
         <br>
-        <div class="ballThrow" id="ballThrow">
-            <img id="mad-left" src="./images/mad_left.png"/>
-            <img id="mad-right" src="./images/mad_right.png"/>
-            <div id="ball-buffer">
-                <div class="ball" id='ball'></div>
-            </div>        
-        </div>
-        <div class="full-height">        
-            <img src="./images/jwest.png"></h1>
-            <br>
-            <p>
-                Welcome! Site's not done, come back later.
-            </p>
-            <!-- <div class="home-button-group">
-                <Button class="current-button">HOME</Button> //
-                <Button onclick="location.href='./writing/index.html'" type="button" class="home-button">WORKS</button> //
-                <button class="home-button">ABOUT</button>
-            </div>  -->
-            <br>
-            Part of the Paradise Webring
-            <br> 
-            <div style="margin: 2%">
-                <a href="https://garden-of-comfie.neocities.org/">Comfie</a> <strong>← </strong><a href="https://youcanneverleave.art/" target="_blank">WEBVOID</a>&nbsp; <strong>→&nbsp;</strong><a href="https://s9menine.itch.io/">Celesti</a>
+        <img id="header-img" src="./images/jwest_header_sm.png">
+    </div>
+    <body>
+        <div id="content-container">
+            <!-- ******************************** ABOUT CONTENT ******************************** -->
+            <div class="page-content" id="about-page-content">
+                <div class="about-selector-wrapper">
+                    <h1>About 
+                        <select class="about-selector" data-target=".about-box">
+                            <option value="me" data-show=".me-text">me</option>
+                            <option value="website" data-show=".website-text">this website</option>
+                            <option value="inspirations" data-show=".inspirations-text">my inspirations</option>
+                            <option value="tools" data-show=".tools-text">my tools</option>
+                            <option value="links" data-show=".links-text">my links</option>
+                        </select>
+                    </h1>
+                </div>
+                <div class="about-box">
+                    <div id="me" class="me-text hide">
+                        <p>
+                            My name is Jonathan West, I'm a hobbyist game designer, photographer, and on rare ocassion a writer, based in New Mexico.  
+                            I'm a proud dad of two (soon to be 3!), and work full time 
+                            as a R&D Software Developer.  
+                        </p>
+                    </div>
+                    <div id="website" class="website-text hide">
+                        <p>
+                            This website at one point served entirely as a portfolio of my game and UX design experience, as a sort of showcase for potential employers.  
+                            However, as I'm not longer job hunting, I though I could take the opportunity to try to make this space a little bit more my own.  Right now,
+                            it is still somewhat serving as a portfolio, but I hope to let it grow natrually and organically to serve other, more creative explorations in 
+                            the web-space.
+                        </p>
+                        <p>
+                            You'll often find me using photos from <a href="https://commons.wikimedia.org/wiki/Main_Page"><b>Wikimedia Commons</b></a>, <a href="https://www.pexels.com/"><b>Pexels</b></a>, 
+                            or <a href="https://pixabay.com/"><b>Pixabay</b></a> in my games and other projects, however each photo background found on this site is from my own camera.
+                            Most are available on my Pexels page, where they can be freely downloaded for anyone else's own creative pursuits.
+                        </p>
+                    </div>
+                    <div id="inspirations" class="inspirations-text hide">
+                        <p>
+                            I'm inspired by things that are playful, things that subvert your expectations and get you to crack a smile at the results.  
+                            We live in an age that treats technology as both a luxury and a necessity, as priceless tools that work for us rather than play along 
+                            with us.  To me, the best creative works are the ones that show us otherwise.
+
+                            Some of my favorite pieces of playful technology and digital games include:
+                            <ul>
+                                <li><a href="http://www.jsjoust.com/">J.S. Joust</a> by Die Gute Fabrik</li>
+                                <li><a href="https://en.wikipedia.org/wiki/Alphabet_(video_game)">Alphabet</a> by Kieta Takahashi and Adam Saltsman</li>
+                                <li><a href="https://ludipe.itch.io/tie-simulator-2020">Tie Simulator</a> by Ludipe</li>
+                                <li><a href="https://www.youtube.com/watch?v=oVJnwf2IWh0">Fake Computer, Real Violence</a> by Matteo Loglio</li>
+                                <li><a href="https://jwhop.itch.io/trackball-driver-installation-disk">Trackball Driver Installation Disk</a> by Jonny Hopkins</li>
+                                <li><a href="https://hawkdanny.itch.io/how-to-be-born">how to be born</a> by Danny Hawk</li>
+                                <li><a href="https://haoliao.itch.io/watch-me-dance">Watch Me Dance</a> by Hao Lio</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="tools" class="tools-text hide">soon...</div>
+                    <div id="links" class="links-text hide">soon...</div>
+                </div>      
+            </div>
+            <!-- ******************************** WORKS CONTENT ******************************** -->
+            <div class="page-content" id="works-page-content">
+                <div id="works-list">
+                    <dl>
+                        <dt>CURRENT</dt>
+                            <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>
+                            <dd class="works-option" value="photography" data-show=".photography-text"><a>Photography</a></dd>
+                        <dt>2022</dt>
+                            <dd class="works-option" value="gradience" data-show=".gradience-text"><a>Gradience</a></dd>
+                            <dd><a>Debugging Session</a></dd>
+                            <dd><a>A Creative Fool's Manifesto</a></dd>
+                            <dd><a>Hexaguessimal</a></dd>
+                            <dd><a>SUSTENANCE</a></dd>
+                        <dt>2021</dt>
+                            <dd><a>Shuriken</a></dd>
+                        <dt>2020</dt>
+                            <dd><a>Dynamo</a></dd>
+                            <dd><a>Havoc</a></dd>
+                            <dd><a>Hunt n' Peck</a></dd>
+                        <dt>OLDER</dt>
+                            <dd><a>Gamanteau</a></dd>
+                            <dd><a>Hatch!</a></dd>
+                            <dd><a>Breakdown</a></dd>
+                            <dd><a>Gravity Hatchet</a></dd>
+                </div>
+                <div id='works-content'>
+                    <div id="plaster" class="work-content plaster-text hide">
+                        <h3>Plaster</h3>
+                    </div>
+                    <div id="photography" class="work-content photography-text hide">
+                        <h3>Photography</h3>
+                        <p>
+                            I've been an off and on hobbyist photographer since late elementary/early high school.  I currently have a Nikon D70 as well as a Diana F+ toy camera
+                            that I like to take out and play around with.  I ocassionally update my flickr page with my absolute favorite shots.
+                        </p>
+                        <p>
+                            You'll often find me using photos from <a href="https://commons.wikimedia.org/wiki/Main_Page"><b>Wikimedia Commons</b></a>, <a href="https://www.pexels.com/"><b>Pexels</b></a>, 
+                            or <a href="https://pixabay.com/"><b>Pixabay</b></a> in my games and other projects, however each photo background found on this site is from my own camera.
+                            Most are available on my Pexels page, where they can be freely downloaded for anyone else's own creative pursuits.
+                        </p>
+                    </div>
+                    <div id="gradience" class="work-content gradience-text hide">
+                        <h3>Gradience</h3>
+                        <p>
+                            A small artistic experiment in taking my photography and displaying it in a different way.
+                        </p>
+                        <p>
+                            Gradience is a stack of photos of sunsets I have taken from my desert home.  Minimizing the amount of objects in the sky, I tried my best to capture
+                            nothing but the natural color gradients that appear in the sky at dusk.  This webpage then simply stacks the photos on top of one another, and slowly
+                            fades between each one in a sort of looping slideshow.
+                        </p>
+                        <p>
+                            Viewers can adjust the speed of the cross-fade by pressing the up and down arrow keys on their keyboard.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <script>
-            $('#ballThrow').click(function(e) {
-                if ($('#ball-buffer:hover').length > 0) {
-                    $('#ball-buffer').remove();
-                    explode(e.pageX, e.pageY);
-                    $('#mad-right').addClass("animate__animated animate__slideInRight");
-                    $('#mad-right').css('visibility', 'visible');
-                    $('#mad-left').addClass("animate__animated animate__slideInLeft");
-                    $('#mad-left').css('visibility', 'visible');
-                }
-            })
-
-            // explosion construction
-            function explode(x, y) {
-            var particles = 10,
-                // explosion container and its reference to be able to delete it on animation end
-                explosion = $('<div class="explosion"></div>');
-
-            // put the explosion container into the body to be able to get it's size
-            $('body').append(explosion);
-
-            // position the container to be centered on click
-            explosion.css('left', x - explosion.width() / 2);
-            explosion.css('top', y - explosion.height() / 2);
-
-            for (var i = 0; i < particles; i++) {
-                // positioning x,y of the particle on the circle (little randomized radius)
-                var x = (explosion.width() / 2) + rand(50, 120) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10)),
-                y = (explosion.height() / 2) + rand(50, 120) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
-                color = 255 + ', ' + 255 + ', ' + 255, // randomize the color rgb
-                    // particle element creation (could be anything other than div)
-                elm = $('<div class="particle" style="' +
-                    'background-color: rgb(' + color + ') ;' +
-                    'top: ' + y + 'px; ' +
-                    'left: ' + x + 'px"></div>');
-
-                if (i == 0) { // no need to add the listener on all generated elements
-                // css3 animation end detection
-                elm.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-                    explosion.remove(); // remove this explosion container when animation ended
-                });
-                }
-                explosion.append(elm);
-            }
-            }
-
-            // get random number between min and max value
-            function rand(min, max) {
-            return Math.floor(Math.random() * (max + 1)) + min;
-            }
-        </script>
     </body>
 </div>
 
-<div class="border-right"></div>
+<div class="home-button-group">
+    <Button onclick="showAbout();" id="about-button" class="current-button home-button">ABOUT</Button> //
+    <Button onclick="showWork();" id="works-button" class="home-button">WORK</Button> //
+    <Button onclick="window.open('./blog/index.html', '_blank')" class="home-button">BLOG↗</Button>
+</div> 
+
+
+<img id="image-background" src="./images/works_page-desk.png" >
+
+<script>
+    $(document).on('click', '.works-option', function() {
+        $('.work-content').addClass('hide');    // Hide All
+        var target = $(this).data('target');    // Reveal selected of value
+        var show = $(this).data('show');
+        $(target).children().addClass('hide');
+        $(show).removeClass('hide');
+    });
+</script>
+
+<script>
+    $(document).on('change', '.about-selector', function() {
+    var target = $(this).data('target');
+    var show = $("option:selected", this).data('show');
+    $(target).children().addClass('hide');
+    $(show).removeClass('hide');
+    });
+    $(document).ready(function(){
+        $('.about-selector').trigger('change');
+});
+</script>
+
+<script>
+    function showAbout() {
+            document.getElementById('about-page-content').style.display = 'block';
+            document.getElementById('about-button').classList.add('current-button');
+            document.getElementById('works-page-content').style.display = 'none';
+            document.getElementById('works-button').classList.remove('current-button');
+    }
+    function showWork() {
+            document.getElementById('works-page-content').style.display = 'block';
+            document.getElementById('works-button').classList.add('current-button');
+            document.getElementById('about-page-content').style.display = 'none';
+            document.getElementById('about-button').classList.remove('current-button');
+    }
+</script>
 
 </html>
