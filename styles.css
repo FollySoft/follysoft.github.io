@@ -195,6 +195,9 @@ body {
     z-index: -1000;
 }
 
+hr {
+    color: white;
+}
 
 #works-list {
     display: inline-flex;
@@ -206,18 +209,14 @@ body {
     border-right-style: solid;
 }
 #works-content {
-    display: inline-block;
-    /* align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-left: 10%; */
+    display: inline-flex;
+
     position: absolute;
     max-width: 45%;
-    width: auto;
+    width: 65vh;
     height: auto;
-    padding: 8px;
     overflow-y: scroll;
-    margin-left: 1%;
+    margin-left: 2%;
 }
 
 dd {
