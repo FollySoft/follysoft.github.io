@@ -200,6 +200,7 @@ hr {
 }
 
 #works-list {
+    font-size: calc(12px + 0.75vw);
     display: inline-flex;
     margin-left: 2%;
     width: 30%;
@@ -209,12 +210,11 @@ hr {
     border-right-style: solid;
 }
 #works-content {
+    font-size: calc(12px + 0.75vw);
     display: inline-flex;
-
     position: absolute;
-    max-width: 45%;
-    width: 65vh;
-    height: auto;
+    width: 45%;
+    height: 65vh;
     overflow-y: scroll;
     margin-left: 2%;
 }
