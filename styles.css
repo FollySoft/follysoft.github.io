@@ -196,7 +196,7 @@ hr {
     display: inline-flex;
     margin-left: 2%;
     width: 30%;
-    height: 65vh;
+    padding-right: 8px;
     border-right-style: solid;
 }
 #works-content {
