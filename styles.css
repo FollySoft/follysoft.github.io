@@ -197,8 +197,6 @@ hr {
     margin-left: 2%;
     width: 30%;
     height: 65vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
     border-right-style: solid;
 }
 #works-content {
@@ -210,6 +208,24 @@ hr {
     overflow-y: scroll;
     margin-left: 2%;
 }
+
+#works-horizontal {
+    overflow: auto;
+    white-space: nowrap;
+    border-bottom: #fff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom: 2%;
+    display: none;
+}
+
+#works-horizontal a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
 
 dd {
     margin-left: 12px;
@@ -230,12 +246,14 @@ dd a:hover {
 }
 
 @media screen and (max-width: 600px) {
-
-    .full-height {
-        /* margin-top: 20%; */
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
+    #works-list {
+        display: none
+    }
+    #works-horizontal {
+        display: block;
+    }
+    #works-content {
+        width: 67%;
+        height: 55vh;
     }
   }
