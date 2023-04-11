@@ -211,6 +211,7 @@ hr {
 
 #works-horizontal {
     overflow: auto;
+    padding-bottom: 8px;
     white-space: nowrap;
     border-bottom: #fff;
     border-bottom-style: solid;
@@ -224,8 +225,20 @@ hr {
     color: white;
     text-align: center;
     padding: 14px;
-    text-decoration: none;
+    text-shadow: 2px 2px #2b2b2b; 
+    cursor: pointer;
   }
+
+  #works-horizontal h3 {
+    display: inline-block;
+    text-align: center;
+    padding-right: 14px;
+    margin: 0px;
+    border: 0px;
+    border-right: #fff;
+    border-style: solid;    
+  }
+
 
 dd {
     margin-left: 12px;
