@@ -4,8 +4,10 @@
 
 body {
   background-color: #436a7b;
-  background-image: url('../images/bg_diamond.png');
+  background-image: url('../images/bg-concrete.jpg');
 	background-position: top;
+  background-size: auto auto;
+  background-repeat: no-repeat;
   font-size: 18px;
   font-family: Georgia, "Times New Roman", serif;
   margin: 0;
@@ -15,8 +17,10 @@ p {
   line-height: 1.6em; /*I find the default HTML line-height tends to be a bit claustrophobic for main text*/
 }
 
-hr {
-  border: solid #c7b591;
+hr {  
+  border-color: #ffffff;
+  border-style: solid;
+  border-radius: 2px;
   border-width: 2px 0 0 0;
 }
 
@@ -53,12 +57,15 @@ img {
 }
 
 a:hover { 
-  background-color: #fff6e6;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: #fff6e6;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: Tahoma, Geneva, sans-serif;
-  color: #34436f;
+  color: #ffffff;
 }
 
 /*#CONTAINER is the rectangle that contains everything but the background!*/
@@ -66,12 +73,13 @@ h1, h2, h3, h4, h5 {
   margin: 3em auto;
   width: 90%;
 	max-width: 700px;
-	background-color: #f1e3c9;
-  color: #151515; 
-  outline-color: #a9a9a9;
-  outline-style: ridge;
-  outline-width: 4px;
-  outline-offset: 0;
+	background-color: rgba(0, 0, 0, 0.95);
+  opacity: 80%;
+  color: #ebebeb; 
+  border-color: #ffffff;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 2px;
 }
 
 #content {
@@ -81,10 +89,11 @@ h1, h2, h3, h4, h5 {
 
 /*HEADER STYLE*/
 #header {
-  background-color: #384879;
+  background-color: #566D65;
   padding: 0 5%;
-  border-color: #a9a9a9;
-  border-style: ridge;
+  border-color: #ffffff;
+  border-style: solid;
+  border-radius: 2px;
   border-width: 0 0 4px 0;
 }
 #header ul {
@@ -139,4 +148,11 @@ h1, h2, h3, h4, h5 {
 #footer {
   font-size: 0.8em;
   padding: 0 5% 10px 5%;
+}
+
+a { 
+  text-decoration: none; 
+  text-shadow: 2px 2px #2b2b2b; 
+  color: white;
+  padding: 4px;
 }
