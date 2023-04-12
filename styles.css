@@ -162,6 +162,7 @@ body {
 }
 
 #about-page-content {
+    font-size: calc(12px + 0.75vw);
     display:block;
     margin: 2%
 }
@@ -256,6 +257,19 @@ dd a {
 
 dd a:hover {
     background: transparent url('../img/basket.png') no-repeat 3px 170px;
+}
+
+img{
+    height: auto;
+    width: auto\9; /* ie8 */
+    max-width:100%;    
+}
+
+.content-images {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 4%;
 }
 
 @media screen and (max-width: 600px) {
