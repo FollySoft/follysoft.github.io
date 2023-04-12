@@ -272,6 +272,20 @@ img{
     margin: 4%;
 }
 
+.works-links {
+    display:inline-flex;
+    top: 2%;
+    position: absolute;
+    right: 8%;
+}
+.works-links img{
+    width: calc(0.5vw, 32px);
+}
+
+sup {
+    text-decoration: none;;
+}
+
 @media screen and (max-width: 600px) {
     #works-list {
         display: none
