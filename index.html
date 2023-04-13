@@ -36,16 +36,20 @@
             </div>
             <div class="about-box">
                 <div id="me" class="me-text hide">
+                    <div class="content-images">
+                        <img id="profile-pic" src="./photos/jwest_profile.png"/>
+                    </div>      
                     <p>                        
-                        My name is Jonathan West, I'm a hobbyist game designer, photographer, and on rare ocassion a writer, based in southern New Mexico.  
-                        I'm a proud dad of three, and work full time 
-                        as a R&D Software Developer.                        
-                        <br>
-                        <br>
-                        You'll frequently find me wearing a flannel shirt and talking about my favorite math rock bands.
-                        <div class="content-images">
-                            <img src="./photos/jwest_profile.png"/>
-                        </div>          
+                        My name is Jonathan West,  I typically go by "jwest" in online spaces. I'm a hobbyist game designer, photographer, and on rare ocassion a writer, based in southern New Mexico.  
+                        I'm a proud dad of three, and work full time as a R&D Software Developer.  You'll frequently find me wearing a flannel shirt and talking about my favorite math rock bands.                       
+                        <br>                    
+                        <br>                        
+                        <div style="display:grid; align-items: center; justify-content: center; text-align: center;padding: 0">                                                        
+                            <h4 style="margin: 0;">Part of the Paradise Webring</h4>
+                            <p class="paradise-link">                                
+                                <a href="https://comfie.neocities.org/"><strong>Comfie</strong></a><strong> </strong><strong>← </strong><a href="https://youcanneverleave.art/" target="_blank"><strong>W̸E̶B̷V̴O̶I̴D̸</strong></a>&nbsp; <strong>→&nbsp;</strong><a href="https://s9menine.itch.io/"><strong>Celesti</strong></a>
+                            </p>                                                 
+                        </div>                            
                     </p>
                 </div>
                 <div id="website" class="website-text hide">
@@ -56,13 +60,13 @@
                         the web-space.  I'm trying my best to code this space from scratch ♥
                     </p>
                     <p>
-                        You'll often find me using photos from <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank"><b>Wikimedia Commons<sup>⧉</sup></b></a>, <a href="https://www.pexels.com/" target="_blank"><b>Pexels<sup>⧉</sup></b></a>, 
-                        or <a href="https://pixabay.com/" target="_blank"><b>Pixabay<sup>⧉</sup></b></a> in my games and other projects, however each photo background found on this site is from my own camera.
-                        Most are available on my <a href="https://www.pexels.com/@jonathan-west-339535484/" target="_blank"><b>personal Pexels page<sup>⧉</sup></b></a>, where they can be freely downloaded for anyone else's own creative pursuits.
+                        You'll often find me using photos from <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank"><b>Wikimedia Commons</b></a>, <a href="https://www.pexels.com/" target="_blank"><b>Pexels</b></a>, 
+                        or <a href="https://pixabay.com/" target="_blank"><b>Pixabay</b></a> in my games and other projects, however each photo background found on this site is from my own camera.
+                        Most are available on my <a href="https://www.pexels.com/@jonathan-west-339535484/" target="_blank"><b>personal Pexels page</b></a>, where they can be freely downloaded for anyone else's own creative pursuits.
                     </p>
                     <p>
-                        The icons found in here, however, are taken from <a href="https://boxicons.com/" target="_blank"><b>boxicons.com<sup>⧉</sup></b></a>.  The font used in my logo, up there in the top right of the page,
-                        is <a href="https://fonts.google.com/specimen/Bebas+Neue"><b>Bebas Neue<sup>⧉</sup></b></a>.  I just really like that font a lot.
+                        The icons found in here, however, are taken from <a href="https://boxicons.com/" target="_blank"><b>boxicons.com</b></a>.  The font used in my logo, up there in the top right of the page,
+                        is <a href="https://fonts.google.com/specimen/Bebas+Neue"><b>Bebas Neue</b></a>.  I just really like that font a lot.
                     </p>
                 </div>
                 <div id="inspirations" class="inspirations-text hide">
@@ -95,8 +99,10 @@
                         </ul>
                         <b>Game Development</b>
                         <ul>
-                            <li>GameMaker Studio</li>
-                            <li>Pico-8</li>
+                            <li>GameMaker Studio (frequently)</li>
+                            <li>Unity (ocassionally)</li>
+                            <li>Pico-8 (rarely)</li>
+                            <li>Visual Studio Code</li>
                             <li>GIMP (Image Editing)</li>
                             <li>Audacity (Audio Editing)</li>
                         </ul>
@@ -126,12 +132,14 @@
             <div id="works-list">
                 <dl>
                     <dt><b>CURRENT</b> <hr></dt>
-                    <dd class="works-option" value="photography" data-show=".photography-text"><a>Photography</a></dd>
+                        <dd class="works-option" value="photography" data-show=".photography-text"><a>Photography</a></dd>
                         <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>                        
                         <br>
+                    <dt><b>2023</b> <hr></dt>
+                        <dd class="works-option" value="pleasehold" data-show=".pleasehold-text"><a>Please Hold</a></dd>    
                     <dt><b>2022</b> <hr></dt>
                         <dd class="works-option" value="gradience" data-show=".gradience-text"><a>Gradience</a></dd>
-                        <dd><a>Debugging Session</a></dd>
+                        <dd class="works-option" value="debugging" data-show=".debugging-text"><a>Debugging Session</a></dd>
                         <dd><a>A Creative Fool's Manifesto</a></dd>
                         <dd><a>Hexaguessimal</a></dd>
                         <dd><a>SUSTENANCE</a></dd>
@@ -152,24 +160,24 @@
                         <br>
             </div>
             <div id="works-horizontal">
-                <a class="works-option" value="photography" data-show=".photography-text">Photography</a>
+                <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
                 -
-                <a class="works-option" value="plaster" data-show=".plaster-text">Plaster</a>                
+                <a class="works-option" value="plaster" data-show=".plaster-text"><b>Plaster</b></a>                
                 -
-                <a class="works-option" value="gradience" data-show=".gradience-text">Gradience</a>
+                <a class="works-option" value="gradience" data-show=".gradience-text"><b>Gradience</b></a>
                 -
-                <a class="works-option" value="debugging" data-show=".debugging-text">Debugging Session</a>
+                <a class="works-option" value="debugging" data-show=".debugging-text"><b>Debugging Session</b></a>
               </div> 
             <div id='works-content'>
                 <div id="plaster" class="work-content plaster-text hide">
                     <h3>
                         Plaster
                         <div class="works-links">
-                            <a href="https://jwest.itch.io/plaster" target="_blank"> <img src="./photos/icons/itchio-textless-white.png"/></a>
+                            <a href="https://jwest.itch.io/plaster" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
                         </div>
                     </h3>
                     <p>
-                        A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/">Paradise<sup>⧉</sup></a>.
+                        A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/">Paradise</a>.
                     </p>
                     <!-- IMAGES HERE -->
                     <p>
@@ -179,10 +187,10 @@
                     </p>
                 </div>
                 <div id="photography" class="work-content photography-text hide">
-                    <h3>
+                    <h3>                        
                         Photography
                         <div class="works-links">
-                            <a href="https://flickr.com/farmerjon555" target="_blank"> <img src="./photos/icons/globe-regular-36.png"/></a>
+                            <a href="https://flickr.com/farmerjon555" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
                         </div>
                     </h3>
                     <p>
@@ -191,8 +199,8 @@
                     </p>
                     <!-- IMAGES HERE -->
                     <p>
-                        You'll often find me using photos from <a href="https://commons.wikimedia.org/wiki/Main_Page"><b>Wikimedia Commons<sup>⧉</sup></b></a>, <a href="https://www.pexels.com/"><b>Pexels</b><sup>⧉</sup></a>, 
-                        or <a href="https://pixabay.com/"><b>Pixabay</b><sup>⧉</sup></a> in my games and other projects, however each photo background found on this site is from my own camera.
+                        You'll often find me using photos from <a href="https://commons.wikimedia.org/wiki/Main_Page"><b>Wikimedia Commons</b></a>, <a href="https://www.pexels.com/"><b>Pexels</b></a>, 
+                        or <a href="https://pixabay.com/"><b>Pixabay</b></a> in my games and other projects, however each photo background found on this site is from my own camera.
                         Most are available on my Pexels page, where they can be freely downloaded for anyone else's own creative pursuits.
                     </p>
                 </div>
@@ -200,7 +208,7 @@
                     <h3>
                         Gradience
                         <div class="works-links">
-                            <a href="https://jrcwest.github.io/gradience" target="_blank"> <img src="./photos/icons/globe-regular-36.png"/></a>
+                            <a href="https://jrcwest.github.io/gradience" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
                         </div>
                     </h3>
                     <p>
@@ -214,6 +222,33 @@
                     </p>
                     <p>
                         Viewers can adjust the speed of the cross-fade by pressing the up and down arrow keys on their keyboard.
+                    </p>
+                </div>
+                <div id="debugging" class="work-content debugging-text hide">
+                    <h3>                        
+                        Debugging Session
+                        <div class="works-links">
+                            <a href="https://jwest.itch.io/debugging-session" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                        </div>
+                    </h3>
+                    <p>
+                        A small alt-ctrl game about squashing the bugs that live inside your keyboard.  Kill the bugs by pressing the keys on your keyboard that they are currently crawling on before
+                        they fly off and overrun your home!
+                    </p>
+                    <div class="content-images">
+                        <img src="./photos/screenshots/debug-1.png"/>
+                        <img src="./photos/screenshots/debug-2.png"/>
+                    </div>
+                    <p>
+                        This is the first project that I attempted to do all of the artwork with public domain images, found primarily on wikimedia commons.  While much of the audio was
+                        taken from FreeSound, I recorded a handful of sound effects myself, in mar car on lunch breaks.  Twisting water bottles to make crunching sounds and pitching up my own
+                        voice saying "ouch" to fill out the cocophony of sound effects was a real treat.                        
+                    </p>
+                    <p>
+                        Design-wise, the game's difficulty curve is fairly simplistic - the more time you spend in a round, the shorter the time roaches will spend on the keyboard before flying off.
+                        There are also some roaches that will appear under the keys, using a wrench to try and pry off a key, rendering it unusable for the round.  Scores are based on key-pressing accuracy
+                        as well as survival time and total roaches killed. The game was paced in an effort to encourage players to "punch" their keyboard, hitting multiple keys at a time, but still playable
+                        for people who might have issues with rollover or ghosting issues with their keyboards.
                     </p>
                 </div>
             </div>
