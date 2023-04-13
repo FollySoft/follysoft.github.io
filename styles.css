@@ -199,7 +199,9 @@ hr {
     display: inline-flex;
     margin-left: 2%;
     width: 30%;
-    padding-right: 8px;
+    height: 65vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
     border-right-style: solid;
 }
 #works-content {
@@ -208,7 +210,7 @@ hr {
     position: absolute;
     width: 45%;
     height: 65vh;
-    overflow-y: scroll;
+    overflow-y: scroll;  
     margin-left: 2%;
 }
 
