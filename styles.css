@@ -208,7 +208,7 @@ hr {
     font-size: calc(12px + 0.75vw);
     display: inline-flex;
     position: absolute;
-    width: 45%;
+    width: 44%;
     height: 65vh;
     overflow-y: scroll;  
     margin-left: 2%;
@@ -273,7 +273,7 @@ img{
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 4%;
+    margin: 2%;
 }
 
 .content-images img {
