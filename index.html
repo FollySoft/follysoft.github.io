@@ -36,9 +36,9 @@
             </div>
             <div class="about-box">
                 <div id="me" class="me-text hide">
-                    <div class="content-images">
+                    <!-- <div class="content-images">
                         <img id="profile-pic" src="./photos/jwest_profile.png"/>
-                    </div>      
+                    </div>       -->
                     <p>                        
                         My name is Jonathan West,  I typically go by "jwest" in online spaces. I'm a hobbyist game designer, photographer, and on rare ocassion a writer, based in southern New Mexico.  
                         I'm a proud dad of three, and work full time as a R&D Software Developer.  You'll frequently find me wearing a flannel shirt and talking about my favorite math rock bands.                       
@@ -148,7 +148,7 @@
                     <dt><b>2022</b> <hr></dt>
                         <dd class="works-option" value="gradience" data-show=".gradience-text"><a>Gradience</a></dd>
                         <dd class="works-option" value="debugging" data-show=".debugging-text"><a>Debugging Session</a></dd>
-                        <dd><a>A Creative Fool's Manifesto</a></dd>
+                        <!-- <dd><a>A Creative Fool's Manifesto</a></dd>
                         <dd><a>Hexaguessimal</a></dd>
                         <dd><a>SUSTENANCE</a></dd>
                         <br>
@@ -165,7 +165,7 @@
                         <dd><a>Hatch!</a></dd>
                         <dd><a>Breakdown</a></dd>
                         <dd><a>Gravity Hatchet</a></dd>
-                        <br>
+                        <br> -->
             </div>
             <div id="works-horizontal">
                 <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
@@ -177,28 +177,6 @@
                 <a class="works-option" value="debugging" data-show=".debugging-text"><b>Debugging Session</b></a>
               </div> 
             <div id='works-content'>
-                <div id="plaster" class="work-content plaster-text hide">
-                    <h3>
-                        Plaster
-                        <div class="works-links">
-                            <a href="https://jwest.itch.io/plaster" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
-                        </div>
-                    </h3>
-                    <p>
-                        A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/">Paradise</a>.
-                    </p>
-                    <div class="content-images">
-                        <img src="./photos/screenshots/plaster-1.png"/>
-                        <br>
-                        <br>
-                        <img src="./photos/screenshots/plaster-2.png"/>
-                    </div>
-                    <p>
-                        The screensaver displays the most-recent contents of the user's clipboard, both text and images, in ways that are intended to be playful.
-                        It was designed to play off of the element of surprise, while also reminding the user how easily accessible data can sometimes become if we aren't
-                        careful.  All image templates were made in GIMP, while the screensaver itself was made with GameMaker.
-                    </p>
-                </div>
                 <div id="photography" class="work-content photography-text hide">
                     <h3>                        
                         Photography
@@ -211,11 +189,55 @@
                         that I like to take out and play around with.  I ocassionally update my flickr page with my absolute favorite shots.
                     </p>
                     <div class="content-images">
-                        <img src="./photos/screenshots/photo-1.jpg"/>                        
+                        <img id="img-photo-1" src="./photos/screenshots/photo-1.jpg" onclick="openModal(this.id)"/>                        
                     </div>
                     <p>
                         On ocassion I upload photos onto <a href="https://www.pexels.com/@jonathan-west-339535484/" target="_blank"><b>Pexels</b></a> for free creative use.  I use a lot of creative commons
                         stuff in my games, so I try to share photos for free-use as a way of giving back to that community.
+                    </p>
+                </div>
+                <div id="plaster" class="work-content plaster-text hide">
+                    <h3>
+                        Plaster
+                        <div class="works-links">
+                            <a href="https://jwest.itch.io/plaster" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                        </div>
+                    </h3>
+                    <p>
+                        A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/">Paradise</a>.
+                    </p>
+                    <div class="content-images">
+                        <img id="img-plaster-1" src="./photos/screenshots/plaster-1.png" onclick="openModal(this.id)"/>
+                        <br>
+                        <br>
+                        <img id="img-plaster-2" src="./photos/screenshots/plaster-2.png" onclick="openModal(this.id)"/>
+                    </div>
+                    <p>
+                        The screensaver displays the most-recent contents of the user's clipboard, both text and images, in ways that are intended to be playful.
+                        It was designed to play off of the element of surprise, while also reminding the user how easily accessible data can sometimes become if we aren't
+                        careful.  All image templates were made in GIMP, while the screensaver itself was made with GameMaker.
+                    </p>
+                </div>
+                <div id="pleasehold" class="work-content pleasehold-text hide">
+                    <h3>                        
+                        Please Hold
+                        <div class="works-links">
+                            <a href="https://jwest.itch.io/please-hold" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                        </div>
+                    </h3>                    
+                    <p>
+                        A small alt-ctrl game made for the <a href="https://itch.io/jam/altctrlathome2022" target="_blank"><b>2022 ALT+CTRL @ HOME jam</b></a>.  Players take on the role of a customer service represdentative, holding a controller up to their heads as if it were a telephone.  
+                        They follow prompts on a screen, with customer satisfaction being determined by their accuracy and speed.
+                    </p>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/xloljhnN9jI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>
+                        While the overall game mechanics are simple, I tried to lean into the silliness of using your controller in such an unorthodox manner in what was meant to be a professional setting.  
+                        The games aesthetics were intended to match that of bland corporate software.
+                    </p>
+                    <p>
+                        I reached out to multiple friends to provide voice lines for the various customers,
+                        giving them as much free-reign as they wanted to establish the characters as they saw fit.  The result ended up being far better than I ever could have accomp-lished on my own.  Their credits can be found on
+                        the game's itch page.
                     </p>
                 </div>
                 <div id="gradience" class="work-content gradience-text hide">
@@ -228,7 +250,10 @@
                     <p>
                         A small artistic experiment in taking my photography and displaying it in a different way.
                     </p>
-                    <!-- IMAGES HERE -->
+                    <div class="content-images">
+                        <img id="img-gradience-1" src="./photos/screenshots/gradience-1.png" onclick="openModal(this.id)"/>                        
+                        <img id="img-gradience-2" src="./photos/screenshots/gradience-2.png" onclick="openModal(this.id)"/>                        
+                    </div>
                     <p>
                         Gradience is a stack of photos of sunsets I have taken from my desert home.  Minimizing the amount of objects in the sky, I tried my best to capture
                         nothing but the natural color gradients that appear in the sky at dusk.  This webpage then simply stacks the photos on top of one another, and slowly
@@ -250,8 +275,8 @@
                         they fly off and overrun your home!
                     </p>
                     <div class="content-images">
-                        <img src="./photos/screenshots/debug-1.png"/>
-                        <img src="./photos/screenshots/debug-2.png"/>
+                        <img id="img-debug-1" src="./photos/screenshots/debug-1.png" onclick="openModal(this.id)"/>
+                        <img id="img-debug-2" src="./photos/screenshots/debug-2.png" onclick="openModal(this.id)"/>
                     </div>
                     <p>
                         This is the first project that I attempted to do all of the artwork with public domain images, found primarily on wikimedia commons.  While much of the audio was
@@ -290,9 +315,13 @@
     <Button onclick="window.open('./blog/index.html', '_blank')" class="home-button">BLOG↗</Button>
 </div> 
 
-
-
 <img id="image-background" src="./images/works_page-desk.png" >
+
+<!-- Modal For Images -->
+<div id="photomodal" class="modal">
+    <span class="close">&times;</span>    
+    <img class="modal-content" id="img01">
+  </div>
 
 <script>
     $(document).on('click', '.works-option', function() {
@@ -328,6 +357,26 @@
             document.getElementById('works-button').classList.add('current-button');
             document.getElementById('about-page-content').style.display = 'none';
             document.getElementById('about-button').classList.remove('current-button');
+    }
+</script>
+
+<script>
+    function openModal(photoID)
+    {
+        // Get the modal
+        var modal = document.getElementById("photomodal");        
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById(photoID);        
+        var modalImg = document.getElementById("img01");        
+        modal.style.display = "block";
+        modalImg.src = img.src;        
+    }         
+    // Get the <span> element that closes the modal
+    var modal = document.getElementById("photomodal");
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
     }
 </script>
 
