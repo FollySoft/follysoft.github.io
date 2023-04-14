@@ -172,6 +172,8 @@
                 -
                 <a class="works-option" value="plaster" data-show=".plaster-text"><b>Plaster</b></a>                
                 -
+                <a class="works-option" value="pleasehold" data-show=".pleasehold-text"><b>Plaster</b></a>
+                -
                 <a class="works-option" value="gradience" data-show=".gradience-text"><b>Gradience</b></a>
                 -
                 <a class="works-option" value="debugging" data-show=".debugging-text"><b>Debugging Session</b></a>
@@ -298,7 +300,7 @@
                         </div>
                     </h3>
                     <p>
-                        A manifesto written for the 2022 Manifesto Jam.  I created it with the help of a close friend, Mackenzie Ito, as an exploration into my own creative motivations and methodologies.
+                        A manifesto written for the 2022 Manifesto Jam.  I created it with the help of a close friend, Mackenzie Ito, as an exploration into my own creative motivations and practices.
                     </p>                      
                     <p>
                         
@@ -376,6 +378,10 @@
     var span = document.getElementsByClassName("close")[0];
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
+        modal.style.display = "none";
+    }
+    modal.onclick = function() {        
+        if(event.target === document.getElementById("img01")) return;
         modal.style.display = "none";
     }
 </script>
