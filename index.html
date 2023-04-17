@@ -108,9 +108,7 @@
                         </ul>
                     </p>
                 </div>
-                <div id="links" class="links-text hide" style="height: 100%;">                    
-                    <br>
-
+                <div id="links" class="links-text hide" style="height: 100%;">            
                     <p style="text-align: center;">                        
                         <Button onclick="window.open('https://twitter.com/jrcwest', '_blank')" class="home-button">Twitter↗</Button>                        
                         <br>
@@ -148,9 +146,9 @@
                     <dt><b>2022</b> <hr></dt>
                         <dd class="works-option" value="gradience" data-show=".gradience-text"><a>Gradience</a></dd>
                         <dd class="works-option" value="debugging" data-show=".debugging-text"><a>Debugging Session</a></dd>
-                        <!-- <dd><a>A Creative Fool's Manifesto</a></dd>
-                        <dd><a>Hexaguessimal</a></dd>
-                        <dd><a>SUSTENANCE</a></dd>
+                        <dd class="works-option" value="creativefool" data-show=".creativefool-text"><a>A Creative Fool's Manifesto</a></dd>
+                        <dd dd class="works-option" value="hexaguessimal" data-show=".hexaguessimal-text"><a>Hexaguessimal</a></dd>
+                        <!-- <dd><a>SUSTENANCE</a></dd>
                         <br>
                     <dt><b>2021</b> <hr></dt>
                         <dd><a>Shuriken</a></dd>
@@ -177,6 +175,10 @@
                 <a class="works-option" value="gradience" data-show=".gradience-text"><b>Gradience</b></a>
                 -
                 <a class="works-option" value="debugging" data-show=".debugging-text"><b>Debugging Session</b></a>
+                - 
+                <a class="works-option" value="creativefool" data-show=".creativefool-text"><b>Creative Fool's Manifesto</b></a>
+                -
+                <a class="works-option" value="hexaguessimal" data-show=".hexaguessimal-text"><b>Hexaguessimal</b></a>
               </div> 
             <div id='works-content'>
                 <div id="photography" class="work-content photography-text hide">
@@ -206,7 +208,7 @@
                         </div>
                     </h3>
                     <p>
-                        A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/">Paradise</a>.
+                        A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/" target="_blank">Paradise</a>.
                     </p>
                     <div class="content-images">
                         <img id="img-plaster-1" src="./photos/screenshots/plaster-1.png" onclick="openModal(this.id)"/>
@@ -292,7 +294,7 @@
                         for people who might have issues with rollover or ghosting issues with their keyboards.
                     </p>
                 </div>
-                <div id="debugging" class="work-content creativefool-text hide">
+                <div id="creativefool" class="work-content creativefool-text hide">
                     <h3>                        
                         A Creative Fool's Manifesto
                         <div class="works-links">
@@ -303,7 +305,42 @@
                         A manifesto written for the 2022 Manifesto Jam.  I created it with the help of a close friend, Mackenzie Ito, as an exploration into my own creative motivations and practices.
                     </p>                      
                     <p>
-                        
+                       The writing came as a result of years of dipping into a variety of readings and studies based around the broader concepts of "play", in both a practical perspectivr but also notablly in a sipratual one.  
+                       In reflecting on my work, and trying to understand the reasons for the decisions I made in designing and developing a game, I found that many of my motivations (or even lackthereof) closely resembled that of a fool,
+                       both in a historical and more modern context.  In many ways, I still feel as though the manifesto only scratched the surface of my thoughts on this, but it was definitely helpful
+                       in connecting some of the dots in my own head.
+                    </p>
+                </div>
+                <div id="hexaguessimal" class="work-content hexaguessimal-text hide">
+                    <h3>                        
+                        Hexaguessimal
+                        <div class="works-links">
+                            <a href="https://jwest.itch.io/hexaguessimal" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                        </div>
+                    </h3>
+                    <p>
+                        A wordle clone with acolorful twist, made for the <a href="https://itch.io/jam/hexes-eggplant-podcast-community-game-jam-12" target="_blank">12th Eggplant Podcast Community Game Jam</a>.  Players are given 6 chances to guess a randomized color of the page's background.  However,
+                        their guesses must be in hexadecimal format.
+                    </p>   
+                    <div class="content-images">
+                        <img id="img-hexaguessimal-1" src="./photos/screenshots/hexaguessimal-1.png" onclick="openModal(this.id)"/>
+                    </div>
+                    <p>
+                        This game originally started as <a href="https://twitter.com/jrcwest/status/1489610464203997188" target="_blank">a joke response to a tweet</a>, suggesting that every game designer "is to be legally obliged to make a wordle variant."  While my response was intended
+                        as a joke, the idea stuck in my head, and the theme for the current Eggplant Podcast game jam happened to be "fun with hexes."  I looked for a tutorial to help me get started with the basic
+                        ground work of a "wordle-clone" and built the game up from there.
+                    </p>
+                    <p>
+                        I experimented with a variety of pre-build CSS animations to see how best to convey information to the player based on their guesses.  By coloring each full guess, players would get some
+                        assistance in determining which portion of their guess was too high or too low.  In an effort to create a more "sharable solution", like the emoji-based ones used in the original wordle, I attempted to
+                        create an image that provided a color gradient of the player's guesses, using an html canvas.  However, I could not figure out a way to take the image and make it easily transferrable to a player's clipboard.                       
+                    </p>
+                    <div class="content-images">
+                        <img id="img-hexaguessimal-2" src="./photos/screenshots/hexaguessimal-2.png" onclick="openModal(this.id)"/>
+                    </div>
+                    <p>
+                        One area of design that needed improvement, however, was indicating to players if there were any duplicate hexadecimal characters within the solution.  I unfortunately ran out of time before the 
+                        end of the jam to find a good solution to the problem, but feedback from players offered some helpful suggestions that I would lke to explore in the future.
                     </p>
                 </div>
             </div>

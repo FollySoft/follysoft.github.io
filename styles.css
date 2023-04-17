@@ -169,6 +169,12 @@ body {
     margin: 2%
 }
 
+#about-page-content a{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
 #works-page-content {
     display: none;
 }
@@ -205,13 +211,18 @@ hr {
     border-right-style: solid;
 }
 #works-content {
-    font-size: calc(12px + 0.7vw);
+    font-size: calc(10px + 0.7vw);
     display: inline-flex;
     position: absolute;
     width: 44%;
     height: 65vh;
     overflow-y: scroll;  
     margin-left: 2%;
+}
+
+#works-content a{
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 #works-horizontal {
