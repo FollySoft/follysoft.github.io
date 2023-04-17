@@ -164,7 +164,7 @@ body {
 }
 
 #about-page-content {
-    font-size: calc(12px + 0.75vw);
+    font-size: min(calc(12px + 0.75vw), 24px);
     display:block;
     margin: 2%
 }
@@ -201,7 +201,7 @@ hr {
 }
 
 #works-list {
-    font-size: calc(12px + 0.75vw);
+    font-size: min(calc(12px + 0.75vw), 24px);
     display: inline-flex;
     margin-left: 2%;
     width: 30%;
@@ -211,7 +211,7 @@ hr {
     border-right-style: solid;
 }
 #works-content {
-    font-size: calc(10px + 0.7vw);
+    font-size: calc(12px + 0.7vw);
     display: inline-flex;
     position: absolute;
     width: 44%;
