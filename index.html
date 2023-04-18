@@ -137,11 +137,12 @@
             <div class="page-content" id="works-page-content">
                 <div id="works-list">
                     <dl>
-                        <dt><b>CURRENT</b> <hr></dt>
+                        <!-- <dt><b>CURRENT</b> <hr></dt>
                             <dd class="works-option" value="photography" data-show=".photography-text"><a>Photography</a></dd>
                             <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>                        
-                            <br>
+                            <br> -->
                         <dt><b>2023</b> <hr></dt>
+                            <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>             
                             <dd class="works-option" value="pleasehold" data-show=".pleasehold-text"><a>Please Hold</a></dd>    
                             <br>
                         <dt><b>2022</b> <hr></dt>
@@ -167,8 +168,8 @@
                             <br> -->
                 </div>
                 <div id="works-horizontal">
-                    <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
-                    -
+                    <!-- <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
+                    - -->
                     <a class="works-option" value="plaster" data-show=".plaster-text"><b>Plaster</b></a>                
                     -
                     <a class="works-option" value="pleasehold" data-show=".pleasehold-text"><b>Please Hold</b></a>
@@ -372,13 +373,22 @@
                     </div>
                 </div>
             </div>
+            <!-- ******************************** BLOG CONTENT ******************************** -->
+            <div class="blog-content" id="blog-page-content">
+                <div id="recentpostlistdiv"></div>
+                <br>
+                <div style="text-align: center;">                        
+                    <Button onclick="window.open('./blog/index.html', '_blank')" class="home-button">Full Blog↗</Button> 
+                </div>                                     
+            </div>
         </div>
     </div>
     
     <div class="home-button-group">
         <Button onclick="showAbout();" id="about-button" class="current-button home-button">ABOUT</Button> //
         <Button onclick="showWork();" id="works-button" class="home-button">WORK</Button> //
-        <Button onclick="window.open('./blog/index.html', '_blank')" class="home-button">BLOG↗</Button>
+        <Button onclick="showBlog()" id="blog-button" class="home-button">BLOG</Button>
+        <!-- <Button onclick="window.open('./blog/index.html', '_blank')" class="home-button">BLOG↗</Button> -->
     </div> 
 
 </div>
@@ -419,12 +429,24 @@
             document.getElementById('about-button').classList.add('current-button');
             document.getElementById('works-page-content').style.display = 'none';
             document.getElementById('works-button').classList.remove('current-button');
+            document.getElementById('blog-page-content').style.display = 'none';
+            document.getElementById('blog-button').classList.remove('current-button');
     }
     function showWork() {
             document.getElementById('works-page-content').style.display = 'block';
             document.getElementById('works-button').classList.add('current-button');
             document.getElementById('about-page-content').style.display = 'none';
             document.getElementById('about-button').classList.remove('current-button');
+            document.getElementById('blog-page-content').style.display = 'none';
+            document.getElementById('blog-button').classList.remove('current-button');
+    }
+    function showBlog() {
+            document.getElementById('blog-page-content').style.display = 'block';
+            document.getElementById('blog-button').classList.add('current-button');
+            document.getElementById('about-page-content').style.display = 'none';
+            document.getElementById('about-button').classList.remove('current-button');
+            document.getElementById('works-page-content').style.display = 'none';
+            document.getElementById('works-button').classList.remove('current-button');
     }
 </script>
 
@@ -451,5 +473,7 @@
         modal.style.display = "none";
     }
 </script>
+
+<script src="./blog/script.js"></script>
 
 </html>

@@ -77,6 +77,8 @@ body::-webkit-scrollbar {
     height: 20%;
     max-width: 133px;
     max-height: 52px;
+    min-width: 80px;
+    min-height: 20px;
 }
 
 /**************************************************/
@@ -179,6 +181,14 @@ body {
 
 #works-page-content {
     display: none;
+}
+
+#blog-page-content {
+    display: none;
+    font-size: min(calc(12px + 0.5vw), 24px);
+    font-family: Montserrat,Lato,LatoExtended,sans-serif;
+    font-weight: 500;
+    margin: 2%
 }
 
 #image-foreground {

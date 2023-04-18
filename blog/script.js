@@ -50,6 +50,9 @@ let relativePath = ".";
 if ( url.includes("posts/") ) {
   relativePath = "..";
 }
+if ( !url.includes("blog/") ) {
+  relativePath = "../blog";
+}
 
 //Write the Header HTML, a series of list items containing links.
 let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">Home</a></li>' + 
@@ -125,7 +128,7 @@ function formatPostLink(i) {
     }
   }
   if (  postDateFormat.test ( postsArray[i][0].slice( 6,17 ) ) ) {
-    return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + postsArray[i][0].slice(6,16) + " \u00BB " + postTitle_i + '</a></li>';
+    return '<li><a href="' + "blog" + '/' + relativePath + '/'+ postsArray[i][0] +'">' + postsArray[i][0].slice(6,16) + " \u00BB " + postTitle_i + '</a></li>';
   } else {
     return '<li><a href="' + relativePath + '/'+ postsArray[i][0] +'">' + postTitle_i + '</a></li>';
   }
@@ -148,7 +151,7 @@ for ( let i = 0; i < numberOfRecentPosts; i++ ) {
   then we'll add a link to the archive so readers can find the rest of
   your wonderful posts and be filled with knowledge.*/
 if ( postsArray.length > recentPostsCutoff ) {
-  recentPostListHTML += '<li class="moreposts"><a href=' + relativePath + '/archive.html>\u00BB more posts</a></li></ul>';
+  recentPostListHTML += '<li class="moreposts"><a href=' + relativePath + '/archive.html target="_blank">\u00BB more posts</a></li></ul>';
 } else {
   recentPostListHTML += "</ul>";
 }
