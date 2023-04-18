@@ -164,7 +164,9 @@ body {
 }
 
 #about-page-content {
-    font-size: min(calc(12px + 0.75vw), 24px);
+    font-size: min(calc(12px + 0.5vw), 24px);
+    font-family: Montserrat,Lato,LatoExtended,sans-serif;
+    font-weight: 500;
     display:block;
     margin: 2%
 }
@@ -202,7 +204,8 @@ hr {
 
 #works-list {
     font-size: min(calc(12px + 0.75vw), 24px);
-    display: inline-flex;
+    font-family: Montserrat,Lato,LatoExtended,sans-serif;
+    display: inline-flex;    
     margin-left: 2%;
     width: 30%;
     height: 65vh;
@@ -211,7 +214,8 @@ hr {
     border-right-style: solid;
 }
 #works-content {
-    font-size: calc(12px + 0.7vw);
+    font-size: calc(12px + 0.5vw);
+    font-family: Montserrat,Lato,LatoExtended,sans-serif;
     display: inline-flex;
     position: absolute;
     width: 44%;
