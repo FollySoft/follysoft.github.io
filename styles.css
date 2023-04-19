@@ -333,6 +333,7 @@ sup {
     height: 120px;
 }
 .paradise-link {
+    display: flex;
     font-size: calc(12px + 0.75vw);
     padding-top: 0;
     padding: 4px;
