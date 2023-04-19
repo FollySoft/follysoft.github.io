@@ -152,20 +152,21 @@
                             <dd class="works-option" value="hexaguessimal" data-show=".hexaguessimal-text"><a>Hexaguessimal</a></dd>
                             <dd class="works-option" value="sustenance" data-show=".sustenance-text"><a>SUSTENANCE</a></dd>
                             <br>
-                        <!--<dt><b>2021</b> <hr></dt>
-                            <dd><a>Shuriken</a></dd>
+                        <dt><b>2021</b> <hr></dt>  
+                            <dd class="works-option" value="shuriken" data-show=".shuriken-text"><a>Shuriken</a></dd>                      
                             <br>
                         <dt><b>2020</b> <hr></dt>
-                            <dd><a>Dynamo</a></dd>
-                            <dd><a>Havoc</a></dd>
-                            <dd><a>Hunt n' Peck</a></dd>
+                            <dd class="works-option" value="dynamo" data-show=".dynamo-text"><a>Dynamo</a></dd>
+                            <dd class="works-option" value="havoc" data-show=".havoc-text"><a>Havoc</a></dd>
+                            <!-- <dd><a>Hunt n' Peck</a></dd>
                             <br>
                         <dt><b>OLDER</b> <hr></dt>
                             <dd><a>Gamanteau</a></dd>
                             <dd><a>Hatch!</a></dd>
                             <dd><a>Breakdown</a></dd>
                             <dd><a>Gravity Hatchet</a></dd>
-                            <br> -->
+                            <br>-->
+                    </dl>
                 </div>
                 <div id="works-horizontal">
                     <!-- <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
@@ -181,6 +182,10 @@
                     <a class="works-option" value="creativefool" data-show=".creativefool-text"><b>Creative Fool's Manifesto</b></a>
                     -
                     <a class="works-option" value="hexaguessimal" data-show=".hexaguessimal-text"><b>Hexaguessimal</b></a>
+                    -
+                    <a class="works-option" value="sustenance" data-show=".sustenance-text"><b>SUSTENANCE</b></a>
+                    -
+                    <a class="works-option" value="shuriken" data-show=".shuriken-text"><b>Shuriken</b></a>
                   </div> 
                 <div id='works-content'>
                     <div id="photography" class="work-content photography-text hide">
@@ -368,6 +373,68 @@
                         <div class="content-images">
                             <img id="img-sustenance-1" src="./photos/screenshots/sustenance-1.png" onclick="openModal(this.id)"/>
                             <img id="img-sustenance-2" src="./photos/screenshots/sustenance-2.png" onclick="openModal(this.id)"/>
+                        </div>
+                    </div>
+                    <div id="shuriken" class="work-content shuriken-text hide">
+                        <h2>
+                            Shuriken
+                            <div class="works-links">
+                                <a href="https://jwest.itch.io/shuriken" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                            </div>
+                        </h2>
+                        <p>
+                            An alt-ctrl game where players use their mouse to simulate throwing ninja stars against an endless onslaught of enemies.
+                        </p>
+                        <iframe width="100%" height="50%" src="https://www.youtube.com/embed/n4Ybs3xO81k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
+                        <p>
+                            This game was my first real introduction into the world of alt-ctrl games, being heavily inspired by <a href="https://jwhop.itch.io/yolks-on-you" target="_blank">Yolk's on You</a> by Jonny Hopkins.  While it's a simple idea at it's core,
+                            this simplicity allowed me to explore the pixellated aesthetics of the game.  There is also a lot of room to expand on content, should I decide to revisit the game in the future.
+                        </p>
+                    </div>
+                    <div id="dynamo" class="work-content dynamo-text hide">
+                        <h2>
+                            Dynamo
+                            <div class="works-links">
+                                <a href="https://move38.com/pages/dynamo" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                            </div>
+                        </h2>
+                        <p>
+                            An open-ended set of party games made and published for Move38's Blinks platform.                            
+                        </p>
+                        <p>
+                            Dynamo's core functionality is simple - It's light is powered by touch.  Pressing the button will charge your dynamo, but the charge only lasts for ~1 second.  
+                            With this core mechanic, we designed 3 different games with very flexible rules, and encouraged players to "think playfully" and create their own games and modify the ones we provided. 
+                        </p>
+                        <iframe width="100%" height="50%" src="https://www.youtube.com/embed/N1TJmm3UIfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
+                        <p>
+                            Dynamo was originally inspired by the game <a href="http://www.foddy.net/2010/10/chicanery/" target="_blank">Chicanery</a>, originally designed by Anna Anthropy.  During the course of playtesting the original game, however, testers
+                            naturally sought out new ways to play with the core mechanic.  The developers at Move38 and I decided to lean into this, and ship a product that was 3-games in one, with a rule book than encouraged breaking the rules and creating
+                            games of their own.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-dynamo-1" src="./photos/screenshots/powerstruggle.gif" onclick="openModal(this.id)"/>                            
+                        </div>
+                    </div>
+                    <div id="havoc" class="work-content havoc-text hide">
+                        <h2>
+                            Havoc
+                            <div class="works-links">
+                                <a href="https://jwest.itch.io/havoc" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                            </div>
+                        </h2>
+                        <p>
+                            A physical action game for Blinks with 2 or more players.  Players choose between 3 weapons and fight to the death, attempting to line up their "lit" LED's with their opponents unlit ones to cause damage. 
+                            Last knight standing is the winner!
+                        </p>
+                        <div class="content-images">
+                            <img id="img-havoc-1" src="./photos/screenshots/havoc-1.jpg" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            The game was loosely based on <a href="https://en.wikipedia.org/wiki/Egg_tapping" target="_blank">Egg Jarping</a>.  I had a lot of fun experimenting with different weapon styles, limited to the 6-LED display on a single Blink tile.
+                            Each weapon is intended to fit different difficulties - if players wanted to give themselves or other players a "handicap", they could use a weapon with more LEDs, offering them more protection as well as adiditonal places to cause damage.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-havoc-2" src="./photos/screenshots/havoc-2.png" onclick="openModal(this.id)"/>                            
                         </div>
                     </div>
                 </div>
