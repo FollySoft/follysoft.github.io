@@ -398,6 +398,11 @@ sup {
     text-decoration: none;
     cursor: pointer;
   }
+
+  #youtube-embed {
+    width: 100%; 
+    height: 315px;
+  }
   
   /* 100% Image Width on Smaller Screens */
   @media only screen and (max-width: 600px){
@@ -433,5 +438,8 @@ sup {
     #profile-pic {
         width: 100px;
         height: 100px;
+    }
+    #youtube-embed {
+        height: 50%;
     }
   }
