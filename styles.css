@@ -311,9 +311,10 @@ img{
 
 .works-links {
     display:inline-flex;
-    top: 4%;
+    top: 3%;
     position: absolute;
     right: 8%;
+    overflow: hidden;
 }
 
 .works-button {
@@ -342,7 +343,7 @@ img{
     cursor: pointer;
 }
 
-.works-links:hover {
+.works-button:hover {
     text-decoration: underline;
 }
 
