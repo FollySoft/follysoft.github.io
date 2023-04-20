@@ -111,22 +111,22 @@
                     </div>
                     <div id="links" class="links-text hide" style="height: 100%;">            
                         <p style="text-align: center;">                        
-                            <Button onclick="window.open('https://twitter.com/jrcwest', '_blank')" class="home-button">Twitter↗</Button>                        
+                            <Button onclick="window.open('https://twitter.com/jrcwest', '_blank')" class="underline-button">Twitter↗</Button>                        
                             <br>
                             (for the tweets)
                             <br>
                             <br>
-                            <Button onclick="window.open('https://jwest.itch.io/', '_blank')" class="home-button">Itch↗</Button>
+                            <Button onclick="window.open('https://jwest.itch.io/', '_blank')" class="underline-button">Itch↗</Button>
                             <br>
                             (for the games I make)
                             <br>
                             <br>
-                            <Button onclick="window.open('https://flickr.com/photos/farmerjon555', '_blank')" class="home-button">Flickr↗</Button>
+                            <Button onclick="window.open('https://flickr.com/photos/farmerjon555', '_blank')" class="underline-button">Flickr↗</Button>
                             <br>
                             (for the pics)
                             <br>
                             <br>
-                            <Button onclick="window.open('https://steamcommunity.com/id/robotgopher', '_blank')" class="home-button">Steam↗</Button>
+                            <Button onclick="window.open('https://steamcommunity.com/id/robotgopher', '_blank')" class="underline-button">Steam↗</Button>
                             <br>
                             (for the games I play)
                         </p>
@@ -158,10 +158,11 @@
                         <dt><b>2020</b> <hr></dt>
                             <dd class="works-option" value="dynamo" data-show=".dynamo-text"><a>Dynamo</a></dd>
                             <dd class="works-option" value="havoc" data-show=".havoc-text"><a>Havoc</a></dd>
-                            <!-- <dd><a>Hunt n' Peck</a></dd>
+                            <dd class="works-option" value="huntnpeck" data-show=".huntnpeck-text"><a>Hunt n' Peck</a></dd>
                             <br>
-                        <dt><b>OLDER</b> <hr></dt>
+                        <!--<dt><b>OLDER</b> <hr></dt>
                             <dd><a>Gamanteau</a></dd>
+                            <dd><a>Reinvent The Wheel</a></dd>
                             <dd><a>Hatch!</a></dd>
                             <dd><a>Breakdown</a></dd>
                             <dd><a>Gravity Hatchet</a></dd>
@@ -186,15 +187,21 @@
                     <a class="works-option" value="sustenance" data-show=".sustenance-text"><b>SUSTENANCE</b></a>
                     -
                     <a class="works-option" value="shuriken" data-show=".shuriken-text"><b>Shuriken</b></a>
+                    -
+                    <a class="works-option" value="dynamo" data-show=".dynamo-text"><b>Dynamo</b></a>
+                    -
+                    <a class="works-option" value="havoc" data-show=".havoc-text"><b>Havoc</b></a>
+                    -
+                    <a class="works-option" value="huntnpeck" data-show=".huntnpeck-text"><b>Hunt n' Peck</b></a>
                   </div> 
                 <div id='works-content'>
                     <div id="photography" class="work-content photography-text hide">
-                        <h3>                        
+                        <h1>                        
                             Photography
                             <div class="works-links">
                                 <a href="https://flickr.com/farmerjon555" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
                             </div>
-                        </h3>
+                        </h1>
                         <p>
                             I've been an off and on hobbyist photographer since late elementary/early high school.  I currently have a Nikon D70 as well as a Diana F+ toy camera
                             that I like to take out and play around with.  I ocassionally update my flickr page with my absolute favorite shots.
@@ -208,12 +215,12 @@
                         </p>
                     </div>
                     <div id="plaster" class="work-content plaster-text hide">
-                        <h3>
+                        <h1>
                             Plaster
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/plaster" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/plaster', '_blank')" class="home-button">DOWNLOAD↗</Button>                        
                             </div>
-                        </h3>
+                        </h1>
                         <p>
                             A screensaver made for a collaboration with developers from<a href="https://youcanneverleave.art/" target="_blank">Paradise</a>.
                         </p>
@@ -230,12 +237,12 @@
                         </p>
                     </div>
                     <div id="pleasehold" class="work-content pleasehold-text hide">
-                        <h3>                        
+                        <h1>                        
                             Please Hold
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/please-hold" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/please-hold', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h3>                    
+                        </h1>                    
                         <p>
                             A small alt-ctrl game made for the <a href="https://itch.io/jam/altctrlathome2022" target="_blank"><b>2022 ALT+CTRL @ HOME jam</b></a>.  Players take on the role of a customer service represdentative, holding a controller up to their heads as if it were a telephone.  
                             They follow prompts on a screen, with customer satisfaction being determined by their accuracy and speed.
@@ -252,12 +259,12 @@
                         </p>
                     </div>
                     <div id="gradience" class="work-content gradience-text hide">
-                        <h3>
+                        <h1>
                             Gradience
                             <div class="works-links">
-                                <a href="https://jrcwest.github.io/gradience" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jrcwest.github.io/gradience', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h3>
+                        </h1>
                         <p>
                             A small artistic experiment in taking my photography and displaying it in a different way.
                         </p>
@@ -275,12 +282,12 @@
                         </p>
                     </div>
                     <div id="debugging" class="work-content debugging-text hide">
-                        <h3>                        
+                        <h1>                        
                             Debugging Session
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/debugging-session" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/debugging-session', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h3>
+                        </h1>
                         <p>
                             A small alt-ctrl game about squashing the bugs that live inside your keyboard.  Kill the bugs by pressing the keys on your keyboard that they are currently crawling on before
                             they fly off and overrun your home!
@@ -301,12 +308,12 @@
                         </p>
                     </div>
                     <div id="creativefool" class="work-content creativefool-text hide">
-                        <h3>                        
+                        <h2>                        
                             A Creative Fool's Manifesto
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/a-creative-fools-manifesto" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/a-creative-fools-manifesto', '_blank')" class="home-button">READ↗</Button>                        
                             </div>
-                        </h3>
+                        </h2>
                         <p>
                             A manifesto written for the 2022 Manifesto Jam.  I created it with the help of a close friend, Mackenzie Ito, as an exploration into my own creative motivations and practices, and what it means to be "foolish" in your work.
                         </p>                      
@@ -318,12 +325,12 @@
                         </p>                
                     </div>
                     <div id="hexaguessimal" class="work-content hexaguessimal-text hide">
-                        <h3>                        
+                        <h1>                        
                             Hexaguessimal
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/hexaguessimal" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/hexaguessimal', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h3>
+                        </h1>
                         <p>
                             A wordle clone with acolorful twist, made for the <a href="https://itch.io/jam/hexes-eggplant-podcast-community-game-jam-12" target="_blank">12th Eggplant Podcast Community Game Jam</a>.  Players are given 6 chances to guess a randomized color of the page's background.  However,
                             their guesses must be in hexadecimal format.
@@ -350,12 +357,12 @@
                         </p>
                     </div>
                     <div id="sustenance" class="work-content sustenance-text hide">
-                        <h3>                        
+                        <h1>                        
                             SUSTENANCE
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/sustenance" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/sustenance', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h3>
+                        </h1>
                         <p>
                             An alt-ctrl game where 2-4 players must share a single mouse to survive.  Players control an organism that has 2-4 different colored brains, representing each player.  Each brain must eat the food
                             of it's color to avoid starvation.  Once all the brains have died out, the game is over.
@@ -376,12 +383,12 @@
                         <iframe id="youtube-embed" src="https://www.youtube.com/embed/hxP6K9Uzp4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
                     </div>
                     <div id="shuriken" class="work-content shuriken-text hide">
-                        <h2>
+                        <h1>
                             Shuriken
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/shuriken" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/shuriken', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h2>
+                        </h1>
                         <p>
                             An alt-ctrl game where players use their mouse to simulate throwing ninja stars against an endless onslaught of enemies.
                         </p>
@@ -392,12 +399,12 @@
                         </p>
                     </div>
                     <div id="dynamo" class="work-content dynamo-text hide">
-                        <h2>
+                        <h1>
                             Dynamo
-                            <div class="works-links">
-                                <a href="https://move38.com/pages/dynamo" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
-                            </div>
-                        </h2>
+                                <div class="works-links">
+                                    <Button class="works-button" onclick="window.open('https://move38.com/pages/dynamo', '_blank')" class="home-button">PLAY↗</Button>                        
+                                </div>
+                        </h1>
                         <p>
                             An open-ended set of party games made and published for Move38's Blinks platform.                            
                         </p>
@@ -416,12 +423,12 @@
                         <iframe id="youtube-embed" src="https://www.youtube.com/embed/N1TJmm3UIfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
                     </div>
                     <div id="havoc" class="work-content havoc-text hide">
-                        <h2>
+                        <h1>
                             Havoc
                             <div class="works-links">
-                                <a href="https://jwest.itch.io/havoc" target="_blank"><img src="./photos/icons/globe-regular-36.png"/></a>
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/havoc', '_blank')" class="home-button">PLAY↗</Button>                        
                             </div>
-                        </h2>
+                        </h1>
                         <p>
                             A physical action game for Blinks with 2 or more players.  Players choose between 3 weapons and fight to the death, attempting to line up their "lit" LED's with their opponents unlit ones to cause damage. 
                             Last knight standing is the winner!
@@ -436,6 +443,26 @@
                         <div class="content-images">
                             <img id="img-havoc-2" src="./photos/screenshots/havoc-2.png" onclick="openModal(this.id)"/>                            
                         </div>
+                    </div>
+                    <div id="huntnpeck" class="work-content huntnpeck-text hide">
+                        <h1>
+                            Hunt n' Peck
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/hunt-n-peck', '_blank')" class="home-button">PLAY↗</Button>                        
+                            </div>
+                        </h1>
+                        <p>
+                            A silly alt-ctrl game, made (though not submitted) for a game jam hosted by Coolmath Games, where the theme was "use your head."  Players use their nose to type the words that appear on the screen, being scored by
+                            their accuracy as well as the number of words completed within the time limit.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-huntnpeck-1" src="./photos/screenshots/huntnpeck-1.gif" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            A 2-player mode, titled "Head-To-Head", was also made for the game, whereby players would have to share a single keyboard and compete to type out words that only contained letters on their half of the keyboard.
+                            In order to help create a smoother user experience, the words were also spoken to the players through their computer speakers, recorded by my friend Alex Pait.  However, the mode was completed not long into the 
+                            height of the COVID-19 pandemic.  As such, due to the nature of the intimacy of players keeping their faces so close together and on a shared keyboard, the mode was never really released in public builds.
+                        </p>
                     </div>
                 </div>
             </div>
