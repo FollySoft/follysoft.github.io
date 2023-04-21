@@ -234,6 +234,10 @@ hr {
     margin-left: 2%;
 }
 
+.work-content h2 {
+    width:60%;
+}
+
 #works-content a{
     text-decoration: underline;
     font-weight: bold;
