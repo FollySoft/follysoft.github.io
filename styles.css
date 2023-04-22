@@ -315,7 +315,7 @@ img{
 
 .works-links {
     display:inline-flex;
-    top: 3%;
+    top: 2.5%;
     position: absolute;
     right: 8%;
     overflow: hidden;
@@ -329,7 +329,8 @@ img{
     text-shadow: 2px 2px #2b2b2b; 
     color: white;
     padding: 4px;
-    font-size: calc(14px + 0.75vw);
+    /* font-size: calc(14px + 0.75vw); */
+    font-size: min(5vw, 18px);
     font-weight: bold;
     cursor: pointer;
 }
