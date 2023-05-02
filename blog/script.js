@@ -34,7 +34,7 @@ let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ]
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
-[ "posts/2020-11-10-Post-Template.html" ] ];
+[ "posts/2023-05-02-OWS-Jam.html" ] ];
 
 //-----------------------------
 
@@ -51,13 +51,12 @@ if ( url.includes("posts/") ) {
   relativePath = "..";
 }
 if ( !url.includes("blog/") ) {
-  relativePath = "../blog";
+  relativePath = "./blog";
 }
 
 //Write the Header HTML, a series of list items containing links.
-let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">Home</a></li>' + 
-'<li><a href="' + relativePath + '/archive.html">Archive</a></li>' +
-'<li><a href="' + relativePath + '/about.html">About</a></li> </ul>';
+let headerHTML = '<ul> <li><a href="' + "../" + '/index.html">Home</a></li>' + 
+'<li><a href="' + relativePath + '/archive.html">Archive</a></li></ul>';
 
 //Write the Footer HTML, which has information about the blog.
 let footerHTML = "<hr><p></a>This blog is built with <a href='https://zonelets.net/'>Zonelets!</a></p>";
