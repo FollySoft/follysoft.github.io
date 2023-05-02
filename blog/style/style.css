@@ -30,6 +30,7 @@ img {
   height: auto;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  opacity: 100%;
 }
 .right {
   float: right;
@@ -74,8 +75,8 @@ h1, h2, h3, h4, h5 {
   margin: 3em auto;
   width: 90%;
 	max-width: 700px;
-	background-color: rgba(0, 0, 0, 0.95);
-  opacity: 80%;
+	background-color: rgba(0, 0, 0, 0.808);
+  opacity: 100%;
   color: #ebebeb; 
   border-color: #ffffff;
   border-style: solid;
