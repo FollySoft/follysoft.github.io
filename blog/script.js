@@ -55,7 +55,7 @@ if ( !url.includes("blog/") ) {
 }
 
 //Write the Header HTML, a series of list items containing links.
-let headerHTML = '<ul> <li><a href="' + "../../" + '/index.html">Home</a></li>' + 
+let headerHTML = '<ul> <li><a href="' + "../.." + '/index.html">Home</a></li>' + 
 '<li><a href="' + relativePath + '/archive.html">Archive</a></li></ul>';
 
 //Write the Footer HTML, which has information about the blog.
