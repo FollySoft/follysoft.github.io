@@ -58,6 +58,11 @@ img {
   font-style: italic;
 }
 
+#content a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 a:hover { 
   border-style: solid;
   border-width: 1px;
