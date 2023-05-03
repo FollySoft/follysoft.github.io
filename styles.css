@@ -446,7 +446,7 @@ sup {
     cursor: pointer;
   }
 
-  #youtube-embed {
+  .youtube-embed {
     width: 100%; 
     height: 315px;
   }

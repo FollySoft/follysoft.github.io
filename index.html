@@ -263,7 +263,7 @@
                             A small alt-ctrl game made for the <a href="https://itch.io/jam/altctrlathome2022" target="_blank"><b>2022 ALT+CTRL @ HOME jam</b></a>.  Players take on the role of a customer service representative, holding a controller up to their heads as if it were a telephone.  
                             They follow prompts on a screen, with customer satisfaction being determined by their accuracy and speed.
                         </p>
-                        <iframe id="youtube-embed" src="https://www.youtube.com/embed/xloljhnN9jI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="youtube-embed"  id="youtube-pleasehold" src="https://www.youtube.com/embed/xloljhnN9jI?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <p>
                             While the overall game mechanics are simple, I tried to lean into the silliness of using your controller in such an unorthodox manner in what was meant to be a professional setting.  
                             The games aesthetics were intended to match that of bland corporate software.
@@ -396,7 +396,7 @@
                             of the jam playtesting, and the original design simply did not work.  Given the quality of music and art that was provided to me, I felt the need to make another attempt at making the game more enjoyable overall.
                             I opted to redesign the game to be cooperative, and added obstacles that players would need to work together to avoid.
                         </p>
-                        <iframe id="youtube-embed" src="https://www.youtube.com/embed/hxP6K9Uzp4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
+                        <iframe class="youtube-embed" id="youtube-sustenance" src="https://www.youtube.com/embed/hxP6K9Uzp4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
                     </div>
                     <div id="shuriken" class="work-content shuriken-text hide">
                         <h2>
@@ -408,7 +408,7 @@
                         <p>
                             An alt-ctrl game where players use their mouse to simulate throwing ninja stars against an endless onslaught of enemies.
                         </p>
-                        <iframe id="youtube-embed" src="https://www.youtube.com/embed/n4Ybs3xO81k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
+                        <iframe class="youtube-embed" id="youtube-shuriken" src="https://www.youtube.com/embed/n4Ybs3xO81k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
                         <p>
                             This game was my first real introduction into the world of alt-ctrl games, being heavily inspired by <a href="https://jwhop.itch.io/yolks-on-you" target="_blank">Yolk's on You</a> by Jonny Hopkins.  While Shuriken is a simple idea at it's core,
                             this simplicity allowed me to explore the pixellated aesthetics of the game.  There is also a lot of room to expand on content, should I decide to revisit the game in the future.
@@ -436,7 +436,7 @@
                             naturally sought out new ways to play with the core mechanic.  The developers at Move38 and I decided to lean into this, and ship a product that was 3-games in one, with a rule book than encouraged breaking the rules and creating
                             games of their own.
                         </p>
-                        <iframe id="youtube-embed" src="https://www.youtube.com/embed/N1TJmm3UIfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
+                        <iframe class="youtube-embed" src="https://www.youtube.com/embed/N1TJmm3UIfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
                     </div>
                     <div id="havoc" class="work-content havoc-text hide">
                         <h2>
@@ -554,6 +554,17 @@
         if ($('#worksintroskinny').length > 0) {
             $('#worksintroskinny').remove();
         }
+        // REALOAD ALLLL THE VIDEOS
+        let video;
+        video = $("#youtube-shuriken").attr("src");
+        $("#youtube-shuriken").attr("src","");
+        $("#youtube-shuriken").attr("src",video);
+        video = $("#youtube-sustenance").attr("src");
+        $("#youtube-sustenance").attr("src","");
+        $("#youtube-sustenance").attr("src",video);
+        video = $("#youtube-pleasehold").attr("src");
+        $("#youtube-pleasehold").attr("src","");
+        $("#youtube-pleasehold").attr("src",video);
     });
 </script>
 
