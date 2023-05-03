@@ -201,6 +201,16 @@
                     <a class="works-option" value="reinvent" data-show=".reinvent-text"><b>Reinvent the Wheel</b></a>
                   </div> 
                 <div id='works-content'>
+                    <div style="text-align: center; align-items: center; width: 100%;
+                        justify-content: center;" id="worksintrowide" class="work-content">
+                        Select an option from the left!
+                    </div>
+                    <div style="text-align: center; align-items: center; width: 100%;
+                        justify-content: center;" id="worksintroskinny" class="work-content">
+                        Select an option from above!
+                        <br>
+                        (Sorted by most recent release.)
+                    </div>
                     <div id="photography" class="work-content photography-text hide">
                         <h2>                        
                             Photography
@@ -537,7 +547,13 @@
         var target = $(this).data('target');    // Reveal selected of value
         var show = $(this).data('show');
         $(target).children().addClass('hide');
-        $(show).removeClass('hide');
+        $(show).removeClass('hide');        
+        if ($('#worksintrowide').length > 0) {
+            $('#worksintrowide').remove();
+        }
+        if ($('#worksintroskinny').length > 0) {
+            $('#worksintroskinny').remove();
+        }
     });
 </script>
 

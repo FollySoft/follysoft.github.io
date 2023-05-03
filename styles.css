@@ -281,6 +281,12 @@ hr {
     border-right: #fff;
     border-style: solid;    
   }
+#worksintrowide {
+    display: flex;
+}
+#worksintroskinny {
+    display: none;
+}
 
 
 dd {
@@ -459,6 +465,7 @@ sup {
     #works-horizontal {
         display: block;
     }
+
     #works-content {
         width: 67%;
         height: 55vh;
@@ -482,5 +489,11 @@ sup {
     }
     #youtube-embed {
         height: 50%;
+    }
+    #worksintrowide {
+        display:none;
+    }
+    #worksintroskinny {
+        display: flex;
     }
   }
