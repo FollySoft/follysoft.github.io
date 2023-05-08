@@ -10,7 +10,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-size: 18px;
-  font-family: Georgia, "Times New Roman", serif;
+  /* font-family: Georgia, "Times New Roman", serif; */
+  font-family: Montserrat,Lato,LatoExtended,sans-serif;
   margin: 0;
 }
 
@@ -63,12 +64,12 @@ img {
   font-weight: bold;
 }
 
-a:hover { 
+/* a:hover { 
   border-style: solid;
   border-width: 1px;
   border-radius: 2px;
   border-color: #fff6e6;
-}
+} */
 
 h1, h2, h3, h4, h5 {
   font-family: Tahoma, Geneva, sans-serif;
@@ -85,7 +86,7 @@ h1, h2, h3, h4, h5 {
   color: #ebebeb; 
   border-color: #ffffff;
   border-style: solid;
-  border-width: 4px;
+  border-width: 2px;
   border-radius: 2px;
 }
 
@@ -101,7 +102,7 @@ h1, h2, h3, h4, h5 {
   border-color: #ffffff;
   border-style: solid;
   border-radius: 2px;
-  border-width: 0 0 4px 0;
+  border-width: 0 0 2px 0;
 }
 #header ul {
   list-style-type: none;
@@ -119,6 +120,7 @@ h1, h2, h3, h4, h5 {
   color: white;
   text-decoration: none;
   background-color: inherit;
+  font-weight: bold;
 }
 #header li a:hover {
   text-decoration: underline;

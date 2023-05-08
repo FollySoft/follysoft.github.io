@@ -1,0 +1,91 @@
+/********* GLOBALS ***********/
+
+body{
+    font-family: Arial, Helvetica, sans-serif; 
+    background-image: url("./images/background.jpg");      
+    font: arial;
+    display: flex;
+    margin: 0;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffffa3 #2b2b2b91;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0.7em;
+    background: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: #c0392b;
+    height:30px;
+  }
+  
+  body::-webkit-scrollbar-track-piece
+  {
+     display:none;
+  }
+
+/**************************************************/
+
+.main-content {    
+    color: white;
+    margin-top: 20%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: #fff;
+    border-style: solid;
+    border-width: 2px;
+    width: 100%;    
+    text-align: center;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+#button-content {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    font-size: x-large;
+    border:#fff;
+    border-radius: 2px;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+#instruction-button {
+    display: none;
+}
+
+h1 {
+    text-shadow: 4px 4px 2px black;
+}
+
+h3 {
+    text-decoration:underline;
+}
+
+
+hr {
+    color: white;
+}
+
