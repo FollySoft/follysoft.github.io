@@ -37,37 +37,37 @@
             <div class="creature-div" id="bat">
                 <img src="./images/bat.jpg">
                 <p>
-
+                    Flip your camera upside down (if your camera doesnt let you turn it upside down, just flip the pic after the fact).
                 </p>
             </div>
             <div class="creature-div" id="bird">
                 <img src="./images/bird.jpg">
                 <p>
-
+                    Take pictures looking down at something from a high angle.
                 </p>
             </div>
             <div class="creature-div" id="flower">
                 <img src="./images/flower.jpg">
                 <p>
-
+                    Lay your phone (or yourself) flat on its back, taking photos looking straight up.
                 </p>
             </div>
             <div class="creature-div" id="gecko">
                 <img src="./images/gecko.jpg">
                 <p>
-
+                    The bottom of your camera must be touching a surface (wall, ceiling, rock, etc).
                 </p>
             </div>  
             <div class="creature-div" id="goldfish">
                 <img src="./images/goldfish.jpg">
                 <p>
-
+                    Take pictures through an additional lens (glass window, sheet of plastic, glass of water, reflections, etc.).
                 </p>
             </div>
             <div class="creature-div" id="mouse">
                 <img src="./images/mouse.jpg">
                 <p>
-
+                    Take pictures as if you are peering out from a hiding place (hole in a fence, crack in a door,  behind a tree, etc).
                 </p>
             </div>            
             <!-- Creature Name -->
@@ -77,6 +77,8 @@
         <div id="button-content">
             <!-- Button that toghgles between "play" and "instructions" -->
             <button id="play-button" onclick="handlePlayPress();shufflePhotos()">PLAY</button>
+            <button id="shuffle-button" onclick="shufflePhotos()">RESHUFFLE</button>
+            <br>
             <button id="instruction-button" onclick="handleInstructionPress()">INSTRUCTIONS</button>
         </div>        
     </div>    
@@ -85,13 +87,15 @@
 <script>
     // Button press    
     function handlePlayPress() {        
-            // document.getElementById("play-button").style.display = "none";
+            document.getElementById("play-button").style.display = "none";
             document.getElementById("instruction-button").style.display = "block";
+            document.getElementById("shuffle-button").style.display = "block";
             document.getElementById("instruction-content").style.display = "none";                
             document.getElementById("game-content").style.display = "block";          
     }
     function handleInstructionPress() {        
             document.getElementById("instruction-button").style.display = "none";
+            document.getElementById("shuffle-button").style.display = "none";
             document.getElementById("play-button").style.display = "block";
             document.getElementById("game-content").style.display = "none";          
             document.getElementById("instruction-content").style.display = "block";         

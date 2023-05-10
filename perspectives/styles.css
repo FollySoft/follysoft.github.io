@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
 
 .main-content {    
     color: white;
-    margin-top: 20%;
+    margin-top: 4%;
     margin-left: 4%;
     margin-right: 4%;
     padding: 2%;
@@ -51,9 +51,9 @@ body::-webkit-scrollbar {
 }
 
 #button-content {
-    align-content: center;
+    justify-items: center;
     justify-content: center;
-    display: flex;
+    display: grid;
 }
 
 button {
@@ -65,6 +65,7 @@ button {
     border-width: 2px;
     border-style: solid;
     cursor: pointer;
+    margin: 2%;
 }
 
 button:hover {
@@ -74,6 +75,10 @@ button:hover {
 
 #instruction-button {
     display: none;
+}
+
+#shuffle-button {
+    display:none;
 }
 
 #game-content {
@@ -86,6 +91,7 @@ button:hover {
 
 img {
     max-width: 512px;
+    width: auto;
     height: auto;
 }
 
