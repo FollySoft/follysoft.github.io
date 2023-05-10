@@ -80,6 +80,10 @@ button:hover {
     display: none;
 }
 
+.creature-div {
+    display: none;
+}
+
 img {
     max-width: 512px;
     height: auto;

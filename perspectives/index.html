@@ -34,24 +34,49 @@
         </div>
         <div id="game-content">
             <!-- Image That shuffles on button Press -->
-            <div>
+            <div class="creature-div" id="bat">
                 <img src="./images/bat.jpg">
                 <p>
 
                 </p>
+            </div>
+            <div class="creature-div" id="bird">
+                <img src="./images/bird.jpg">
+                <p>
+
+                </p>
+            </div>
+            <div class="creature-div" id="flower">
+                <img src="./images/flower.jpg">
+                <p>
+
+                </p>
+            </div>
+            <div class="creature-div" id="gecko">
+                <img src="./images/gecko.jpg">
+                <p>
+
+                </p>
+            </div>  
+            <div class="creature-div" id="goldfish">
+                <img src="./images/goldfish.jpg">
+                <p>
+
+                </p>
+            </div>
+            <div class="creature-div" id="mouse">
+                <img src="./images/mouse.jpg">
+                <p>
+
+                </p>
             </div>            
-            <img src="./images/bird.jpg">
-            <img src="./images/flower.jpg">
-            <img src="./images/gecko.jpg">
-            <img src="./images/goldfish.jpg">
-            <img src="./images/mouse.jpg">
             <!-- Creature Name -->
             <!-- Explanation of Perspective -->
         </div>        
         <br>
         <div id="button-content">
             <!-- Button that toghgles between "play" and "instructions" -->
-            <button id="play-button" onclick="handlePlayPress()">PLAY</button>
+            <button id="play-button" onclick="handlePlayPress();shufflePhotos()">PLAY</button>
             <button id="instruction-button" onclick="handleInstructionPress()">INSTRUCTIONS</button>
         </div>        
     </div>    
@@ -60,7 +85,7 @@
 <script>
     // Button press    
     function handlePlayPress() {        
-            document.getElementById("play-button").style.display = "none";
+            // document.getElementById("play-button").style.display = "none";
             document.getElementById("instruction-button").style.display = "block";
             document.getElementById("instruction-content").style.display = "none";                
             document.getElementById("game-content").style.display = "block";          
@@ -74,8 +99,20 @@
 </script>
 
 <script>
+    var currentCreature = "";
     function shufflePhotos() {
         const creatures = ["bat", "bird", "flower", "gecko", "goldfish", "mouse"]
+        if (currentCreature == "") {
+            currentCreature = creatures[Math.floor(Math.random() * creatures.length)];
+        }
+        else {
+            document.getElementById(currentCreature).style.display = "none";
+            var tmpArray = creatures;
+            var index = creatures.indexOf(2);
+            tmpArray.splice(index, 1);
+            currentCreature = tmpArray[Math.floor(Math.random() * tmpArray.length)];
+        }
+        document.getElementById(currentCreature).style.display = "block";
     }
 </script>
 
