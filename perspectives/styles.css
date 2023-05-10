@@ -91,7 +91,12 @@ button:hover {
 
 img {
     max-width: 512px;
-    width: auto;
+    width: 80%;
+    height: auto;
+}
+
+img.resize {
+    width:512px; /* you can use % */
     height: auto;
 }
 
