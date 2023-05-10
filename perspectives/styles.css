@@ -76,6 +76,15 @@ button:hover {
     display: none;
 }
 
+#game-content {
+    display: none;
+}
+
+img {
+    max-width: 512px;
+    height: auto;
+}
+
 h1 {
     text-shadow: 4px 4px 2px black;
 }

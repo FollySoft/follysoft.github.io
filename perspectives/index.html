@@ -17,23 +17,34 @@
 <body>
     <div class="main-content">
         <!-- Title -->
-        <h1>Perspectives Game</h1>
-        <br>
+        <h1>Perspectives Game</h1>        
         <div id="instruction-content">
             <!-- DISPLAY ON LOAD-->
             <!-- Instruction Text -->
             <h3>How to Play</h3>
             <p>
-                Find a space (indoor or outdoor) where you're willing to spend some time with a camera.  Press the start button to be assigned a random creature
-                who's perspective you must try and emulate with your camera for the next <b>10 minutes</b>.  The explanations for the creature's perspective are just guidelines, 
-                feel free to get creative with it!
+                Find a space (indoor or outdoor) where you're willing to spend some time with a camera.  Open this page and press the start button to be assigned a random creature.
+                For the next <b>10 minutes</b>, use your camera to image seeing the space through this creature's eyes.  Some guidelines and tips for each creature's perspective will be provided,
+                but feel free to ignore them!
             </p>
+            <br>
             <p>
                 Ready to move on to a different perspective?  Press the play button again to reshuffle!
             </p>
         </div>
         <div id="game-content">
             <!-- Image That shuffles on button Press -->
+            <div>
+                <img src="./images/bat.jpg">
+                <p>
+
+                </p>
+            </div>            
+            <img src="./images/bird.jpg">
+            <img src="./images/flower.jpg">
+            <img src="./images/gecko.jpg">
+            <img src="./images/goldfish.jpg">
+            <img src="./images/mouse.jpg">
             <!-- Creature Name -->
             <!-- Explanation of Perspective -->
         </div>        
@@ -59,6 +70,12 @@
             document.getElementById("play-button").style.display = "block";
             document.getElementById("game-content").style.display = "none";          
             document.getElementById("instruction-content").style.display = "block";         
+    }
+</script>
+
+<script>
+    function shufflePhotos() {
+        const creatures = ["bat", "bird", "flower", "gecko", "goldfish", "mouse"]
     }
 </script>
 
