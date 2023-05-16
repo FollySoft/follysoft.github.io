@@ -73,6 +73,10 @@ button:hover {
     color: black;
 }
 
+button #tip-button {
+    width: 10%;
+}
+
 #instruction-button {
     display: none;
 }
