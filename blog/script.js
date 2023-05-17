@@ -136,7 +136,7 @@ function formatPostLink(i) {
 }
 
 let postListHTML = "<ul>";
-for ( let i = 0; i < postsArray.length; i++ ) {
+for ( let i = postsArray.length - 1; i >= 0; i-- ) {
   postListHTML += formatPostLink(i);
 }
 postListHTML += "</ul>";
@@ -145,7 +145,7 @@ postListHTML += "</ul>";
 let recentPostsCutoff = 3; //Hey YOU! Change this number to set how many recent posts to show before cutting it off with a "more posts" link.
 let recentPostListHTML = "<h2>Recent Posts:</h2><ul>";
 let numberOfRecentPosts = Math.min( recentPostsCutoff, postsArray.length );
-for ( let i = 0; i < numberOfRecentPosts; i++ ) {
+for ( let i = numberOfRecentPosts - 1; i >= 0; i-- ) {
   recentPostListHTML += formatPostLink(i);
 }
 /*If you've written more posts than can fit in the Recent Posts List,
