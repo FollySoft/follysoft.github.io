@@ -172,11 +172,11 @@ if ( postsArray.length < 2 ) {
   nextprevHTML = '<a href="' + relativePath + '/archive.html">Archive</a> | <a href="'+ relativePath + '/' + prevlink +'">Previous Post \u00BB</a>';
 } else if ( currentIndex === postsArray.length - 1 ) {
   nextlink = postsArray[currentIndex - 1][0];
-  nextprevHTML = '<a href="' + relativePath + '/' + nextlink +'">\u00AB Next Post</a> | <a href="' + relativePath + '/archive.html">Archive</a>';
+  nextprevHTML = '<a href="' + relativePath + '/' + nextlink +'">\u00AB Previous Post</a> | <a href="' + relativePath + '/archive.html">Archive</a>';
 } else if ( 0 < currentIndex && currentIndex < postsArray.length - 1 ) {
   nextlink = postsArray[currentIndex - 1][0];
   prevlink = postsArray[currentIndex + 1][0];
-  nextprevHTML = '<a href="' + relativePath + '/'+ nextlink +'">\u00AB Next Post</a> | <a href="' + relativePath + '/archive.html">Archive</a> | <a href="' + relativePath + '/'+ prevlink +'">Previous Post \u00BB</a>';
+  nextprevHTML = '<a href="' + relativePath + '/'+ nextlink +'">\u00AB Previous Post</a> | <a href="' + relativePath + '/archive.html">Archive</a> | <a href="' + relativePath + '/'+ prevlink +'">Next Post \u00BB</a>';
 }
 
 //-----------------------------
