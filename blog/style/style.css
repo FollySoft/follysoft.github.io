@@ -165,3 +165,9 @@ a {
   color: white;
   padding: 4px;
 }
+
+iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
+}
