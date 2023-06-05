@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +27,8 @@
             <h3>How to Play</h3>
             <p>
                 Find a space (indoor or outdoor) where you're willing to spend some time with a camera.  Open this page and press the PLAY button to be assigned a random creature.
-                For the next <b>10 minutes</b>, use your camera to try and see the space as if through this creature's eyes.  Some rules will be provided, but feel free 
-                to ignore them!
+                For the next <b>10 minutes</b>, use your camera to try and see the space as if through this creature's eyes.  Some suggestions of how to accomplish this will be 
+                provided, but feel free to ignore them!
             </p>
             <br>
             <p>
@@ -36,21 +39,28 @@
             </p>
         </div>
         <div id="game-content">
-            <h1>Take pictures as a... </h1>
+            <h2>Take pictures as a... </h2>
             <!-- Image That shuffles on button Press -->
             <div class="creature-div" id="bat">
                 <img src="./images/bat.jpg">
                 <h1>Bat</h1>
                 <details>
-                    <summary>Need a tip?</summary>                
-                    Flip your camera upside down (if your camera doesnt let you turn it upside down, just flip the pic after the fact).
+                    <summary>Need a suggestion?</summary>                
+                    <ul>
+                        <li>
+                            Flip your camera upside down (if your camera doesnt let you turn it upside down, just flip the pic after the fact).
+                        </li>
+                        <li>
+                            Take pictures with your eyes closed.
+                        </li>
+                    </ul>                      
                 </details>
             </div>
             <div class="creature-div" id="bird">
                 <img src="./images/bird.jpg">
                 <h1>Bird</h1>
                 <details>
-                    <summary>Need a tip?</summary>                
+                    <summary>Need a suggestion?</summary>                
                     Take pictures looking down at something from a high angle.
                 </details>
             </div>
@@ -58,15 +68,22 @@
                 <img src="./images/flower.jpg">                
                 <h1>Flower</h1>
                 <details>
-                    <summary>Need a tip?</summary>                
-                    Lay your phone (or yourself) flat on its back, taking photos looking straight up.
+                    <summary>Need a suggestion?</summary>                
+                    <ul>
+                        <li>
+                            Lay your phone (or yourself) flat on its back, taking photos looking straight up.
+                        </li>
+                        <li>
+                            Make sure the sun is in every picture you take.
+                        </li>
+                    </ul>                         
                 </details>
             </div>
             <div class="creature-div" id="gecko">
                 <img src="./images/gecko.jpg">
                 <h1>Gecko</h1>
                 <details>
-                    <summary>Need a tip?</summary>                
+                    <summary>Need a suggestion?</summary>                
                     The bottom of your camera must be touching a surface (wall, ceiling, rock, etc).
                 </details>   
             </div>  
@@ -74,7 +91,7 @@
                 <img src="./images/goldfish.jpg">
                 <h1>Goldfish</h1>
                 <details>
-                    <summary>Need a tip?</summary>                
+                    <summary>Need a suggestion?</summary>                
                     Take pictures through an additional lens (glass window, sheet of plastic, glass of water, reflections, etc.).
                 </details>                                                        
             </div>
@@ -82,10 +99,37 @@
                 <img src="./images/mouse.jpg">
                 <h1>Mouse</h1>
                 <details>
-                    <summary>Need a tip?</summary>                
+                    <summary>Need a suggestion?</summary>                
                     Take pictures as if you are peering out from a hiding place (hole in a fence, crack in a door,  behind a tree, etc).
                 </details>                                    
-            </div>            
+            </div>   
+            <div class="creature-div" id="dog">
+                <img src="./images/dog.png">
+                <h1>Excitable Dog</h1>
+                <details>
+                    <summary>Need a suggestion?</summary>
+                    <ul>
+                        <li>
+                            Take a picture os something while the camera is in motion.
+                        </li>
+                        <li>
+                            Get your camera within "sniffing distance" of something.
+                        </li>
+                    </ul>                    
+                </details>                                    
+            </div> 
+            <div class="creature-div" id="tourist">
+                <img src="./images/tourist.jpg">
+                <h1>Tourist</h1>
+                <details>
+                    <summary>Need a suggestion?</summary>
+                    <ul>
+                        <li>
+                            Take a picture of yourself posing with anything of interest.
+                        </li>
+                    </ul>                    
+                </details>                                    
+            </div>                      
             <!-- Creature Name -->
             <!-- Explanation of Perspective -->
         </div>        
@@ -122,7 +166,7 @@
     var currentCreature = "";
     var count = 0;
     function shufflePhotos() {
-        const creatures = ["bat", "bird", "flower", "gecko", "goldfish", "mouse"]
+        const creatures = ["bat", "bird", "flower", "gecko", "goldfish", "mouse", "dog", "tourist"]
         if (currentCreature == "") {
             currentCreature = creatures[Math.floor(Math.random() * creatures.length)];
         }
