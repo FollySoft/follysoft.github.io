@@ -170,6 +170,7 @@
                         <dt><b>OLDER</b> <hr></dt>
                         <dd class="works-option" value="reinvent" data-show=".reinvent-text"><a>Reinvent the Wheel</a></dd>
                         <dd class="works-option" value="mountain" data-show=".mountain-text"><a>The Mountain (Mod)</a></dd>
+                        <dd class="works-option" value="gamanteau" data-show=".gamanteau-text"><a>Gamanteau</a></dd>
                             <!--<dd><a>Gravity Hatchet</a></dd>
                             <br>-->
                     </dl>
@@ -202,6 +203,8 @@
                     <a class="works-option" value="reinvent" data-show=".reinvent-text"><b>Reinvent the Wheel</b></a>
                     -
                     <a class="works-option" value="mountain" data-show=".mountain-text"><b>The Mountain (Mod)</b></a>
+                    -
+                    <a class="works-option" value="gamanteau" data-show=".mountain-text"><b>Gamanteau</b></a>
                   </div> 
                 <div id='works-content'>
                     <div style="text-align: center; align-items: center; width: 100%;
@@ -513,7 +516,7 @@
                             <img id="img-reinvent-2" src="./photos/screenshots/reinvent-2.png" onclick="openModal(this.id)"/>                            
                         </div>
                     </div>
-                    <div id="moutain" class="work-content mountain-text hide">
+                    <div id="mountain" class="work-content mountain-text hide">
                         <h2>
                             The Mountain (Mod)
                             <div class="works-links">
@@ -542,6 +545,40 @@
                         </div>
                         <p>
                             During the weeks following it's release, "The Mountain" was listed as one of Hat in Time's most popular playable mods, and currently holds a 5-star rating on Steam Workshop.
+                        </p>
+                    </div>
+                    <div id="gamanteau" class="work-content gamanteau-text hide">
+                        <h2>
+                            Gamanteau
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/gamanteau', '_blank')" class="home-button">PLAY↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            A small game of word play, made as a last-minute submission to the <a href="https://itch.io/jam/game-off-2018"> 2018 Github Game Off.</a>
+                        </p>
+                        <div class="content-images">
+                            <img id="img-gamanteau-1" src="./photos/screenshots/gamanteau-1.png" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            The theme for the github game off jam was "Hybrid", and I thought very early on into the jam that this sort of word-mashing game would be a great fit.  My friends and I ocassionally
+                            partake in these sort of word-play games, and I thought that the idea of being given two random words would translate well into the digital sphere.  I had initially explored
+                            creating this in Pico-8, using an in-game keyboard, but I realized far too late into the jam that going the route of an html page with basic javascript made much more sense.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-gamanteau-2" src="./photos/screenshots/gamanteau-2.png" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            One decision I made in making this that I'm particularly proud of was providing the option to tweet your results.  I had explored some ways in setting up a score board, with players being able
+                            to upvote or downvote entries.  However, this was far beyond the scope that I could manage for the jam.  I also began to worry about ways that players might abuse the game with any sort of toxicity, 
+                            particularly with the capability to enter in their answers freely.  By allowing players to "submit" their results of the game via twitter, they hold themselves accountable for what they enter.
+                            Plus, by adding the "#gamanteau" hastag, twitter can sort of double as a scoreboard that I didn't even need to host!
+                        </p>
+                        <div class="content-images">
+                            <img id="img-gamanteau-3" src="./photos/screenshots/gamanteau-3.png" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            A full post-mortem for making this may be found on my old <a href="https://jrcwest.blogspot.com/2018/12/gamanteau-how-not-to-do-month-long-game.html" target="_blank"> blog.</a>
                         </p>
                     </div>
                 </div>
