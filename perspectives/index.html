@@ -39,10 +39,13 @@
             </p>
         </div>
         <div id="game-content">
-            <h2>Take pictures as a... </h2>
+
+            <!-- Button that toghgles between "play" and "instructions" -->                
+            
+            <h2 style="align-content: center;justify-content: center;display: inline-flex;"> <button id="back-button" onclick="handleInstructionPress()"><img src="./images/back_button.png"></button> Take pictures as a... </h2>
             <!-- Image That shuffles on button Press -->
             <div class="creature-div" id="bat">
-                <img src="./images/bat.jpg">
+                <img src="./images/clipart/bat-clip.png">
                 <h1>Bat</h1>
                 <details>
                     <summary>Need a suggestion?</summary>                
@@ -57,7 +60,7 @@
                 </details>
             </div>
             <div class="creature-div" id="bird">
-                <img src="./images/bird.jpg">
+                <img classname="creature-image" src="./images/clipart/bird-clip.png">
                 <h1>Bird</h1>
                 <details>
                     <summary>Need a suggestion?</summary>                
@@ -65,7 +68,7 @@
                 </details>
             </div>
             <div class="creature-div" id="flower">
-                <img src="./images/flower.jpg">                
+                <img classname="creature-image" src="./images/clipart/flower-clip.png">                
                 <h1>Flower</h1>
                 <details>
                     <summary>Need a suggestion?</summary>                
@@ -80,7 +83,7 @@
                 </details>
             </div>
             <div class="creature-div" id="gecko">
-                <img src="./images/gecko.jpg">
+                <img classname="creature-image" src="./images/clipart/gecko-clip.png">
                 <h1>Gecko</h1>
                 <details>
                     <summary>Need a suggestion?</summary>                
@@ -88,7 +91,7 @@
                 </details>   
             </div>  
             <div class="creature-div" id="goldfish">
-                <img src="./images/goldfish.jpg">
+                <img classname="creature-image" src="./images/clipart/fish-clip.png">
                 <h1>Goldfish</h1>
                 <details>
                     <summary>Need a suggestion?</summary>                
@@ -96,7 +99,7 @@
                 </details>                                                        
             </div>
             <div class="creature-div" id="mouse">
-                <img src="./images/mouse.jpg">
+                <img classname="creature-image" src="./images/clipart/mouse-clip.png">
                 <h1>Mouse</h1>
                 <details>
                     <summary>Need a suggestion?</summary>                
@@ -104,7 +107,7 @@
                 </details>                                    
             </div>   
             <div class="creature-div" id="dog">
-                <img src="./images/dog.png">
+                <img classname="creature-image" src="./images/clipart/dog-clip.png">
                 <h1>Excitable Dog</h1>
                 <details>
                     <summary>Need a suggestion?</summary>
@@ -119,7 +122,7 @@
                 </details>                                    
             </div> 
             <div class="creature-div" id="tourist">
-                <img src="./images/tourist.jpg">
+                <img class="creature-image" src="./images/clipart/tourist-clip.png">
                 <h1>Tourist</h1>
                 <details>
                     <summary>Need a suggestion?</summary>
@@ -139,7 +142,7 @@
             <button id="play-button" onclick="handlePlayPress();shufflePhotos()">PLAY</button>
             <button id="shuffle-button" onclick="shufflePhotos()">RESHUFFLE</button>
             <br>
-            <button id="instruction-button" onclick="handleInstructionPress()">INSTRUCTIONS</button>
+            <!-- <button id="instruction-button" onclick="handleInstructionPress()">INSTRUCTIONS</button> -->
         </div>        
     </div>    
 </body>
@@ -148,13 +151,13 @@
     // Button press    
     function handlePlayPress() {        
             document.getElementById("play-button").style.display = "none";
-            document.getElementById("instruction-button").style.display = "block";
+            document.getElementById("back-button").style.display = "block";
             document.getElementById("shuffle-button").style.display = "block";
             document.getElementById("instruction-content").style.display = "none";                
             document.getElementById("game-content").style.display = "block";          
     }
     function handleInstructionPress() {        
-            document.getElementById("instruction-button").style.display = "none";
+            document.getElementById("back-button").style.display = "none";
             document.getElementById("shuffle-button").style.display = "none";
             document.getElementById("play-button").style.display = "block";
             document.getElementById("game-content").style.display = "none";          
