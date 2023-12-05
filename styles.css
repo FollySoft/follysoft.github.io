@@ -172,7 +172,7 @@ body {
     font-family: Montserrat,Lato,LatoExtended,sans-serif;
     font-weight: 500;
     display:block;
-    margin: 2%;
+    margin-left: 2%;
     height: inherit;
     overflow-y: auto;
     /* width: inherit; */
