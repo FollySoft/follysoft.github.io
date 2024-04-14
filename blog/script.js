@@ -38,7 +38,8 @@ let postsArray = [
   [ "posts/2023-05-17-Perspectives-Game-Devlog-1.html" ],
   [ "posts/2023-06-09-Perspectives-Game-Devlog-2.html" ],
   [ "posts/2024-02-15-The-Bible-and-Play.html"],
-  [ "posts/2024-02-27-Thin-Places-and-Magic-Circles.html"]
+  [ "posts/2024-02-27-Thin-Places-and-Magic-Circles.html"],
+  [ "posts/2024-04-14-My-2024-Lent.html"]
 ];
 
 //-----------------------------
