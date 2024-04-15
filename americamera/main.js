@@ -115,6 +115,6 @@ function stopDrag() {
   drag=false;
 }
 window.onload = function() {
-  document.onmousedown = startDrag;
-  document.onmouseup = stopDrag;
+  document.ontouchstart = startDrag;
+  document.ontouchend = stopDrag;
 }
