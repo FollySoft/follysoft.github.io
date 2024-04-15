@@ -86,7 +86,7 @@ function startDrag(e) {
   drag = true;
   // move div element
   console.log("moving");
-  document.onmousemove=dragDiv;
+  document.ontouchmove=dragDiv;
 
   return false;
 }
