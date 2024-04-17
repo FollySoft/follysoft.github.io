@@ -50,7 +50,13 @@ function errorMsg(msg, error) {
 
 async function init(e) {
   try {
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    // const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    const stream = navigator.mediaDevices.getUserMedia({
+      audio: false,
+      video: {
+        facingMode: 'environment'
+      }
+    });
     handleSuccess(stream);
     e.target.disabled = true;
   } catch (e) {

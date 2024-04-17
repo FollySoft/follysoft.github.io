@@ -84,8 +84,8 @@ code {
 
 div#container {
   margin: 0 auto 0 auto;
-  max-width: 60em;
-  padding: 1em 1.5em 1.3em 1.5em;
+  /* max-width: 60em; */
+  /* padding: 1em 1.5em 1.3em 1.5em; */
 }
 
 div#links {
@@ -120,12 +120,20 @@ li {
 html {
   /* avoid annoying page width change
   when moving from the home page */
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
 
 img {
   border: none;
-  max-width: 100%;
+  max-width: 60%;
 }
 
 input[type=radio] {
@@ -231,9 +239,11 @@ textarea {
 video {
   background: #222;
   margin: 0 0 20px 0;
-  --width: 100%;
+  /* --width: 100%;
   width: var(--width);
-  height: calc(var(--width) * 0.75);
+  height: calc(var(--width) * 0.75); */
+  width: 520px;
+  height: 520px;
 }
 
 ul {
