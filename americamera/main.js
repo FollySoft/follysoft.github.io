@@ -16,7 +16,9 @@ var coordY;
 // Put variables in global scope to make them available to the browser console.
 const constraints = window.constraints = {
   audio: false,
-  video: true
+  video: {
+    facingMode: 'environment'
+  }
 };
 
 function handleSuccess(stream) {
@@ -50,13 +52,7 @@ function errorMsg(msg, error) {
 
 async function init(e) {
   try {
-    // const stream = await navigator.mediaDevices.getUserMedia(constraints);
-    const stream = navigator.mediaDevices.getUserMedia({
-      audio: false,
-      video: {
-        facingMode: 'environment'
-      }
-    });
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
     e.target.disabled = true;
   } catch (e) {
