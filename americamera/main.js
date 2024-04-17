@@ -86,7 +86,7 @@ function startDrag(e) {
   drag = true;
   // move div element
   console.log("moving");
-  document.ontouchmove=dragDiv;
+  document.onpointermove=dragDiv;
 
   return false;
 }
@@ -115,6 +115,6 @@ function stopDrag() {
   drag=false;
 }
 window.onload = function() {
-  document.ontouchstart = startDrag;
-  document.ontouchend = stopDrag;
+  document.onpointerdown = startDrag;
+  document.onpointerup = stopDrag;
 }
