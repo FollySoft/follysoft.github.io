@@ -154,7 +154,7 @@ function printToFile() {
 
 //**************** SCREENSHOT CODE */
 
-const width = 320; // We will scale the photo width to this
+const width = 520; // We will scale the photo width to this
 let height = 520; // This will be computed based on the input stream
 // Fill the photo with an indication that none has been
   // captured.
@@ -187,8 +187,13 @@ let height = 520; // This will be computed based on the input stream
     img.src = "./amfoo-whitelogo.png";
     var logo = document.getElementById('overlay'); 
     
-    context.drawImage(img, 320 - (logo.width * 0.60), 240 - (logo.width * 0.60), logo.width * .60, logo.height * .60);
+    context.drawImage(img, width - (width * 0.60), height - (height * 0.80), logo.width, logo.height);
 
+    document.getElementById("video-container").style.display = "none";
+    //document.getElementById("video-containter").style.visibility = "hidden";
+    document.getElementById("canvas").style.display = "flex";
+    
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
+
   }

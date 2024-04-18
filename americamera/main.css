@@ -74,7 +74,6 @@ button[disabled]:hover {
 canvas {
   background-color: #ccc;
   max-width: 100%;
-  width: 100%;
 }
 
 code {
@@ -226,6 +225,14 @@ div.outputSelector {
   margin: -1.3em 0 2em 0;
 }
 
+#output {
+  visibility: hidden;
+}
+
+canvas {
+  display: none;
+}
+
 p.description {
   margin: 0 0 0.5em 0;
 }
@@ -262,9 +269,17 @@ fieldset > select {
 }
 
 #video-container {
-  display: flex;
+  display: inline-flex;
   position: relative;
 }
+
+.crop{
+  overflow:hidden;
+  display:block;
+  width: 300px;
+  height: 300px;
+}
+
 #overlay {
   position: absolute;
 }

@@ -33,16 +33,18 @@
 
 <div id="container">
     <div id="video-container">
+      <!-- <div class="crop"><video id="gum-local" autoplay playsinline></video></div> -->
       <video id="gum-local" autoplay playsinline></video>
       <!-- <img id="overlay" class="draggable" src="./amfoo-whitelogo.png"/> -->
       <img id="overlay" src="./amfoo-whitelogo.png"/>
-    </div>    
-    <button id="showVideo">Open camera</button>
-    <button id="takePhoto" onclick="takepicture()">Capture</button>
-    
-    <canvas id="canvas"> </canvas>
-    <div class="output">
-      <img id="photo" alt="The screen capture will appear in this box." />
+    </div>
+    <canvas id="canvas" width="520" height="520"></canvas>
+    <!-- <div id="output">
+      <img id="photo"/>
+    </div> -->
+    <div id="button-container">
+      <button id="showVideo">Open camera</button>
+      <button id="takePhoto" onclick="takepicture()">Capture</button>
     </div>
 </div>
 
