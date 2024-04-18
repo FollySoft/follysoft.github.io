@@ -120,11 +120,11 @@ li {
 html {
   /* avoid annoying page width change
   when moving from the home page */
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 html, body {
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 body {
   position: relative;
@@ -134,7 +134,10 @@ body {
 img {
   border: none;
   max-width: 60%;
+  right: 0;
+  top: 20%;
 }
+
 
 input[type=radio] {
   position: relative;

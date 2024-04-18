@@ -5,6 +5,7 @@
  *  that can be found in the LICENSE file in the root of the source
  *  tree.
  */
+
 'use strict';
 
 var drag;
@@ -13,11 +14,16 @@ var offsetY;
 var coordX;
 var coordY;
 
+let video = document.getElementById("gum-local");
+
 // Put variables in global scope to make them available to the browser console.
 const constraints = window.constraints = {
   audio: false,
   video: {
-    facingMode: 'environment'
+    facingMode: 'environment',
+    // width: 520,
+    // height: 520,
+    // aspectRatio: 1,
   }
 };
 
@@ -92,6 +98,7 @@ function startDrag(e) {
 
   return false;
 }
+
 function dragDiv(e) {
   if (!drag) {return};
   if (!e) { var e= window.event};
@@ -120,3 +127,68 @@ window.onload = function() {
   document.onpointerdown = startDrag;
   document.onpointerup = stopDrag;
 }
+
+
+//Creating dynamic link that automatically click
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  link.click();
+  //after creating link you should delete dynamic link
+  //clearDynamicLink(link); 
+}
+
+//Your modified code.
+function printToFile() {
+  html2canvas(document.getElementById("video-container"), {
+      onrendered: function (canvas) {
+          var myImage = canvas.toDataURL("image/png");
+          //create your own dialog with warning before saving file
+          //beforeDownloadReadMessage();
+          //Then download file
+          downloadURI("data:" + myImage, "yourImage.png");
+      }
+  });
+}
+
+//**************** SCREENSHOT CODE */
+
+const width = 320; // We will scale the photo width to this
+let height = 520; // This will be computed based on the input stream
+// Fill the photo with an indication that none has been
+  // captured.
+
+  function clearphoto() {
+    const context = canvas.getContext("2d");
+    context.fillStyle = "#AAA";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    const data = canvas.toDataURL("image/png");
+    photo.setAttribute("src", data);
+  }
+
+  // Capture a photo by fetching the current contents of the video
+  // and drawing it into a canvas, then converting that to a PNG
+  // format data URL. By drawing it on an offscreen canvas and then
+  // drawing that to the screen, we can change its size and/or apply
+  // other changes before drawing it.
+
+  function takepicture() {
+    const context = canvas.getContext("2d");
+    height = video.videoHeight / (video.videoWidth / width);
+    canvas.width = width;
+    canvas.height = height;
+    context.imageSmoothingEnabled = false;
+    context.drawImage(video, 0, 0, width, height);
+
+    // Set logo
+    var img = new Image();
+    img.src = "./amfoo-whitelogo.png";
+    var logo = document.getElementById('overlay'); 
+    
+    context.drawImage(img, 320 - (logo.width * 0.60), 240 - (logo.width * 0.60), logo.width * .60, logo.height * .60);
+
+    const data = canvas.toDataURL("image/png");
+    photo.setAttribute("src", data);
+  }
