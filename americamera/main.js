@@ -16,6 +16,7 @@ var coordY;
 
 let video = document.getElementById("gum-local");
 
+
 // Put variables in global scope to make them available to the browser console.
 const constraints = window.constraints = {
   audio: false,
@@ -58,9 +59,15 @@ function errorMsg(msg, error) {
 
 async function init(e) {
   try {
+
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
     e.target.disabled = true;
+    //document.getElementById("video-container").style.display = "flex";
+    //document.getElementById("video-containter").style.visibility = "hidden";
+    document.getElementById("canvas").style.display = "none";
+    document.getElementById('#showVideo').disabled = false;
+
   } catch (e) {
     handleError(e);
   }
@@ -195,5 +202,7 @@ let height = 520; // This will be computed based on the input stream
     
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
+
+    document.getElementById('#showVideo').disabled = false;
 
   }
