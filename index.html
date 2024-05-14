@@ -156,6 +156,9 @@
                             <dd class="works-option" value="photography" data-show=".photography-text"><a>Photography</a></dd>
                             <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>                        
                             <br> -->
+                        <dt><b>2024</b> <hr></dt>
+                            <dd class="works-option" value="hatocubulus" data-show=".hatocubulus-text"><a>Hatocubulus (Mod)</a></dd>
+                            <br>
                         <dt><b>2023</b> <hr></dt>
                             <dd class="works-option" value="curses" data-show=".curses-text"><a>Curses!</a></dd>
                             <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster (Screensaver)</a></dd>             
@@ -188,6 +191,8 @@
                 <div id="works-horizontal">
                     <!-- <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
                     - -->
+                    <a class="works-option" value="hatocubulus" data-show=".hatocubulus-text"><b>Hatocubulus (Mod)</b></a>  
+                    -
                     <a class="works-option" value="curses" data-show=".curses-text"><b>Curses!</b></a>  
                     -
                     <a class="works-option" value="plaster" data-show=".plaster-text"><b>Plaster (Screensaver)</b></a>                
@@ -249,6 +254,34 @@
                             On occasion I upload photos onto <a href="https://www.pexels.com/@jonathan-west-339535484/" target="_blank"><b>Pexels</b></a> for free creative use.  I use a lot of creative commons
                             stuff in my games, so I try to share photos for free-use as a way of giving back to that community.
                         </p>
+                    </div>
+                    <div id="hatocubulus" class="work-content hatocubulus-text hide">
+                        <h2>
+                            Hatocubulus (Mod)
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=3240355708', '_blank')" class="home-button">DOWNLOAD↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            An attempt at porting over a really cool mod from 2013 for Mirror's Edge, <a href="https://www.moddb.com/mods/stratocubulus">Stratocubulus</a> by anamorphonic, into A Hat in Time.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-hatocubulus-1" src="./photos/screenshots/hatocubulus-1.jpeg" onclick="openModal(this.id)"/>
+                        </div>
+                        <p>
+                            I first learned of the mod after watching it being played on the <a href="/home/jwest/Projects/git/jrcwest.github.io/index.html" target="_blank">Gamer Potluck show</a> on twitch.  I was fascinated with it's design, the way it used procedural modeling to 
+                            create a difficult path-finding challenge for a familiar platformer.  I dedperately wanted to try it myself, but I didn't want to have to buy Mirrors Edge again (I already
+                            owned it on PS3) in order to do so.  Luckily, Mirror's Edge runs the same engine as A Hat in Time, and I already had some familiarity with the latter's modding tools...
+                        </p>
+                        <p>
+                            I only made a handful of changes to the level's design (apart from the visuals).  Namely, rather than using a sequencial set of checkpoints that the player needed to reach in order,
+                            I utilized Hat in Time's "time piece shard" collectibles.  This allows the player more freedom in optimizing their route in completing the level, as the shards could be collected
+                            in any order.
+                        </p>
+                        <p>
+                            You can read more about the process of creating this port in a forthcoming blog post.
+                        </p>
+                        <iframe class="youtube-embed" id="youtube-hatocubulus" src="https://www.youtube.com/embed/A0z3oec0IQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
                     </div>
                     <div id="curses" class="work-content curses-text hide">
                         <h2>
