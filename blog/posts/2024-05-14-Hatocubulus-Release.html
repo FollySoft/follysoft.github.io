@@ -50,10 +50,40 @@
       <h4 id="postDate"></h4>
       
       <p>
-        Yesterday I released <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3240355708" target="_blank">Hatocubulus</a>, my attempt at porting over
+        Recently, I released <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3240355708" target="_blank">Hatocubulus</a>, my attempt at porting over
         <a href="https://www.moddb.com/mods/stratocubulus" target="_blank">a really cool mod from 2013 for Mirror's Edge</a> into one of my favorite games, A Hat in Time.
+        It was a really fun and fairly easy project to take on, and I'm ultimately happy with how it turned out.
       </p>
-      
+      <p>
+        Getting the model into the Hat in Time modding tools took a few steps but was overall not very complicated.  I was able to use <a href="https://www.gildor.org/en/projects/umodel" target="_blank">this tool</a> pull the models and materials from from the stratocubulus mod download folder,
+        then I could import the resulting psk files into blender with <a href="https://github.com/Befzz/blender3d_import_psk_psa/" target="_blank">this add-on.</a>
+        After that I just needed to ensure that a "Per-Poly Collision" flag was set within Unreal so that the player could stand on the imported meshes.
+      </p>
+      <p>
+        From this point the perhaps biggest hurdle I had to overcome was that one of the meshes, when imported, didn't line up correctly with the others.  It's 
+        unclear as to why this was the case, but it took some manner of trial and error and comparing screenshots from the spawn point to see if I had lined it up
+        "close enough".
+      </p>
+      <img src="../images/hatocubulus/hato_1.png">
+      <img src="../images/hatocubulus/hato_2.png">
+      <p>
+        After the map appeared close enough to being lined up, the next step was ensuring I had the checkpoints in the right place.  I manged this simply by
+        watching speedruns of the original mod and following their paths along in-editor.  Dropping a checkpoint marker (which eventually became time piece shards)
+        wherever they met a checkpoint in the run.  It was tedious, but it did the job.
+      </p>
+      <p>
+        Perhaps the biggest deviation I took from the original mod, however, was to use the aforementioned time piece shards in place of sequential checkpoints.
+        I wanted to give the player a bit more freedom in their pathing, and time piece shards could be collected in any order.  I thought that, if any kind of 
+        speedrunning community formed around this map, it would encourage runners to find more optimal paths to completion.
+      </p>
+      <p>
+        As of now, the mod sits at relatively low reviews - at the time of writing, it's split 50/50 between positive and negative.  There are some issues I had
+        with the mod myself, but I hesitated to change much more than I already did, in order to keep the spirit of the original.  Going forward though,
+        I'm curious to explore some basic generative modeling in blender and making more levels like this one.
+      </p>
+      <p>
+        Anyway...
+      </p>
       
     <div id="nextprev"></div>
     </div> <!-- end of div id="content" -->
