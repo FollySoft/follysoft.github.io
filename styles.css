@@ -344,7 +344,7 @@ img{
     text-shadow: 2px 2px #2b2b2b; 
     color: white;
     padding: 4px;
-    /* font-size: calc(14px + 0.75vw); */
+    font-size: calc(8px + 0.75vw);
     /* font-size: min(5vw, 18px); */
     font-size: (12px + 0.5vw);
     font-weight: bold;
