@@ -157,6 +157,7 @@
                             <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>                        
                             <br> -->
                         <dt><b>2024</b> <hr></dt>
+                            <dd class="works-option" value="levelwithme" data-show=".levelwithme-text"><a>Level With Me</a></dd>
                             <dd class="works-option" value="hatocubulus" data-show=".hatocubulus-text"><a>Hatocubulus (Mod)</a></dd>
                             <br>
                         <dt><b>2023</b> <hr></dt>
@@ -191,6 +192,8 @@
                 <div id="works-horizontal">
                     <!-- <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
                     - -->
+                    <a class="works-option" value="levelwithme" data-show=".levelwithme-text"><b>Level With Me</b></a>  
+                    -
                     <a class="works-option" value="hatocubulus" data-show=".hatocubulus-text"><b>Hatocubulus (Mod)</b></a>  
                     -
                     <a class="works-option" value="curses" data-show=".curses-text"><b>Curses!</b></a>  
@@ -255,6 +258,24 @@
                             stuff in my games, so I try to share photos for free-use as a way of giving back to that community.
                         </p>
                     </div>
+                    <div id="levelwithme" class="work-content levelwithme-text hide">
+                        <h2>
+                            Level With Me
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/level-with-me', '_blank')" class="home-button">PLAY↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            A small game I made for a jam I hosted, the <a href="https://itch.io/jam/factory-reset-jam" target="_blank">Factory Reset Jam.</a>  Players use the bubble level app installed on their phones (or the one provided by 
+                            <a href="https://www.google.com/search?q=bubble+level" target="">google</a> if you search on mobile!) to try and see who can keep their hand steady the longest.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-levelwithme" src="./photos/screenshots/levelwithme.png" onclick="openModal(this.id)"/>
+                        </div>
+                        <p>
+                            Host the jam itself was a really fun experience that I hope to repeat.  I'll discuss it in a future blog post!
+                        </p>
+                    </div>
                     <div id="hatocubulus" class="work-content hatocubulus-text hide">
                         <h2>
                             Hatocubulus (Mod)
@@ -279,7 +300,7 @@
                             in any order.
                         </p>
                         <p>
-                            You can read more about the process of creating this port in a forthcoming blog post.
+                            You can read a bit about the process of creating this port in <a href="https://jrcwest.github.io/blog/posts/2024-05-14-Hatocubulus-Release.html" target="_blank">my blog.</a>.
                         </p>
                         <iframe class="youtube-embed"  id="youtube-hatocubulus" src="https://www.youtube.com/watch?v=A0z3oec0IQc?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
