@@ -157,6 +157,7 @@
                             <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>                        
                             <br> -->
                         <dt><b>2024</b> <hr></dt>
+                            <dd class="works-option" value="altocubulus" data-show=".altocubulus-text"><a>Altocubulus (Mod)</a></dd>
                             <dd class="works-option" value="levelwithme" data-show=".levelwithme-text"><a>Level With Me</a></dd>
                             <dd class="works-option" value="hatocubulus" data-show=".hatocubulus-text"><a>Hatocubulus (Mod)</a></dd>
                             <br>
@@ -192,6 +193,8 @@
                 <div id="works-horizontal">
                     <!-- <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
                     - -->
+                    <a class="works-option" value="altocubulus" data-show=".altocubulus-text"><b>Altocubulus (Mod)</b></a>  
+                    -
                     <a class="works-option" value="levelwithme" data-show=".levelwithme-text"><b>Level With Me</b></a>  
                     -
                     <a class="works-option" value="hatocubulus" data-show=".hatocubulus-text"><b>Hatocubulus (Mod)</b></a>  
@@ -257,6 +260,36 @@
                             On occasion I upload photos onto <a href="https://www.pexels.com/@jonathan-west-339535484/" target="_blank"><b>Pexels</b></a> for free creative use.  I use a lot of creative commons
                             stuff in my games, so I try to share photos for free-use as a way of giving back to that community.
                         </p>
+                    </div>
+                    <div id="altocubulus" class="work-content altocubulus-text hide">
+                        <h2>
+                            Altocubulus (Mod)
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=3267405532', '_blank')" class="home-button">DOWNLOAD↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            An attempt at recreating the experience of a really cool mod from 2013 for Mirror's Edge, <a href="https://www.moddb.com/mods/stratocubulus">Stratocubulus</a> by anamorphonic.  Made in a rather
+                            short time frame for the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3267788231" target="_blank">2024 Hat in Time Summer Modding Jam.</a>
+                        </p>
+                        <div class="content-images">
+                            <img id="img-altocubulus-1" src="./photos/screenshots/alto-1.jpeg" onclick="openModal(this.id)"/>
+                            <img id="img-altocubulus-2" src="./photos/screenshots/alto-2.jpeg" onclick="openModal(this.id)"/>
+                        </div>
+                        <p>
+                            I learned some basics of Blender to see if I could generate a semi-randomized grid of blocks at varying scale to replciate the structure of Stratocubulus.  Turns out using python to generate the cubes
+                            and the <a href="https://docs.blender.org/manual/en/latest/scene_layout/object/editing/transform/randomize.html" target="_blank">Randomize Transform Tool</a> is a quick and easy way to get the basic concept going!                
+                        </p>
+                        <p>
+                            I also experimented a little with geometry nodes to produce the same effect, but ran short on time to explore them thoroughly.  Overall the "level shape" isn't as... cohesive(?) as I would have hoped, 
+                            but the end result still ended up being really fun to play.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-altocubulus-3" src="./photos/screenshots/alto-3.jpeg" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            You can (hopefully) read about the process of making this in a forthcoming blogpost.</a>.
+                        </p>                        
                     </div>
                     <div id="levelwithme" class="work-content levelwithme-text hide">
                         <h2>
