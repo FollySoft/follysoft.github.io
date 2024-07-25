@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Post</title> <!-- If you leave title as "Blog Post", it will automatically be updated to the post title -->
+
+    <!-- ******* HERES SOME GOOD RULES TO FOLLOW JWEST! ******* -->
+    
+    <!-- 
+      https://www.interconnected.org/home/2020/09/10/streak 
+
+    - Three posts a week, more or less.
+    - One idea per post. If I find myself launching into another section, cut and paste the extra 
+      into a separate draft post, and tie off the original one with the word “Anyway.” Then publish.
+    - No hedging, no nuance. If I’m getting in a twist about a sentence, take it out.
+    - Give up on attempting to be right.
+    - Give up on providing full links and citations.
+    - Give up on saying anything new. Most people haven’t read my old stuff. Play the hits.
+    - Give up on trying to be popular. I try not to filter myself based on what I believe will be popular. 
+      Some of my favourite posts get ignored. Some posts get popular and I have no idea why. Besides, 
+      terrible posts get buried fast if I’m posting three times a week. So post with abandon.
+    - Give up on trying to be interesting. Readers will come to my site for what’s interesting to me, or not, 
+      it’s fine, just say what I think about whatever I’m thinking about.
+    - But make it work for a general audience.
+    - Only write what’s in my head at that exact moment. It’s 10x faster.
+    - If it’s taking too long to write, stop.
+    - Don’t use a post just to link to something elsewhere. If there’s a point to make, start with that.
+    - Titles should be descriptive and have the flavour of the post. And rewrite the lede once the post 
+      is done so the whole thing gets to the point faster.
+    - It’s ok not to blog if it feels like a chore.
+    - Writing is a muscle.
+
+    "If I have an idea for a post, at any time, I make a note of it in my drafts folder – without delay. 
+    Or it’ll disappear.
+
+    When there’s time to write, I go through my draft posts (and recent links that I’ve run across, 
+    I capture those too) and see if anything catches my eye. If it does: start typing and see what happens."
+
+    -->
+
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link href="../style/style.css" rel="stylesheet" type="text/css" media="all">    
+  </head>
+  <body>
+    <div id="container">
+    <div id="header">...</div>
+    <div id="content">
+      <h1 id="postTitleH1"></h1>
+      <h4 id="postDate"></h4>
+      
+      <p>
+        A couple of weeks ago, I released <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3240355708" target="_blank">Altocubulus</a>, another mod for A Hat in Time 
+        heavily inspired by my time working on <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3240355708" taget="_blank">Hatocubulus</a>.  It was made over the course of a few
+        weeks in my spare time for the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3267788231" target="_blank">Summer Community Mod Jam</a>, hosted by the Hat in Time discord.
+      </p>
+      <img src="../../photos/screenshots/alto-2.jpeg">
+      <img src="../../photos/screenshots/alto-1.jpeg">
+      <p>
+        I spent a little bit of time familiarizing myself with Blender to try and create something similar in structure to the original Stratocubulus mod, and while I didn't get anywhere close,
+        the results of my tinkering with python and transform/scale randomization created a space that was still fun to navigate and explore.
+      </p>
+      <code style="white-space: pre-line; font-size: 12px">
+        for i in range(0, 5):
+        &nbsp;&nbsp;for j in range(0, 5):
+        &nbsp;&nbsp;&nbsp;&nbsp;for k in range(0, 5):
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flip = random.randint(0, 2)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (flip == 0):
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bpy.ops.mesh.primitive_cube_add(size=1, location=(i, j, k))
+
+      </code>
+      <p>
+        The scripting I ended up using in python was rather simplistic, simply creating what would have been, say, a 5x5x10 grid of cubes, with some randomization to alternate whether a cube was actually created
+        during a given pass of the nested loops.  Once the cubes were generated, I could select handfuls of the instances and move them around as I pleased, or I could make use of Blenders "Randomize Tranform" tool,
+        found under the Object menu.
+      </p>
+      <img src="../../photos/screenshots/alto-4.png">
+      <p>
+        Perhaps the most fascinating aspect of this mod was discovering just how much impact the scaling of cubes had on gameplay.  The center of the level structure features a tall column
+        vertically stretched cobes, while the space surrounding it comprised of smaller cubes that were further spaced apart.  It was fun to discover how the pace of gameplay would be slowed
+        when entering the central structure as oppossed to the more quick decision making it would take to navigate the exterior sets of cubes.
+      </p>
+      <img src="../../photos/screenshots/alto-3.jpeg">
+      <p>
+        Perhaps it was a result of being a part of the community jam, but the mod ended up being much more positiviely recieved than Hatocubulus.  Despite the original mod being a huge source of
+        inspiration to me, I was aware of some of the flaws it had that may have limited accessibility to some players.  Even so, it was very motivational to get such great feedback, and I hope to
+        make at least one more map like this one in the near future without the time constraints I had for the jam.
+      </p>
+      <p>
+        Anyway...
+      </p>
+      
+    <div id="nextprev"></div>
+    </div> <!-- end of div id="content" -->
+    <div id="footer"></div>
+    </div> <!-- end of div id="container" -->
+  <!-- Here's the link to our JavaScript! -->
+  <script src="../script.js"></script>
+  </body>
+</html>
