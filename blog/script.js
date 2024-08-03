@@ -41,7 +41,8 @@ let postsArray = [
   [ "posts/2024-02-27-Thin-Places-and-Magic-Circles.html"],
   [ "posts/2024-04-14-My-2024-Lent.html"],
   ["posts/2024-05-14-Hatocubulus-Release.html"],
-  ["posts/2024-07-25-Altocubulus-Release.html"]
+  ["posts/2024-07-25-Altocubulus-Release.html"],
+  ["posts/2024-08-03-OWS-Dump.html"]
 ];
 
 //-----------------------------
