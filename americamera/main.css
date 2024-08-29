@@ -38,6 +38,8 @@ body {
   margin: 0;
   padding: 1em;
   word-break: break-word;
+  align-content: center;
+  display: flex;
 }
 
 button {
@@ -74,6 +76,7 @@ button[disabled]:hover {
 canvas {
   background-color: #ccc;
   max-width: 100%;
+  object-fit: cover;
 }
 
 code {
