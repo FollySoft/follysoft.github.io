@@ -249,9 +249,10 @@ textarea {
 video {
   background: #222;
   margin: 0 0 20px 0;
-  --width: 100%;
+  /* --width: 100%;
   width: var(--width);
-  height: calc(var(--width) * 0.75);
+  height: calc(var(--width) * 0.75); */
+  object-fit: cover;
   /* width: 520px;
   height: 520px; */
 }

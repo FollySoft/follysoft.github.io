@@ -22,8 +22,8 @@ const constraints = window.constraints = {
   audio: false,
   video: {
     facingMode: 'environment',
-    // width: 520,
-    // height: 520,
+    width: 480,
+    height: 480,
     // aspectRatio: 1,
   }
 };
@@ -194,7 +194,8 @@ let height = 520; // This will be computed based on the input stream
     img.src = "./amfoo-whitelogo.png";
     var logo = document.getElementById('overlay'); 
     
-    context.drawImage(img, width - (width * 0.60), height - (height * 0.80), logo.width, logo.height);
+    //context.drawImage(img, width - (width * 0.60), height - (height * 0.80), logo.width, logo.height);
+    context.drawImage(img, width - logo.width, height - (height * 0.8), logo.width, logo.height);
 
     document.getElementById("video-container").style.display = "none";
     //document.getElementById("video-containter").style.visibility = "hidden";
