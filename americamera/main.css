@@ -38,6 +38,8 @@ body {
   margin: 0;
   padding: 1em;
   word-break: break-word;
+  align-content: center;
+  display: flex;
 }
 
 button {
@@ -74,6 +76,7 @@ button[disabled]:hover {
 canvas {
   background-color: #ccc;
   max-width: 100%;
+  object-fit: cover;
 }
 
 code {
@@ -249,9 +252,10 @@ textarea {
 video {
   background: #222;
   margin: 0 0 20px 0;
-  --width: 100%;
+  /* --width: 100%;
   width: var(--width);
-  height: calc(var(--width) * 0.75);
+  height: calc(var(--width) * 0.75); */
+  object-fit: cover;
   /* width: 520px;
   height: 520px; */
 }

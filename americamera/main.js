@@ -22,8 +22,8 @@ const constraints = window.constraints = {
   audio: false,
   video: {
     facingMode: 'environment',
-    // width: 520,
-    // height: 520,
+    width: 480,
+    height: 480,
     // aspectRatio: 1,
   }
 };
@@ -161,8 +161,8 @@ function printToFile() {
 
 //**************** SCREENSHOT CODE */
 
-const width = 520; // We will scale the photo width to this
-let height = 520; // This will be computed based on the input stream
+const width = 480; // We will scale the photo width to this
+let height = 480; // This will be computed based on the input stream
 // Fill the photo with an indication that none has been
   // captured.
 
@@ -183,7 +183,7 @@ let height = 520; // This will be computed based on the input stream
 
   function takepicture() {
     const context = canvas.getContext("2d");
-    height = video.videoHeight / (video.videoWidth / width);
+    //height = video.videoHeight / (video.videoWidth / width);
     canvas.width = width;
     canvas.height = height;
     context.imageSmoothingEnabled = false;
@@ -194,11 +194,12 @@ let height = 520; // This will be computed based on the input stream
     img.src = "./amfoo-whitelogo.png";
     var logo = document.getElementById('overlay'); 
     
-    context.drawImage(img, width - (width * 0.60), height - (height * 0.80), logo.width, logo.height);
+    //context.drawImage(img, width - (width * 0.60), height - (height * 0.80), logo.width, logo.height);
+    context.drawImage(img, width - logo.width, height - (height * 0.8), logo.width, logo.height);
 
     document.getElementById("video-container").style.display = "none";
     //document.getElementById("video-containter").style.visibility = "hidden";
-    document.getElementById("canvas").style.display = "flex";
+    document.getElementById("canvas").style.display = "block";
     
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
