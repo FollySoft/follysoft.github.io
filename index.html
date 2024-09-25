@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jwest's space</title>
+    <title>FollySoft (jwest's space)</title>
     <link rel="stylesheet" href="styles.css">
     <link
         rel="stylesheet"
@@ -84,6 +84,7 @@
                                 <li><a href="https://en.wikipedia.org/wiki/Alphabet_(video_game)" target="_blank">Alphabet</a> by Kieta Takahashi and Adam Saltsman</li>
                                 <li><a href="https://web.archive.org/web/20160703174109/http://scatter.nyc/freefallhighscore" target="_blank">Freefall Highscore</a> by James George</li>
                                 <li><a href="https://ludipe.itch.io/tie-simulator-2020" target="_blank">Tie Simulator</a> by Ludipe</li>
+                                <li><a href="https://droqen.itch.io/asphyx" target="_blank">asphyx</a> by droqen</li>
                                 <li><a href="https://www.youtube.com/watch?v=oVJnwf2IWh0" target="_blank">Fake Computer, Real Violence</a> by Matteo Loglio</li>
                                 <li><a href="https://jwhop.itch.io/trackball-driver-installation-disk" target="_blank">Trackball Driver Installation Disk</a> by Jonny Hopkins</li>
                                 <li><a href="https://hawkdanny.itch.io/how-to-be-born" target="_blank">how to be born</a> by Danny Hawk</li>
@@ -104,6 +105,8 @@
                                 <li><a href="https://www.youtube.com/@MagicTheNoah">Magic The Noah's Google Slides Games</a></li>
                                 <li><a href="https://www.youtube.com/watch?v=C3O7t4R5Gxw">AR Eyebomber</a> by Studio Playfool</li>
                                 <li><a href="https://eggplant.show/31-frank-lantz">Eggplant Podcast #31 - Good Times With Bad Robots with Frank Lantz (Hey Robot)</a></li>
+                                <li><a href="https://letterclub.games/2024/06/10/a-haiku-games-manifesto/">a HAIKU games manifesto</a> by <a href="https://www.droqen.com/">droqen</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=34NVLRHsxSU">Weird Games Manifesto Part 1</a> and <a href="https://www.youtube.com/watch?v=oBrkdcVam4U&">Part 2</a> by Zeph and Ramo</li>
                             </ul>
                         </p>
                     </div>
@@ -152,7 +155,22 @@
                     </div>
                 </div>     
                 <div id="manifesto" class="tools-manifesto hide">
-                    *soon*
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const url = 'https://docs.google.com/document/d/1nLFbWzsXDvM8NwAWRtXQ1p_PtD1Bq16lXfvwk5JgK4E/pub?embedded=true'; // Replace with your document's publish link
+                
+                            fetch(url)
+                                .then(response => response.text())
+                                .then(text => {
+                                    const docContent = new DOMParser().parseFromString(text, 'text/html');
+                                    document.getElementById('doc-content').innerHTML = docContent.body.innerHTML;
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching document:', error);
+                                    document.getElementById('doc-content').innerText = 'Failed to load content.';
+                                });
+                        });
+                    </script>
                 </div> 
             </div>
             <!-- ******************************** WORKS CONTENT ******************************** -->
