@@ -32,7 +32,7 @@
                             <option value="inspirations" data-show=".inspirations-text">my inspirations</option>
                             <option value="tools" data-show=".tools-text">my tools</option>
                             <option value="links" data-show=".links-text">my links</option>
-                            <option value="manifesto" data-show=".links-manifesto">FollySoft</option>
+                            <option value="manifesto" data-show=".manifesto-text">FollySoft</option>
                         </select>
                     </h1>
                 </div>
@@ -154,23 +154,8 @@
                         </p>
                     </div>
                 </div>     
-                <div id="manifesto" class="tools-manifesto hide">
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const url = 'https://docs.google.com/document/d/1nLFbWzsXDvM8NwAWRtXQ1p_PtD1Bq16lXfvwk5JgK4E/pub?embedded=true'; // Replace with your document's publish link
-                
-                            fetch(url)
-                                .then(response => response.text())
-                                .then(text => {
-                                    const docContent = new DOMParser().parseFromString(text, 'text/html');
-                                    document.getElementById('doc-content').innerHTML = docContent.body.innerHTML;
-                                })
-                                .catch(error => {
-                                    console.error('Error fetching document:', error);
-                                    document.getElementById('doc-content').innerText = 'Failed to load content.';
-                                });
-                        });
-                    </script>
+                <div id="manifesto" class="manifesto-text hide">
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQwFBFS_uIQ3P2NuiaDsObpgnwlJpfRC4jDEqufmIeCfo_nABkV2mTWXnJzofNiGWc2vBgTbSLXwSTp/pub?embedded=true" style="width: 97%;height: 900px;"></iframe>
                 </div> 
             </div>
             <!-- ******************************** WORKS CONTENT ******************************** -->
