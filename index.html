@@ -155,6 +155,14 @@
                     </div>
                 </div>     
                 <div id="manifesto" class="manifesto-text hide" style="height: 50vh;">                    
+                    <p style="
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    font-size: small;
+                    ">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vQwFBFS_uIQ3P2NuiaDsObpgnwlJpfRC4jDEqufmIeCfo_nABkV2mTWXnJzofNiGWc2vBgTbSLXwSTp/pub" target="_blank">(Can't See the document?)</a>
+                    </p>
                     <br>
                     <iframe frameBorder="0" src="https://docs.google.com/document/d/e/2PACX-1vQwFBFS_uIQ3P2NuiaDsObpgnwlJpfRC4jDEqufmIeCfo_nABkV2mTWXnJzofNiGWc2vBgTbSLXwSTp/pub?embedded=true" style="width: 80%;height: 45vh;display:flex;margin:auto""></iframe>
                 </div> 
@@ -822,7 +830,8 @@
         var target = $(this).data('target');    // Reveal selected of value
         var show = $(this).data('show');
         $(target).children().addClass('hide');
-        $(show).removeClass('hide');        
+        $(show).removeClass('hide');
+        // window.location.hash = $(show).attr('id');
         if ($('#worksintrowide').length > 0) {
             $('#worksintrowide').remove();
         }
@@ -849,11 +858,30 @@
     var show = $("option:selected", this).data('show');
     $(target).children().addClass('hide');
     $(show).removeClass('hide');
+    // window.location.hash = $(show).attr('id');
     });
     $(document).ready(function(){
         $('.about-selector').trigger('change');
 });
 </script>
+
+<!-- <script>
+    function showContent(id) {
+        $('.work-content').addClass('hide');    // Hide All
+        var target = $(id).data('target');    // Reveal selected of value
+        var show = $(id).data('show');
+        $(target).children().addClass('hide');
+        $(show).removeClass('hide');
+        console.log(id + "hidden?")
+    }
+    // Show content based on the URL hash
+    window.onload = function() {
+        const hash = window.location.hash.substring(1); // Remove the "#" symbol
+        if (hash) {
+            showContent(hash);
+        }
+    };
+</script> -->
 
 <script>
     function showAbout() {
