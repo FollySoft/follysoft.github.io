@@ -1,4 +1,83 @@
+<!-- Video Sources
+*   https://archive.org/details/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour
+*   
+-->
+
+<!-- SOURCES
+*  https://codepen.io/www-0av-com/pen/jxzxEX
+-->
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
 <video id="myvideo" controls>
     <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=56">
   </video>
 <div id="video_counter"></div>
+
+<button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button>
+<canvas id="canvas" width="150" height="300" style='background:blue'></canvas>
+<br>
+CLICK START
+<div align=left>See JS for attribution</div>
+  
+
+<script>
+    // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
+    function startr(){
+     console.log ("starting...");
+     navigator.getUserMedia = navigator.getUserMedia ||
+       navigator.webkitGetUserMedia ||
+       navigator.mozGetUserMedia;
+     if (navigator.getUserMedia) {
+      navigator.getUserMedia({
+          audio: true
+        },
+        function(stream) {
+          audioContext = new AudioContext();
+          analyser = audioContext.createAnalyser();
+          microphone = audioContext.createMediaStreamSource(stream);
+          javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+
+          analyser.smoothingTimeConstant = 0.8;
+          analyser.fftSize = 1024;
+
+          microphone.connect(analyser);
+          analyser.connect(javascriptNode);
+          javascriptNode.connect(audioContext.destination);
+
+          canvasContext = $("#canvas")[0].getContext("2d");
+
+          javascriptNode.onaudioprocess = function() {
+              var array = new Uint8Array(analyser.frequencyBinCount);
+              analyser.getByteFrequencyData(array);
+              var values = 0;
+
+              var length = array.length;
+              for (var i = 0; i < length; i++) {
+                values += (array[i]);
+              }
+
+              var average = values / length;
+
+    //          console.log(Math.round(average - 40));
+
+              canvasContext.clearRect(0, 0, 150, 300);
+              canvasContext.fillStyle = '#FF0A55'; //was BadA55 (very cute)
+              canvasContext.fillRect(0, 300 - average, 150, 300);
+              canvasContext.fillStyle = '#F62626';
+              canvasContext.font = "24px impact";
+              canvasContext.fillText(Math.round(average - 40), 2, 30);
+              // console.log (average);
+            } // end fn stream
+        },
+        function(err) {
+          console.log("The following error occured: " + err.name)
+        });
+    } else {
+      console.log("getUserMedia not supported");
+     }
+    }
+
+
+</script>
