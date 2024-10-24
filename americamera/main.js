@@ -24,6 +24,7 @@ const constraints = window.constraints = {
     facingMode: 'environment',
     width: 480,
     height: 480,
+    crossOrigin: "Anonymous"
     // aspectRatio: 1,
   }
 };
@@ -35,6 +36,7 @@ function handleSuccess(stream) {
   console.log(`Using video device: ${videoTracks[0].label}`);
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
+  video.crossOrigin="Anonymous";
 }
 
 function handleError(error) {
@@ -76,67 +78,68 @@ async function init(e) {
 document.querySelector('#showVideo').addEventListener('click', e => init(e));
 
 
-function startDrag(e) {
-  // determine event object
-  if (!e) {
-    var e = window.event;
-  }
+// function startDrag(e) {
+//   // determine event object
+//   if (!e) {
+//     var e = window.event;
+//   }
 
-  // IE uses srcElement, others use target
-  var targ = e.target ? e.target : e.srcElement;
+//   // IE uses srcElement, others use target
+//   var targ = e.target ? e.target : e.srcElement;
 
-  if (targ.className != 'draggable') {return};
-  // calculate event X, Y coordinates
-    offsetX = e.clientX;
-    offsetY = e.clientY;
+//   if (targ.className != 'draggable') {return};
+//   // calculate event X, Y coordinates
+//     offsetX = e.clientX;
+//     offsetY = e.clientY;
 
-  // assign default values for top and left properties
-  if(!targ.style.left) { targ.style.left='0px'};
-  if (!targ.style.top) { targ.style.top='0px'};
+//   // assign default values for top and left properties
+//   if(!targ.style.left) { targ.style.left='0px'};
+//   if (!targ.style.top) { targ.style.top='0px'};
 
-  // calculate integer values for top and left 
-  // properties
-  coordX = parseInt(targ.style.left);
-  coordY = parseInt(targ.style.top);
-  drag = true;
-  // move div element
-  console.log("moving");
-  document.onpointermove=dragDiv;
+//   // calculate integer values for top and left 
+//   // properties
+//   coordX = parseInt(targ.style.left);
+//   coordY = parseInt(targ.style.top);
+//   drag = true;
+//   // move div element
+//   console.log("moving");
+//   document.onpointermove=dragDiv;
 
-  return false;
-}
+//   return false;
+// }
 
-function dragDiv(e) {
-  if (!drag) {return};
-  if (!e) { var e= window.event};
-  e.stopPropagation();
-  var targ=e.target?e.target:e.srcElement;
-  // var bound = document.getElementById("video-container").offsetWidth-document.getElementById("overlay").offsetWidth;    
-  // if((coordX>=0)&&(coordX<bound)&&(coordY>=0)&&(coordY<bound)){
-  //   // move div element
-  //   targ.style.left=coordX+e.clientX-offsetX+'px';
-  //   targ.style.top=coordY+e.clientY-offsetY+'px';
-  // }
-  // else {
-  //   document.onmousemove = null;
-  //   document.onmouseup();
-  //   console.log("MOUSEUP")
-  //   //stopDrag();
-  // }
-  targ.style.left=coordX+e.clientX-offsetX+'px';
-  targ.style.top=coordY+e.clientY-offsetY+'px';
-  return false;
-}
-function stopDrag() {
-  drag=false;
-}
-window.onload = function() {
-  document.onpointerdown = startDrag;
-  document.onpointerup = stopDrag;
-}
+// function dragDiv(e) {
+//   if (!drag) {return};
+//   if (!e) { var e= window.event};
+//   e.stopPropagation();
+//   var targ=e.target?e.target:e.srcElement;
+//   // var bound = document.getElementById("video-container").offsetWidth-document.getElementById("overlay").offsetWidth;    
+//   // if((coordX>=0)&&(coordX<bound)&&(coordY>=0)&&(coordY<bound)){
+//   //   // move div element
+//   //   targ.style.left=coordX+e.clientX-offsetX+'px';
+//   //   targ.style.top=coordY+e.clientY-offsetY+'px';
+//   // }
+//   // else {
+//   //   document.onmousemove = null;
+//   //   document.onmouseup();
+//   //   console.log("MOUSEUP")
+//   //   //stopDrag();
+//   // }
+//   targ.style.left=coordX+e.clientX-offsetX+'px';
+//   targ.style.top=coordY+e.clientY-offsetY+'px';
+//   return false;
+// }
+// function stopDrag() {
+//   drag=false;
+// }
+// window.onload = function() {
+//   document.onpointerdown = startDrag;
+//   document.onpointerup = stopDrag;
+// }
 
 
 //Creating dynamic link that automatically click
+
 function downloadURI(uri, name) {
   var link = document.createElement("a");
   link.download = name;
@@ -157,6 +160,13 @@ function printToFile() {
           downloadURI("data:" + myImage, "yourImage.png");
       }
   });
+}
+
+function downloadImage() {
+  var link = document.createElement('a');
+  link.download = 'filename.png';
+  link.href = document.getElementById('canvas').toDataURL()
+  link.click();
 }
 
 //**************** SCREENSHOT CODE */
@@ -186,8 +196,8 @@ let height = 480; // This will be computed based on the input stream
     //height = video.videoHeight / (video.videoWidth / width);
     canvas.width = width;
     canvas.height = height;
-    context.imageSmoothingEnabled = false;
-    context.drawImage(video, 0, 0, width, height);
+    context.imageSmoothingEnabled = true;
+    context.drawImage(video, 0, 0, video.width, video.height);
 
     // Set logo
     var img = new Image();
