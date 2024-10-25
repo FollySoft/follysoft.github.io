@@ -4,23 +4,63 @@
 -->
 
 <!-- SOURCES
-*  https://codepen.io/www-0av-com/pen/jxzxEX
+*   https://codepen.io/www-0av-com/pen/jxzxEX
+*   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ontimeupdate_dom
+*   https://media.baamboozle.com/uploads/images/64101/1649578508_1487878_gif-url.gif
+*   https://tenor.com/view/applause-clapping-good-job-nice-one-well-played-gif-16353179
+*   https://pixabay.com/illustrations/advertising-sign-clipart-extol-2058701/
 -->
 <head>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    </head>
-<video id="myvideo" controls>
-    <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=56">
-  </video>
-<div id="video_counter"></div>
+</head>
+<div id="container">
+    <!-- <div id="text-label"></div> -->
+    <video autoplay id="myvideo" controls>
+        <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90">
+        <div id="text-label"></div>
+      </video>
+    <div id="video_counter"></div>
+    <button onclick="startr();">Start</button>
+    <button onclick="nextVideo();">Next</button>
+    <canvas id="canvas" width="32" height="400" style='background:rgba(63, 63, 63, 0.829)'></canvas>
+    <br>
+</div>
 
-<button onclick="startr();" title="click start needed as security in browser increased and voice mic can only be started from a gesture on page">Start</button>
-<canvas id="canvas" width="150" height="300" style='background:blue'></canvas>
-<br>
-CLICK START
-<div align=left>See JS for attribution</div>
-  
+<script>
+    // Video Manager
+    let videoRunTime = 0;
+    const videoLinks = [
+        "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",        
+        "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180"
+    ]
+
+    let vid = document.getElementById("myvideo");
+
+    function nextVideo() {
+        let video =  document.getElementById('myvideo').src = videoLinks[1];
+    }
+
+    function playVid() {
+        vid.play();
+    }
+
+    function pauseVid() {
+        vid.pause();
+    } 
+    
+    // Get Video Runtime
+    vid.ontimeupdate = function(){
+        videoRunTime = vid.currentTime;
+        console.log(videoRunTime);
+    };    
+</script>
+
+<script>
+    function getAmbientAverage() {
+        // Listen for a few seconds and get the average ambent volume.
+    }
+</script>
 
 <script>
     // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
@@ -62,18 +102,26 @@ CLICK START
 
     //          console.log(Math.round(average - 40));
 
-              canvasContext.clearRect(0, 0, 150, 300);
-              canvasContext.fillStyle = '#FF0A55'; //was BadA55 (very cute)
-              canvasContext.fillRect(0, 300 - average, 150, 300);
+              canvasContext.clearRect(0, 0, 32, 400);
+              canvasContext.fillStyle = '#FF0A55';
+              canvasContext.fillRect(0, 300 - average, 32, 400);
               canvasContext.fillStyle = '#F62626';
-              canvasContext.font = "24px impact";
-              canvasContext.fillText(Math.round(average - 40), 2, 30);
+              canvasContext.font = "12px impact";
+              // Only use for debug!
+              canvasContext.fillText(Math.round(average - 40), 2, 12);
+              if (Math.round(average - 40) > 100) {
+                $( "#text-label" ).html( "PIPE DOWN" );
+              }
+              else {
+                $( "#text-label" ).html( "meh");
+              }
               // console.log (average);
             } // end fn stream
         },
         function(err) {
           console.log("The following error occured: " + err.name)
         });
+        playVid();
     } else {
       console.log("getUserMedia not supported");
      }

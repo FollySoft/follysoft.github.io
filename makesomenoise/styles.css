@@ -8,10 +8,25 @@ body {
   }
 
   #canvas {
-    width: 100px;
-    height: 100px;
+    width: 32px;
+    height: 400px;
     position: absolute;
-    top: 150px;
-    left: 45%;
+    top: 64px;
+    left: 8%;
+    text-align: center;
+  }
+
+  #myvideo {
+    width: 100%;
+  }
+
+  #text-label {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:xx-large;
     text-align: center;
   }
