@@ -9,21 +9,27 @@
 *   https://media.baamboozle.com/uploads/images/64101/1649578508_1487878_gif-url.gif
 *   https://tenor.com/view/applause-clapping-good-job-nice-one-well-played-gif-16353179
 *   https://pixabay.com/illustrations/advertising-sign-clipart-extol-2058701/
+*   https://commons.wikimedia.org/wiki/File:18th_Birthday_Party.webm
 -->
 <head>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+     />
 </head>
 <div id="container">
-    <!-- <div id="text-label"></div> -->
-    <video autoplay id="myvideo" controls>
-        <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90">
-        <div id="text-label"></div>
+    <div id="text-label" class="animate__animated"></div>
+    <video autoplay id="myvideo" width="840" height="475">
+        <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90">        
       </video>
-    <div id="video_counter"></div>
+    <div id="video_counter"></div>    
     <button onclick="startr();">Start</button>
     <button onclick="nextVideo();">Next</button>
-    <canvas id="canvas" width="32" height="400" style='background:rgba(63, 63, 63, 0.829)'></canvas>
+    <canvas id="canvas" width="32" height="250" style='background:rgba(63, 63, 63, 0.829)'></canvas>
+    <img id="clap-gif" src="./images/applause-clapping.gif" class="overlay-gif" >
+    <!-- <img id="gif2" src="your-gif2.gif" class="overlay-gif"> -->
     <br>
 </div>
 
@@ -32,7 +38,8 @@
     let videoRunTime = 0;
     const videoLinks = [
         "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",        
-        "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180"
+        "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180",
+        "https://upload.wikimedia.org/wikipedia/commons/c/c2/18th_Birthday_Party.webm"
     ]
 
     let vid = document.getElementById("myvideo");
@@ -60,6 +67,19 @@
     function getAmbientAverage() {
         // Listen for a few seconds and get the average ambent volume.
     }
+</script>
+
+<script>
+  // Overlay Images
+  function showGif(gifId) {
+    const gif = document.getElementById(gifId);
+    gif.classList.add('show-gif');
+    
+    // Remove the class after animation ends to reset position for next use
+    setTimeout(() => {
+        gif.classList.remove('show-gif');
+    }, 5000); // Match with animation duration
+}
 </script>
 
 <script>
@@ -110,10 +130,12 @@
               // Only use for debug!
               canvasContext.fillText(Math.round(average - 40), 2, 12);
               if (Math.round(average - 40) > 100) {
-                $( "#text-label" ).html( "PIPE DOWN" );
+                $( "#text-label" ).html( "PIPE DOWN!" );
+                $( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
               }
               else {
-                $( "#text-label" ).html( "meh");
+                $( "#text-label" ).removeClass( "animate__shakeY animate__infinite" )       
+                $( "#text-label" ).html( "" );
               }
               // console.log (average);
             } // end fn stream
@@ -122,6 +144,7 @@
           console.log("The following error occured: " + err.name)
         });
         playVid();
+        //showGif('clap-gif');
     } else {
       console.log("getUserMedia not supported");
      }

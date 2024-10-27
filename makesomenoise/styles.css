@@ -2,8 +2,7 @@ body {
     color: #888;
     background: #262626;
     margin: 0;
-    padding: 40px;
-    text-align: center;
+    padding: 40px;    
     font-family: "helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
@@ -12,21 +11,58 @@ body {
     height: 400px;
     position: absolute;
     top: 64px;
-    left: 8%;
+    left: 96px;
     text-align: center;
   }
 
   #myvideo {
-    width: 100%;
+    /* width: 100%; */
   }
 
   #text-label {
     z-index: 100;
     position: absolute;
-    left: 50%;
-    top: 20%;
+    left: 175;
+    top: 185;
+    font-size: 110;
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:xx-large;
     text-align: center;
+    text-shadow: 4px 4px black;
   }
+
+  .overlay-gif {
+    position: absolute;
+    top: 50%; /* Adjust based on where you want the GIF */
+    transform: translateY(-50%);
+    width: 100px; /* Adjust size as needed */
+    opacity: 0;
+}
+
+/* Keyframe animations */
+@keyframes slideInOut {
+    0% { left: -150px; top: 275px; opacity: 0; } /* Start offscreen to the left */
+    10% { left: 420px; opacity: 1; } /* Slide into view */
+    90% { left: 420px; opacity: 1; } /* Stay in view */
+    100% { left: 990px; top: 275px; opacity: 0; } /* Slide out of view */
+}
+
+@keyframes slowDropFromTop {
+  0% { left: 420px; top: -110px; opacity: 0; } /* Start offscreen to the left */
+  10% { left: 420px; top: 10px; opacity: 1; } /* Slide into view */
+  90% { left: 420px; top: 40px; opacity: 1; } /* Stay in view */
+  100% { left: 420px; top: 275px; opacity: 0; } /* Slide out of view */
+}
+
+.show-sign {
+  animation: slideInOut 5s ease forwards; /* Adjust duration */
+}
+
+.show-gif {
+    animation: slideInOut 5s ease forwards; /* Adjust duration */
+}
+
+
+.animate__animated.animate__shakeY {
+  
+}
