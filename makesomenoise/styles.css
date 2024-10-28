@@ -49,17 +49,32 @@ body {
 
 @keyframes slowDropFromTop {
   0% { left: 420px; top: -110px; opacity: 0; } /* Start offscreen to the left */
-  10% { left: 420px; top: 10px; opacity: 1; } /* Slide into view */
-  90% { left: 420px; top: 40px; opacity: 1; } /* Stay in view */
-  100% { left: 420px; top: 275px; opacity: 0; } /* Slide out of view */
+  10% { left: 420px; top: 128px; opacity: 1; } /* Slide into view */
+  90% { left: 420px; top: 128px; opacity: 1; } /* Stay in view */
+  100% { left: 420px; top: -110px; opacity: 0; } /* Slide out of view */
 }
 
-.show-sign {
+/* .show-sign {
   animation: slideInOut 5s ease forwards; /* Adjust duration */
-}
+} */
 
 .show-gif {
     animation: slideInOut 5s ease forwards; /* Adjust duration */
+}
+
+@keyframes slide-in {
+  from {
+    transform: translatey(-100%); opacity: 1;
+  }
+  to {
+    transform: translatey(0%); opacity: 1;
+  }
+}
+
+/* ...and then apply it: */
+.show-sign {
+  width: 250px;
+  animation: slowDropFromTop 5s;
 }
 
 

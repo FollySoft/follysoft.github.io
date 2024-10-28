@@ -1,4 +1,5 @@
 var videoElement = document.getElementById("myvideo");
+var signDisplayed = false;
 console.log(videoElement);
     var totalTimePlayed = 0;
     var lastUpdatedTime = 0;
