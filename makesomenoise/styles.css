@@ -8,10 +8,11 @@ body {
 
   #canvas {
     position: absolute;
-    top: 210px;
-    left: 785;
+    top: 335px;
+    left: 749px;
     text-align: center;
     z-index: 500;
+    border-radius: 20px;
 
   }
 
@@ -41,8 +42,8 @@ body {
 
 #static-gif {
     opacity: 0.2;
-    width: 840px;
-    height: 475px;
+    width: 820px;
+    height: 450px;
     position: absolute;
 }
 
@@ -50,7 +51,7 @@ body {
     width: 840px;
     height: 475px;
     position: absolute;
-    z-index: 300;
+    z-index: 300;    
 }
 
 /* Keyframe animations */
