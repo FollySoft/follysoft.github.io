@@ -17,15 +17,16 @@ body {
   }
 
   #myvideo {
-    /* width: 100%; */
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   #text-label {
     z-index: 100;
     position: absolute;
-    left: 130;
-    top: 200;
-    font-size: 110;
+    left: 150;
+    top: 220;
+    font-size: 86;
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
@@ -63,10 +64,10 @@ body {
 }
 
 @keyframes slowDropFromTop {
-  0% { left: 280px; top: -110px; opacity: 0; } /* Start offscreen to the left */
-  10% { left: 280px; top: 150px; opacity: 1; } /* Slide into view */
-  90% { left: 280px; top: 150px; opacity: 1; } /* Stay in view */
-  100% { left: 280px; top: -110px; opacity: 0; } /* Slide out of view */
+  0% { left: 250px; top: -110px; opacity: 0; } /* Start offscreen to the left */
+  10% { left: 250px; top: 180px; opacity: 1; } /* Slide into view */
+  90% { left: 250px; top: 180px; opacity: 1; } /* Stay in view */
+  100% { left: 250px; top: -110px; opacity: 0; } /* Slide out of view */
 }
 
 /* .show-sign {

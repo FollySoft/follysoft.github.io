@@ -26,7 +26,7 @@
     <img id="sign-gif" src="./images/sign.gif" class="overlay-gif" >
     <img id="tv-overlay" src="./images/tv-overlay-2.png">
     <img id="static-gif" src="./images/tv-static.gif">
-    <video autoplay id="myvideo" width="840" height="475">
+    <video autoplay id="myvideo" width="740" height="375">
         <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90">        
       </video>
     <div id="video_counter"></div>    
@@ -148,8 +148,8 @@
     //          console.log(Math.round(average - 40));
 
               canvasContext.clearRect(0, 0, 80, 140);
-              canvasContext.fillStyle = '#FF0A55';
-              canvasContext.fillRect(0, 300 - average, 80, 140);
+              canvasContext.fillStyle = '#857253';  // Standard Fill
+              canvasContext.fillRect(0, 180 - average, 80, 140);
               canvasContext.fillStyle = '#F62626';
               canvasContext.font = "12px impact";
               // Only use for debug!
@@ -157,7 +157,10 @@
               if (Math.round(average - 40) > 100) {
                 $( "#text-label" ).html( "PIPE DOWN!" );
                 $( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
+                canvasContext.fillStyle = '#FA003F' // Loud Fill
+                canvasContext.fillRect(0, 180 - average, 80, 140);
               }
+              // Add condition here for "correct range?" #95C623
               else {
                 $( "#text-label" ).removeClass( "animate__shakeY animate__infinite" )       
                 $( "#text-label" ).html( "" );
