@@ -19,7 +19,7 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-     />
+     />     
 </head>
 <div id="container">
     <div id="text-label" class="animate__animated"></div>
@@ -32,151 +32,12 @@
     <div id="video_counter"></div>    
     <button onclick="startr();">Start</button>
     <button onclick="nextVideo();">Next</button>
-    <canvas id="canvas" width="80" height="140" style='background:rgba(19, 19, 19, 0.829)'></canvas>
+    <input type="range" id="mic-sensitivity" step="0.1" min="0.1" max="1.9" onchange="updateMicSensitivity(this.value)" value="1" >
+    <canvas id="canvas" width="80" height="100" style='background:rgba(19, 19, 19, 0.829)'></canvas>
     <img id="clap-gif" src="./images/applause-clapping.gif" class="overlay-gif" >
     <!-- <img id="gif2" src="your-gif2.gif" class="overlay-gif"> -->
     <br>
 </div>
 
-<script>
-    // Video Manager
-    let videoRunTime = 0;
-    let signDisplayed = false;
-    const videoLinks = [
-        "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",        
-        "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180",
-        "https://upload.wikimedia.org/wikipedia/commons/c/c2/18th_Birthday_Party.webm"
-    ]
-
-    let vid = document.getElementById("myvideo");
-
-    function nextVideo() {
-        let video =  document.getElementById('myvideo').src = videoLinks[1];
-    }
-
-    function playVid() {
-        vid.play();
-    }
-
-    function pauseVid() {
-        vid.pause();
-    } 
-    
-    // Get Video Runtime
-    vid.ontimeupdate = function(){
-        videoRunTime = vid.currentTime;
-        console.log(videoRunTime);
-        if (videoRunTime >= 100.8 && signDisplayed == false) {
-          //$( "#sign-gif" ).addClass( "animate__shakeY animate__infinite" )
-          signDisplayed = true;
-          console.log("DISPLAYING SIGN?");
-          //$( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
-          //showGif('sign-gif')
-          showSign('sign-gif')
-        }
-    };    
-</script>
-
-<script>
-    function getAmbientAverage() {
-        // Listen for a few seconds and get the average ambent volume.
-    }
-</script>
-
-<script>
-  // Overlay Images
-  function showGif(gifId) {
-    const gif = document.getElementById(gifId);
-    gif.classList.add('show-gif');
-    
-    // Remove the class after animation ends to reset position for next use
-    setTimeout(() => {
-        gif.classList.remove('show-gif');
-    }, 5000); // Match with animation duration
-  }
-
-  // Sign Indicator
-  function showSign(gifId) {
-    const gif = document.getElementById(gifId);
-    gif.classList.add('show-sign');
-    
-    // Remove the class after animation ends to reset position for next use
-    setTimeout(() => {
-        gif.classList.remove('show-sign');
-    }, 5000); // Match with animation duration
-  }
-</script>
-
-<script>
-    // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
-    function startr(){
-     console.log ("starting...");
-     navigator.getUserMedia = navigator.getUserMedia ||
-       navigator.webkitGetUserMedia ||
-       navigator.mozGetUserMedia;
-     if (navigator.getUserMedia) {
-      navigator.getUserMedia({
-          audio: true
-        },
-        function(stream) {
-          audioContext = new AudioContext();
-          analyser = audioContext.createAnalyser();
-          microphone = audioContext.createMediaStreamSource(stream);
-          javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
-
-          analyser.smoothingTimeConstant = 0.8;
-          analyser.fftSize = 1024;
-
-          microphone.connect(analyser);
-          analyser.connect(javascriptNode);
-          javascriptNode.connect(audioContext.destination);
-
-          canvasContext = $("#canvas")[0].getContext("2d");
-
-          javascriptNode.onaudioprocess = function() {
-              var array = new Uint8Array(analyser.frequencyBinCount);
-              analyser.getByteFrequencyData(array);
-              var values = 0;
-
-              var length = array.length;
-              for (var i = 0; i < length; i++) {
-                values += (array[i]);
-              }
-
-              var average = values / length;
-
-    //          console.log(Math.round(average - 40));
-
-              canvasContext.clearRect(0, 0, 80, 140);
-              canvasContext.fillStyle = '#857253';  // Standard Fill
-              canvasContext.fillRect(0, 180 - average, 80, 140);
-              canvasContext.fillStyle = '#F62626';
-              canvasContext.font = "12px impact";
-              // Only use for debug!
-              canvasContext.fillText(Math.round(average - 40), 8, 20);
-              if (Math.round(average - 40) > 100) {
-                $( "#text-label" ).html( "PIPE DOWN!" );
-                $( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
-                canvasContext.fillStyle = '#FA003F' // Loud Fill
-                canvasContext.fillRect(0, 180 - average, 80, 140);
-              }
-              // Add condition here for "correct range?" #95C623
-              else {
-                $( "#text-label" ).removeClass( "animate__shakeY animate__infinite" )       
-                $( "#text-label" ).html( "" );
-              }
-              // console.log (average);
-            } // end fn stream
-        },
-        function(err) {
-          console.log("The following error occured: " + err.name)
-        });
-        playVid();
-        //showGif('clap-gif');
-    } else {
-      console.log("getUserMedia not supported");
-     }
-    }
-
-
-</script>
+<!-- Placing after elements have loaded to avoid null referencing -->
+<script src="main.js"></script>

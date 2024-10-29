@@ -8,12 +8,40 @@ body {
 
   #canvas {
     position: absolute;
-    top: 335px;
-    left: 749px;
+    top: 375px;
+    left: 750px;
     text-align: center;
     z-index: 500;
     border-radius: 20px;
 
+  }
+
+  #mic-sensitivity {
+    position: absolute;
+    top: 352px;
+    left: 704px;
+    text-align: center;
+    z-index: 500;
+    background: #444;
+    -webkit-appearance: none;
+    height: 4px;
+    
+  }
+
+  #mic-sensitvity::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height:15px; /* Slider handle height */
+    background: #1e1e1e; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  #mic-sensitivity::-moz-range-thumb {
+    width: 10px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #1e1e1e; /* Green background */
+    cursor: pointer; /* Cursor on hover */
   }
 
   #myvideo {
