@@ -5,6 +5,10 @@ var gatherForAverage = false;
 var microphoneAverage = 0;
 var micSensitivityFactor = 1;
 
+// Game Management
+misses = 0; // Increment when too loud or too early
+missTimeoutActive = false;
+
 // Video Manager
 let videoRunTime = 0;
 let signDisplayed = false;
@@ -46,6 +50,12 @@ function pauseVid() {
     vid.pause();
 } 
 
+function fadeInStatic() {
+  staticGif = document.getElementById("static-gif");
+  staticGif.classList.remove("fadeOutOpacity");
+  staticGif.classList.add("fadeInOpacity");
+}
+
 // Get Video Runtime
 vid.ontimeupdate = function(){
     videoRunTime = vid.currentTime;
@@ -73,6 +83,22 @@ function showGif(gifId) {
   }, 5000); // Match with animation duration
 }
 
+function showLoudText() {
+  missTimeoutActive = true;
+  misses += 1;
+  if (misses >= 3) {
+    fadeInStatic();
+    console.log("FADING IN!!!!!")
+  }
+  $( "#text-label" ).html( "PIPE DOWN!" );
+  $( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
+  setTimeout(() => {
+    $( "#text-label" ).removeClass( "animate__shakeY animate__infinite" )       
+    $( "#text-label" ).html( "" );
+    missTimoutActive = false;
+  }, 2000)
+}
+
 // Sign Indicator
 function showSign(gifId) {
   const gif = document.getElementById(gifId);
@@ -87,7 +113,7 @@ function showSign(gifId) {
 // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
 function startr(){
   console.log ("starting...");
-  gatherForAverage = true;
+  //gatherForAverage = true;
   navigator.getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia;
@@ -130,25 +156,22 @@ function startr(){
   //          console.log(Math.round(average - 40));
             else {
               console.log("AVERAGE DIFF: " + average);
-              let microphoneDifference = average - microphoneAverage;
+              //let microphoneDifference = average - microphoneAverage;
               canvasContext.clearRect(0, 0, 80, 140);
               canvasContext.fillStyle = '#857253';  // Standard Fill
-              canvasContext.fillRect(0, 180 - microphoneDifference, 80, 140);
+              canvasContext.fillRect(0, 180 - average, 80, 140);
               canvasContext.fillStyle = '#F62626';
               canvasContext.font = "12px impact";
               // Only use for debug!
-              canvasContext.fillText(Math.round(microphoneDifference - 40), 8, 20);
-              if (Math.round(microphoneDifference - 40) > 100) {
-                $( "#text-label" ).html( "PIPE DOWN!" );
-                $( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
+              canvasContext.fillText(Math.round(average - 40), 8, 20);
+              if (Math.round(average - 40) > 100) {
                 canvasContext.fillStyle = '#FA003F' // Loud Fill
-                canvasContext.fillRect(0, 180 - microphoneDifference, 80, 140);
+                canvasContext.fillRect(0, 180 - average, 80, 140);
+                if (!missTimeoutActive) {
+                  showLoudText();
+                }                
               }
               // Add condition here for "correct range?" #95C623
-              else {
-                $( "#text-label" ).removeClass( "animate__shakeY animate__infinite" )       
-                $( "#text-label" ).html( "" );
-              }
               // console.log (average);
               }
           } // end fn stream

@@ -115,13 +115,33 @@ body {
   }
 }
 
-/* ...and then apply it: */
+.fade-in {
+  animation: fadeInOpacity 2s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOutOpacity 2s ease forwards;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.2;
+	}
+}
+
 .show-sign {
   width: 250px;
   animation: slowDropFromTop 5s;
-}
-
-
-.animate__animated.animate__shakeY {
-  
 }
