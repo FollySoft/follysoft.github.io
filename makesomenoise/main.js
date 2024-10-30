@@ -52,8 +52,8 @@ function pauseVid() {
 
 function fadeInStatic() {
   staticGif = document.getElementById("static-gif");
-  staticGif.classList.remove("fadeOutOpacity");
-  staticGif.classList.add("fadeInOpacity");
+  staticGif.classList.remove("fade-out");
+  staticGif.classList.add("fade-in");
 }
 
 // Get Video Runtime
@@ -95,7 +95,7 @@ function showLoudText() {
   setTimeout(() => {
     $( "#text-label" ).removeClass( "animate__shakeY animate__infinite" )       
     $( "#text-label" ).html( "" );
-    missTimoutActive = false;
+    missTimeoutActive = false;
   }, 2000)
 }
 
