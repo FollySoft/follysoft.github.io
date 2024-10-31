@@ -11,6 +11,7 @@ missTimeoutActive = false;
 overallMisses = 0;
 
 // Video Manager
+let currentVideo = 0;
 let videoRunTime = 0;
 let signDisplayed = false;
 windowStart = 0.0;
@@ -25,7 +26,9 @@ videoStartTimes = [
 ]
 // When its appropriate to applaud
 videoWindowTimes = [
-
+  100,
+  100,
+  100
 ]
 
 let vid = document.getElementById("myvideo");
@@ -49,7 +52,8 @@ function updateMicSensitivity(sensitivityValue) {
 
 
 function nextVideo() {
-    let video =  document.getElementById('myvideo').src = videoLinks[1];
+    currentVideo++;
+    let video =  document.getElementById('myvideo').src = videoLinks[currentVideo];
     misses = 0;
     missTimeoutActive = false;
 }
@@ -126,13 +130,13 @@ function showEarlyText() {
     showErrorAndProceed();
     return;  
   }
-  $( "#early-label" ).html( "noy yet..." );
+  $( "#early-label" ).html( "not yet..." );
   $( "#early-label" ).addClass( "animate__flash animate__infinite" )
   setTimeout(() => {
     $( "#early-label" ).removeClass( "animate__flash animate__infinite" )       
     $( "#early-label" ).html( "" );
     missTimeoutActive = false;
-  }, 1000)
+  }, 2000)
 }
 
 
@@ -140,17 +144,21 @@ function showErrorAndProceed(misses) {
   overallMisses += 1;
   setTimeout(() => {
     if (overallMisses == 1) {
-      $( "#miss-label" ).html( "X" );
+      $( "#miss-label" ).addClass( "animate__bounce" )
+      $( "#miss-label" ).html( "X" );      
     }    
     if (overallMisses == 2) {
-      $( "#miss-label" ).html( "X    X" );
+      $( "#miss-label" ).addClass( "animate__bounce" )
+      $( "#miss-label" ).html( "X    X" );      
     }
     if (overallMisses == 3) {
-      $( "#miss-label" ).html( "X    X    X" );
+      $( "#miss-label" ).addClass( "animate__bounce" )
+      $( "#miss-label" ).html( "X    X    X" );      
     }
   }, 2000)
   setTimeout(() => {
     $( "#miss-label" ).html( "" );
+    $( "#miss-label" ).removeClass( "animate__bounce" )   
     nextVideo();
     fadeOutStatic();
   }, 6000)
@@ -222,8 +230,10 @@ function startr(){
               canvasContext.font = "12px impact";
               // Only use for debug!
               canvasContext.fillText(Math.round(average - 40), 8, 20);
-              if (Math.round(average - 40) > 50 && videoRunTime < 100) {
-                showEarlyText();
+              if (Math.round(average - 40) > 50 && (videoRunTime < videoWindowTimes[currentVideo])) {
+                if (!missTimeoutActive) {
+                  showEarlyText();
+                }                                
               }
               if (Math.round(average - 40) > 100) {
                 canvasContext.fillStyle = '#FA003F' // Loud Fill
