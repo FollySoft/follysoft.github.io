@@ -8,14 +8,24 @@ var micSensitivityFactor = 1;
 // Game Management
 misses = 0; // Increment when too loud or too early
 missTimeoutActive = false;
+overallMisses = 0;
 
 // Video Manager
 let videoRunTime = 0;
 let signDisplayed = false;
+windowStart = 0.0;
 const videoLinks = [
     "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",        
     "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180",
     "https://upload.wikimedia.org/wikipedia/commons/c/c2/18th_Birthday_Party.webm"
+]
+// When the clip should start
+videoStartTimes = [
+
+]
+// When its appropriate to applaud
+videoWindowTimes = [
+
 ]
 
 let vid = document.getElementById("myvideo");
@@ -40,6 +50,8 @@ function updateMicSensitivity(sensitivityValue) {
 
 function nextVideo() {
     let video =  document.getElementById('myvideo').src = videoLinks[1];
+    misses = 0;
+    missTimeoutActive = false;
 }
 
 function playVid() {
@@ -54,6 +66,12 @@ function fadeInStatic() {
   staticGif = document.getElementById("static-gif");
   staticGif.classList.remove("fade-out");
   staticGif.classList.add("fade-in");
+}
+
+function fadeOutStatic() {
+  staticGif = document.getElementById("static-gif");
+  staticGif.classList.remove("fade-in");
+  staticGif.classList.add("fade-out");
 }
 
 // Get Video Runtime
@@ -88,7 +106,8 @@ function showLoudText() {
   misses += 1;
   if (misses >= 3) {
     fadeInStatic();
-    console.log("FADING IN!!!!!")
+    showErrorAndProceed();
+    return;  
   }
   $( "#text-label" ).html( "PIPE DOWN!" );
   $( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
@@ -97,6 +116,45 @@ function showLoudText() {
     $( "#text-label" ).html( "" );
     missTimeoutActive = false;
   }, 2000)
+}
+
+function showEarlyText() {
+  missTimeoutActive = true;
+  misses += 1;
+  if (misses >= 3) {
+    fadeInStatic();
+    showErrorAndProceed();
+    return;  
+  }
+  $( "#early-label" ).html( "noy yet..." );
+  $( "#early-label" ).addClass( "animate__flash animate__infinite" )
+  setTimeout(() => {
+    $( "#early-label" ).removeClass( "animate__flash animate__infinite" )       
+    $( "#early-label" ).html( "" );
+    missTimeoutActive = false;
+  }, 1000)
+}
+
+
+function showErrorAndProceed(misses) {
+  overallMisses += 1;
+  setTimeout(() => {
+    if (overallMisses == 1) {
+      $( "#miss-label" ).html( "X" );
+    }    
+    if (overallMisses == 2) {
+      $( "#miss-label" ).html( "X    X" );
+    }
+    if (overallMisses == 3) {
+      $( "#miss-label" ).html( "X    X    X" );
+    }
+  }, 2000)
+  setTimeout(() => {
+    $( "#miss-label" ).html( "" );
+    nextVideo();
+    fadeOutStatic();
+  }, 6000)
+
 }
 
 // Sign Indicator
@@ -164,6 +222,9 @@ function startr(){
               canvasContext.font = "12px impact";
               // Only use for debug!
               canvasContext.fillText(Math.round(average - 40), 8, 20);
+              if (Math.round(average - 40) > 50 && videoRunTime < 100) {
+                showEarlyText();
+              }
               if (Math.round(average - 40) > 100) {
                 canvasContext.fillStyle = '#FA003F' // Loud Fill
                 canvasContext.fillRect(0, 180 - average, 80, 140);

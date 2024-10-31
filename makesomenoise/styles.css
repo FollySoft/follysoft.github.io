@@ -50,12 +50,36 @@ body {
   }
 
   #text-label {
-    z-index: 100;
+    z-index: 700;
     position: absolute;
     left: 150;
     top: 220;
     font-size: 86;
     color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-shadow: 4px 4px black;
+  }
+
+  #miss-label {
+    z-index: 700;
+    position: absolute;
+    left: 275;
+    top: 220;
+    font-size: 86;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-shadow: 4px 4px black;
+  }
+
+  #early-label {
+    z-index: 700;
+    position: absolute;
+    left: 275;
+    top: 240;
+    font-size: 55;
+    color: #dfff00;;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     text-shadow: 4px 4px black;
