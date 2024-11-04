@@ -4,6 +4,9 @@ var valuesForAverage = [];
 var gatherForAverage = false;
 var microphoneAverage = 0;
 var micSensitivityFactor = 1;
+// Appropriate volume level, set per video
+var micThresholdUpper = 0;
+var micThresholdLower = 0;
 
 // Game Management
 misses = 0; // Increment when too loud or too early
@@ -15,23 +18,41 @@ let currentVideo = 0;
 let videoRunTime = 0;
 let signDisplayed = false;
 windowStart = 0.0;
-const videoLinks = [
-    "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",        
-    "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180",
-    "https://upload.wikimedia.org/wikipedia/commons/c/c2/18th_Birthday_Party.webm"
-]
-// When the clip should start
-videoStartTimes = [
 
-]
-// When its appropriate to applaud
-videoWindowTimes = [
-  100,
-  100,
-  100
+const videoObjects = [
+  {
+    // Golf
+    "link": "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",
+    "startTime": 100,
+    "endTime": 200,
+    "micThresholdUpper": 100,
+    "micThresholdLower": 50,
+    "volume": 0.1
+  },
+  {
+    // Football
+    "link": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180",
+    "startTime": 100,
+    "endTime": 200,
+    "micThresholdUpper": 999,
+    "micThresholdLower": 100,
+    "volume": 1
+  },
+  {
+    // Birthday
+    "link": "https://upload.wikimedia.org/wikipedia/commons/c/c2/18th_Birthday_Party.webm",
+    "startTime": 100,
+    "endTime": 200,
+    "micThresholdUpper": 150,
+    "micThresholdLower": 100,
+    "volume": 0.3
+  }
 ]
 
 let vid = document.getElementById("myvideo");
+// Fist video
+vid.src = videoObjects[currentVideo].link;
+vid.volume = videoObjects[currentVideo].volume;
 
 
 function getAmbientAverage() {
@@ -53,7 +74,8 @@ function updateMicSensitivity(sensitivityValue) {
 
 function nextVideo() {
     currentVideo++;
-    let video =  document.getElementById('myvideo').src = videoLinks[currentVideo];
+    vid.src = videoObjects[currentVideo].link;
+    vid.volume = videoObjects[currentVideo].volume;
     misses = 0;
     missTimeoutActive = false;
 }
@@ -230,12 +252,12 @@ function startr(){
               canvasContext.font = "12px impact";
               // Only use for debug!
               canvasContext.fillText(Math.round(average - 40), 8, 20);
-              if (Math.round(average - 40) > 50 && (videoRunTime < videoWindowTimes[currentVideo])) {
+              if ((Math.round(average - 40) > videoObjects[currentVideo].micThresholdLower) && (videoRunTime < videoObjects[currentVideo].startTime)) {
                 if (!missTimeoutActive) {
                   showEarlyText();
                 }                                
               }
-              if (Math.round(average - 40) > 100) {
+              if ((Math.round(average - 40) > videoObjects[currentVideo].micThresholdUpper) && (videoRunTime > videoObjects[currentVideo].startTime)) {
                 canvasContext.fillStyle = '#FA003F' // Loud Fill
                 canvasContext.fillRect(0, 180 - average, 80, 140);
                 if (!missTimeoutActive) {
@@ -243,6 +265,13 @@ function startr(){
                 }                
               }
               // Add condition here for "correct range?" #95C623
+              if ((Math.round(average - 40) < videoObjects[currentVideo].micThresholdUpper) && (Math.round(average - 40) > videoObjects[currentVideo].micThresholdLower) && (videoRunTime > videoObjects[currentVideo].startTime)) {
+                canvasContext.fillStyle = '#95C623' // Loud Fill
+                canvasContext.fillRect(0, 180 - average, 80, 140);
+                if (!missTimeoutActive) {
+                  // Increment Score?
+                }                
+              }
               // console.log (average);
               }
           } // end fn stream
