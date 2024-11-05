@@ -45,7 +45,7 @@ const videoObjects = [
     "endTime": 200,
     "micThresholdUpper": 150,
     "micThresholdLower": 100,
-    "volume": 0.3
+    "volume": 0.1
   }
 ]
 
@@ -53,6 +53,10 @@ let vid = document.getElementById("myvideo");
 // Fist video
 vid.src = videoObjects[currentVideo].link;
 vid.volume = videoObjects[currentVideo].volume;
+// vid.addEventListener('loadeddata', function() {
+//   console.log("Video ready!");
+//   fadeOutStatic();
+// }, false);
 
 
 function getAmbientAverage() {
@@ -73,6 +77,7 @@ function updateMicSensitivity(sensitivityValue) {
 
 
 function nextVideo() {
+    fadeInStatic();
     currentVideo++;
     vid.src = videoObjects[currentVideo].link;
     vid.volume = videoObjects[currentVideo].volume;
@@ -95,6 +100,7 @@ function fadeInStatic() {
 }
 
 function fadeOutStatic() {
+  console.log("Video ready!");
   staticGif = document.getElementById("static-gif");
   staticGif.classList.remove("fade-in");
   staticGif.classList.add("fade-out");
@@ -182,7 +188,7 @@ function showErrorAndProceed(misses) {
     $( "#miss-label" ).html( "" );
     $( "#miss-label" ).removeClass( "animate__bounce" )   
     nextVideo();
-    fadeOutStatic();
+    //fadeOutStatic();
   }, 6000)
 
 }
@@ -243,7 +249,7 @@ function startr(){
             }
   //          console.log(Math.round(average - 40));
             else {
-              console.log("AVERAGE DIFF: " + average);
+              //console.log("AVERAGE DIFF: " + average);
               //let microphoneDifference = average - microphoneAverage;
               canvasContext.clearRect(0, 0, 80, 140);
               canvasContext.fillStyle = '#857253';  // Standard Fill

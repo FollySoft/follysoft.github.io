@@ -97,7 +97,7 @@ body {
 }
 
 #static-gif {
-    opacity: 0.2;
+    /* opacity: 0.2; */
     width: 820px;
     height: 450px;
     position: absolute;

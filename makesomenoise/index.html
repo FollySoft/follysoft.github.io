@@ -28,14 +28,14 @@
     <img id="sign-gif" src="./images/sign.gif" class="overlay-gif" >
     <img id="tv-overlay" src="./images/tv-overlay-2.png">
     <img id="static-gif" src="./images/tv-static.gif">
-    <video autoplay id="myvideo" width="740" height="375">
+    <video autoplay oncanplay="fadeOutStatic()" id="myvideo" width="740" height="375">
         <!-- <source src="https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90">-->
         <!-- <source src="">         -->
       </video>
     <div id="video_counter"></div>    
     <button onclick="startr();">Start</button>
     <button onclick="nextVideo();">Next</button>
-    <input type="range" id="mic-sensitivity" step="0.1" min="0.1" max="1.9" onchange="updateMicSensitivity(this.value)" value="1" >
+    <input type="range" autocomplete="off" id="mic-sensitivity" step="0.1" min="0.1" max="1.9" onchange="updateMicSensitivity(this.value)" value="1" >
     <canvas id="canvas" width="80" height="100" style='background:rgba(19, 19, 19, 0.829)'></canvas>
     <img id="clap-gif" src="./images/applause-clapping.gif" class="overlay-gif" >
     <!-- <img id="gif2" src="your-gif2.gif" class="overlay-gif"> -->
