@@ -143,11 +143,11 @@ body {
 }
 
 .fade-in {
-  animation: fadeInOpacity 2s ease forwards;
+  animation: fadeInOpacity 1s ease forwards;
 }
 
 .fade-out {
-  animation: fadeOutOpacity 2s ease forwards;
+  animation: fadeOutOpacity 1s ease forwards;
 }
 
 @keyframes fadeInOpacity {
