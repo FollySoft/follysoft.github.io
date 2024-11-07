@@ -12,6 +12,7 @@ var micThresholdLower = 0;
 misses = 0; // Increment when too loud or too early
 missTimeoutActive = false;
 overallMisses = 0;
+var clipScore = 0;
 
 // Video Manager
 let currentVideo = 0;
@@ -32,7 +33,7 @@ const videoObjects = [
   {
     // Football
     "link": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oregon_vs._Washington_St_-_FOX_COLLEGE_FOOTBALL_HIGHLIGHTS.webm#t=180",
-    "startTime": 100,
+    "startTime": 187,
     "endTime": 200,
     "micThresholdUpper": 999,
     "micThresholdLower": 100,
@@ -41,7 +42,7 @@ const videoObjects = [
   {
     // Birthday
     "link": "https://upload.wikimedia.org/wikipedia/commons/c/c2/18th_Birthday_Party.webm",
-    "startTime": 100,
+    "startTime": 8,
     "endTime": 200,
     "micThresholdUpper": 150,
     "micThresholdLower": 100,
@@ -190,7 +191,14 @@ function showErrorAndProceed(misses) {
     nextVideo();
     //fadeOutStatic();
   }, 6000)
+}
 
+function showSuccessAndProceed() {
+  setTimeout(() => {
+    showGif('clap-gif');
+    nextVideo();
+    //fadeOutStatic();
+  }, 6000)
 }
 
 // Sign Indicator
@@ -275,7 +283,10 @@ function startr(){
                 canvasContext.fillStyle = '#95C623' // Loud Fill
                 canvasContext.fillRect(0, 180 - average, 80, 140);
                 if (!missTimeoutActive) {
-                  // Increment Score?
+                  clipScore++;
+                  if (clipScore >= 50) {
+                    showSuccessAndProceed();
+                  }
                 }                
               }
               // console.log (average);
