@@ -17,6 +17,7 @@ var clipScore = 0;
 // Video Manager
 let currentVideo = 0;
 let videoRunTime = 0;
+clipTransitioning = false;
 let signDisplayed = false;
 windowStart = 0.0;
 
@@ -25,7 +26,7 @@ const videoObjects = [
     // Golf
     "link": "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",
     "startTime": 100,
-    "endTime": 200,
+    "endTime": 110,
     "micThresholdUpper": 100,
     "micThresholdLower": 50,
     "volume": 0.1
@@ -79,6 +80,7 @@ function updateMicSensitivity(sensitivityValue) {
 
 function nextVideo() {
     fadeInStatic();
+    clipTransitioning = false;
     currentVideo++;
     vid.src = videoObjects[currentVideo].link;
     vid.volume = videoObjects[currentVideo].volume;
@@ -111,15 +113,27 @@ function fadeOutStatic() {
 vid.ontimeupdate = function(){
     videoRunTime = vid.currentTime;
     console.log(videoRunTime);
-    if (videoRunTime >= 100.8 && signDisplayed == false) {
-      //$( "#sign-gif" ).addClass( "animate__shakeY animate__infinite" )
-      signDisplayed = true;
-      console.log("DISPLAYING SIGN?");
-      //$( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
-      //showGif('sign-gif')
-      //showSign('sign-gif')
-      getAmbientAverage();
-      gatherForAverage = false;
+    // if (videoRunTime >= 100.8 && signDisplayed == false) {
+    //   //$( "#sign-gif" ).addClass( "animate__shakeY animate__infinite" )
+    //   signDisplayed = true;
+    //   console.log("DISPLAYING SIGN?");
+    //   //$( "#text-label" ).addClass( "animate__shakeY animate__infinite" )
+    //   //showGif('sign-gif')
+    //   //showSign('sign-gif')
+    //   getAmbientAverage();
+    //   gatherForAverage = false;
+    // }
+    
+    // Check time against clip length and trigger end?
+    if (videoRunTime >= videoObjects[currentVideo].endTime) {
+      if (clipScore < 50 && ! clipTransitioning) {
+        clipTransitioning = true;
+        fadeInStatic();
+        vid.volume = 0;
+        setTimeout(() => {
+          showWeakAndProceed();
+        }, 2000)
+      }
     }
 };    
   
@@ -184,13 +198,13 @@ function showErrorAndProceed(misses) {
       $( "#miss-label" ).addClass( "animate__bounce" )
       $( "#miss-label" ).html( "X    X    X" );      
     }
+    setTimeout(() => {
+      $( "#miss-label" ).html( "" );
+      $( "#miss-label" ).removeClass( "animate__bounce" )   
+      nextVideo();
+      //fadeOutStatic();
+    }, 3000)
   }, 2000)
-  setTimeout(() => {
-    $( "#miss-label" ).html( "" );
-    $( "#miss-label" ).removeClass( "animate__bounce" )   
-    nextVideo();
-    //fadeOutStatic();
-  }, 6000)
 }
 
 function showSuccessAndProceed() {
@@ -199,6 +213,16 @@ function showSuccessAndProceed() {
     nextVideo();
     //fadeOutStatic();
   }, 6000)
+}
+
+function showWeakAndProceed() {
+  $( "#weak-label" ).addClass( "animate__pulse animate__infinite" )
+  $( "#weak-label" ).html( "weak..." );     
+  setTimeout(() => {
+    $( "#weak-label" ).html( "" );
+    $( "#weak-label" ).removeClass( "animate__pulse animate__infinite" )   
+    showErrorAndProceed();
+  }, 2000)
 }
 
 // Sign Indicator
@@ -266,11 +290,13 @@ function startr(){
               canvasContext.font = "12px impact";
               // Only use for debug!
               canvasContext.fillText(Math.round(average - 40), 8, 20);
+              // Too early
               if ((Math.round(average - 40) > videoObjects[currentVideo].micThresholdLower) && (videoRunTime < videoObjects[currentVideo].startTime)) {
                 if (!missTimeoutActive) {
                   showEarlyText();
                 }                                
               }
+              // Too Loud
               if ((Math.round(average - 40) > videoObjects[currentVideo].micThresholdUpper) && (videoRunTime > videoObjects[currentVideo].startTime)) {
                 canvasContext.fillStyle = '#FA003F' // Loud Fill
                 canvasContext.fillRect(0, 180 - average, 80, 140);
@@ -278,7 +304,7 @@ function startr(){
                   showLoudText();
                 }                
               }
-              // Add condition here for "correct range?" #95C623
+              // Just Right
               if ((Math.round(average - 40) < videoObjects[currentVideo].micThresholdUpper) && (Math.round(average - 40) > videoObjects[currentVideo].micThresholdLower) && (videoRunTime > videoObjects[currentVideo].startTime)) {
                 canvasContext.fillStyle = '#95C623' // Loud Fill
                 canvasContext.fillRect(0, 180 - average, 80, 140);
