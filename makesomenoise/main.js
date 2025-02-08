@@ -24,9 +24,10 @@ windowStart = 0.0;
 const videoObjects = [
   {
     // Golf
-    "link": "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",
-    "startTime": 100,
-    "endTime": 110,
+    //"link": "https://ia801500.us.archive.org/0/items/whhisc-GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour/GOLF_CENTER_Tournament_Coverage_at_the_2018_GolfWeek_Amateur_Tour.HD.mov#t=90",
+    "link": "./videos/noise_golf.mp4",
+    "startTime": 10,
+    "endTime": 20,
     "micThresholdUpper": 100,
     "micThresholdLower": 50,
     "volume": 0.1
@@ -311,6 +312,7 @@ function startr(){
                 if (!missTimeoutActive) {
                   clipScore++;
                   if (clipScore >= 50) {
+                    console.log("GOAL MET!")
                     showSuccessAndProceed();
                   }
                 }                

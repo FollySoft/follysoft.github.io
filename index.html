@@ -197,6 +197,7 @@
                             <dd class="works-option" value="huntnpeck" data-show=".huntnpeck-text"><a>Hunt n' Peck</a></dd>
                             <br>
                         <dt><b>OLDER</b> <hr></dt>
+                        <dd class="works-option" value="droppingin" data-show=".droppingin-text"><a>Dropping In (Level)</a></dd>
                         <dd class="works-option" value="reinvent" data-show=".reinvent-text"><a>Reinvent the Wheel</a></dd>
                         <dd class="works-option" value="mountain" data-show=".mountain-text"><a>The Mountain (Mod)</a></dd>
                         <dd class="works-option" value="gamanteau" data-show=".gamanteau-text"><a>Gamanteau</a></dd>
@@ -241,6 +242,8 @@
                     <a class="works-option" value="havoc" data-show=".havoc-text"><b>Havoc</b></a>
                     -
                     <a class="works-option" value="huntnpeck" data-show=".huntnpeck-text"><b>Hunt n' Peck</b></a>
+                    -
+                    <a class="works-option" value="droppingin" data-show=".droppingin-text"><b>Dropping In (Level)</b></a>
                     -
                     <a class="works-option" value="reinvent" data-show=".reinvent-text"><b>Reinvent the Wheel</b></a>
                     -
@@ -394,9 +397,10 @@
                             in any order.
                         </p>
                         <p>
-                            You can read a bit about the process of creating this port in <a href="https://jrcwest.github.io/blog/posts/2024-05-14-Hatocubulus-Release.html" target="_blank">my blog.</a>.
+                            You can read a bit about the process of creating this port in <a href="https://jrcwest.github.io/blog/posts/2024-05-14-Hatocubulus-Release.html" target="_blank">my blog</a>.
                         </p>
-                        <iframe class="youtube-embed"  id="youtube-hatocubulus" src="https://www.youtube.com/watch?v=A0z3oec0IQc?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="youtube-embed"  id="youtube-hatocubulus" src="https://www.youtube.com/embed/A0z3oec0IQc?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
                     </div>
                     <div id="curses" class="work-content curses-text hide">
                         <h2>
@@ -674,6 +678,37 @@
                             height of the COVID-19 pandemic.  As such, due to the nature of the intimacy of players keeping their faces so close together and on a shared keyboard, the mode was never really released in public builds.
                         </p>
                     </div>
+                    <div id="droppingin" class="work-content droppingin-text hide">
+                        <h2>
+                            Dropping In (Level)
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://drive.google.com/drive/folders/1wLejtl5JpIM2Z12BXLsDducQsMyjUW4o?usp=drive_link', '_blank')" class="home-button">DOWNLOAD↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            "Dropping In" is a level prototype, made for the "Level Design Weekend" challenge hosted by the Level Design Lobby.  Aspiring level designers were tasked with grey-boxing a playable space over the course of 48 hours 
+                            that would fit into the cyber-punk world of "Deus Ex: Human Revolution".  I took this opportunity to learn some of the basics of Unreal Engine 4 and designing from a first-person perspective, while simultaneously applying 
+                            lessons I had learned in my own previous level design experiences.
+                        </p>
+                        <p>
+                            Participants were prompted with the following scenario:  Adam Jensen (the player) must break into a nightclub and steal data from the club owner's computer.  Designers were free to work with the skills 
+                            and abilities established in Deus Ex: Human Revolution, but we were not to add any new mechanics or skills for the player to use.  Players needed to also have options; there should be several 
+                            ways to get into the club to access the data Jensen needed, accounting for the different tools at Jensen's disposal: speech, hacking, stealth, and combat.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-droppingin-1" src="./photos/screenshots/droppingin-1.png" onclick="openModal(this.id)"/>                            
+                            <img id="img-droppingin-2" src="./photos/screenshots/droppingin-2.png" onclick="openModal(this.id)"/>                            
+                            <img id="img-droppingin-3" src="./photos/screenshots/droppingin-3.png" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <p>
+                            We were required by the end of the challenge to submit a playable executible along with a design document.  This granted me the opportunity
+                            to practice putting together reference boards as well as draw diagrams to explain the level's setting and overall narrative and gameplay flow.                            
+                        </p>
+                        <div class="content-images">
+                            <img id="img-droppingin-6" src="./photos/screenshots/droppingin-6.png" onclick="openModal(this.id)"/>                            
+                        </div>
+                        <iframe class="youtube-embed"  id="youtube-droppingin" src="https://www.youtube.com/embed/wLa1phUmcDo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                     <div id="reinvent" class="work-content reinvent-text hide">
                         <h2>
                             Reinvent The Wheel
@@ -734,7 +769,7 @@
                         <p>
                             During the weeks following it's release, "The Mountain" was listed as one of Hat in Time's most popular playable mods, and currently holds a 5-star rating on Steam Workshop.
                         </p>
-                        <iframe class="youtube-embed"  id="youtube-themountain" src="https://www.youtube.com/watch?v=BusK1Ei-Btw?enablejsapi=1&version=3&playerapiid=ytplayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="youtube-embed"  id="youtube-themountain" src="https://www.youtube.com/embed/BusK1Ei-Btw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div id="gamanteau" class="work-content gamanteau-text hide">
                         <h2>
@@ -861,6 +896,13 @@
         video = $("#youtube-pleasehold").attr("src");
         $("#youtube-pleasehold").attr("src","");
         $("#youtube-pleasehold").attr("src",video);
+        video = $("#youtube-themountain").attr("src");
+        $("#youtube-themountain").attr("src","");
+        $("#youtube-themountain").attr("src",video);
+        video = $("#youtube-droppingin").attr("src");
+        $("#youtube-droppingin").attr("src","");
+        $("#youtube-droppingin").attr("src",video);
+        
     });
 </script>
 
