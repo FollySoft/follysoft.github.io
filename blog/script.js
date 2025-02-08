@@ -33,7 +33,7 @@ let authorLink = "jwest.github.io"; // Enter your website, social media, etc. So
 let postsArray = [
 //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ]
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
-//[ "posts/2020-11-10-My-Second-Post-Example.html" ],
+//[ "posts/2020-11-10-My-Second-Post-Example.html" ],  
   [ "posts/2023-05-02-OWS-Jam.html"],
   [ "posts/2023-05-17-Perspectives-Game-Devlog-1.html" ],
   [ "posts/2023-06-09-Perspectives-Game-Devlog-2.html" ],
@@ -43,7 +43,8 @@ let postsArray = [
   ["posts/2024-05-14-Hatocubulus-Release.html"],
   ["posts/2024-07-25-Altocubulus-Release.html"],
   ["posts/2024-08-03-OWS-Dump.html"],
-  ["posts/2024-08-13-RE-A-Theology-of-Play.html"]
+  ["posts/2024-08-13-RE-A-Theology-of-Play.html"],
+  [ "posts/2025-01-31-Relections-On-2PPPP4P.html"]
 ];
 
 //-----------------------------

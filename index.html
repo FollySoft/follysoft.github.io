@@ -170,6 +170,7 @@
                             <dd class="works-option" value="plaster" data-show=".plaster-text"><a>Plaster</a></dd>                        
                             <br> -->
                         <dt><b>2024</b> <hr></dt>
+                            <dd class="works-option" value="2PPPP4P" data-show=".2PPPP4P-text"><a>2PPPP4P</a></dd>
                             <dd class="works-option" value="autobard" data-show=".autobard-text"><a>AutoBard</a></dd>
                             <dd class="works-option" value="altocubulus" data-show=".altocubulus-text"><a>Altocubulus (Mod)</a></dd>
                             <dd class="works-option" value="levelwithme" data-show=".levelwithme-text"><a>Level With Me</a></dd>
@@ -209,6 +210,8 @@
                 <div id="works-horizontal">
                     <!-- <a class="works-option" value="photography" data-show=".photography-text"><b>Photography</b></a>
                     - -->
+                    <a class="works-option" value="2PPPP4P" data-show=".2PPPP4P-text"><b>2PPPP4P</b></a>  
+                    -
                     <a class="works-option" value="autobard" data-show=".autobard-text"><b>AutoBard</b></a>  
                     -
                     <a class="works-option" value="altocubulus" data-show=".altocubulus-text"><b>Altocubulus (Mod)</b></a>  
@@ -283,6 +286,39 @@
                             stuff in my games, so I try to share photos for free-use as a way of giving back to that community.
                         </p>
                     </div>
+                    <div id="2PPPP4P" class="work-content 2PPPP4P-text hide">
+                        <h2>
+                            2PPPP4P
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/2PPPP4P', '_blank')" class="home-button">PLAY↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            Otherwise known as a "A 2-Player Plundercore Photography Prototype 4 Paradise", 2PPPP4P is a small Unity prototype I put together in the few quiet hours I found
+                            while on paternity leave.  As the name suggests, it's a platformer and photography game prototype for 2 players, which I originally made for the members of
+                            <a href="https://paradise-collab.itch.io/" target="_blank"> the Paradise Collab group.</a>  
+                        </p>
+                        <div class="content-images">
+                            <img id="img-2ppp4p-1" src="./photos/screenshots/2pppp4p-1.png" onclick="openModal(this.id)"/>
+                            <img id="img-2ppp4p-2" src="./photos/screenshots/2pppp4p-2.png" onclick="openModal(this.id)"/>
+                        </div>
+                        <p>
+                            The prototype was originally intended to explore a concept I had a long time ago about a 3D platformer for 2 players, where one player controlled
+                            the character and the other controlled the camera.  I opted to utilize the <a href="https://github.com/libsm64/libsm64-unity-dev" target="_blank">libsm64 library for Unity</a>,
+                            allowing me to have a functional Mario 64 character controller in the game without the need to create a new platforming controller from scratch.
+                        </p>
+                        <p>
+                            Over time, the narrative I had in my head for the game began to shift, and it became a game about photography more than platforming.  It became a really fun and interesting
+                            exploration of what "videogame photography" could look like.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-2ppp4p-3" src="./photos/screenshots/2pppp4p-3.png" onclick="openModal(this.id)"/>
+                            <img id="img-2ppp4p-4" src="./photos/screenshots/2pppp4p-4.png" onclick="openModal(this.id)"/>
+                        </div>
+                        <p>
+                            Hopefully I will get the opportunity to reflect on this more in a future blog post.
+                        </p>
+                    </div>
                     <div id="autobard" class="work-content autobard-text hide">
                         <h2>
                             AutoBard
@@ -325,7 +361,7 @@
                             <img id="img-altocubulus-3" src="./photos/screenshots/alto-3.jpeg" onclick="openModal(this.id)"/>                            
                         </div>
                         <p>
-                            You can (hopefully) read about the process of making this in a forthcoming blogpost.</a>.
+                            A few more details about the creation of this mod can be found on my <a href="https://follysoft.github.io/blog/posts/2024-07-25-Altocubulus-Release.html" target="_blank"> blog.</a>
                         </p>                        
                     </div>
                     <div id="levelwithme" class="work-content levelwithme-text hide">

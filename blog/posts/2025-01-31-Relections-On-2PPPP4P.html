@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Post</title> <!-- If you leave title as "Blog Post", it will automatically be updated to the post title -->
+
+    <!-- ******* HERES SOME GOOD RULES TO FOLLOW JWEST! ******* -->
+    
+    <!-- 
+      https://www.interconnected.org/home/2020/09/10/streak 
+
+    - Three posts a week, more or less.
+    - One idea per post. If I find myself launching into another section, cut and paste the extra 
+      into a separate draft post, and tie off the original one with the word “Anyway.” Then publish.
+    - No hedging, no nuance. If I’m getting in a twist about a sentence, take it out.
+    - Give up on attempting to be right.
+    - Give up on providing full links and citations.
+    - Give up on saying anything new. Most people haven’t read my old stuff. Play the hits.
+    - Give up on trying to be popular. I try not to filter myself based on what I believe will be popular. 
+      Some of my favourite posts get ignored. Some posts get popular and I have no idea why. Besides, 
+      terrible posts get buried fast if I’m posting three times a week. So post with abandon.
+    - Give up on trying to be interesting. Readers will come to my site for what’s interesting to me, or not, 
+      it’s fine, just say what I think about whatever I’m thinking about.
+    - But make it work for a general audience.
+    - Only write what’s in my head at that exact moment. It’s 10x faster.
+    - If it’s taking too long to write, stop.
+    - Don’t use a post just to link to something elsewhere. If there’s a point to make, start with that.
+    - Titles should be descriptive and have the flavour of the post. And rewrite the lede once the post 
+      is done so the whole thing gets to the point faster.
+    - It’s ok not to blog if it feels like a chore.
+    - Writing is a muscle.
+
+    "If I have an idea for a post, at any time, I make a note of it in my drafts folder – without delay. 
+    Or it’ll disappear.
+
+    When there’s time to write, I go through my draft posts (and recent links that I’ve run across, 
+    I capture those too) and see if anything catches my eye. If it does: start typing and see what happens."
+
+    -->
+
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link href="../style/style.css" rel="stylesheet" type="text/css" media="all">    
+  </head>
+  <body>
+    <div id="container">
+    <div id="header">...</div>
+    <div id="content">
+      <h1 id="postTitleH1"></h1>
+      <h4 id="postDate"></h4>
+      
+      <p>
+        I had originally written the following for the newsletter of my local photography club, however I never went through with submitting it.  As such, it was written
+        for an audience who might have miore experience with cameras than game controllers.
+        It's been a little while, but I was having some thoughts about how much I enjoyed this project during it's creation that I wanted to share
+        more of the process behind it with the world.  You can play the prototype <a href="https://jwest.itch.io/2pppp4p" target="_blank">here.</a>
+      </p>
+      <hr>
+      <h1>(Photo) Games People <s>Play</s> Make!</h1>
+      <h4>by Jonathan West</h4>
+      <p>
+        It’s been a little while since I’ve written anything for the PEEPsheet.  Life, as it does, has a habit of forcing you to prioritize and reprioritize 
+        your day to day.  My wife and I welcomed a son into our family last September, and as such, I’ve had to take some time away from work and other 
+        activities to prioritize caring for my family and my home while we adjust.
+      </p>
+      <p>
+        In the sparse downtime I did find during parental leave, however, something really interesting happened.  When I’m not out and about taking photos, 
+        I’m often at a keyboard, making little video games to share online.  I had been experimenting with this idea recently of a platformer game (think of 
+        some of the newer 3D Super Mario games) for 2 players.  One thing led to another, and after several iterations I had a prototype for my own very first photography video game.
+      </p>
+      <img src="../images/2pppp4p/image2.png"/>
+      <img src="../images/2pppp4p/image5.png"/>
+      <img src="../images/2pppp4p/image7.png"/>
+      <p>
+        The 2-player aspect of this was a lot of fun from the beginning.  Player 1 used a controller to play as Mario, essentially acting as a model, while 
+        Player 2 used a keyboard and mouse to play the role of a photographer.  Coordination and communication between  players becomes key, not unlike when photographing 
+        a model out on location, and it was fascinating to see how many unique moment-to-moment shots the photographer could capture of the model simply traversing the level 
+        the two have been placed in.
+      </p>
+      <p>
+        What became the most fascinating thing for me in the process of making this, however, was the realization of what “video game photography” could really evolve into.  
+        Despite the alien and fantastical settings of most of the photography video games I’ve covered in past articles, their mechanics were still grounded in some sense of reality.  
+        Some of the more immersive photography games do their best to mimic the capabilities of a real-life camera, often to great effect.  Cameras are complicated, and programming 
+        them to accurately simulate the capture of light is more difficult than I could possibly imagine.
+      </p>
+      <p>
+        <b>
+          What if, however, game developers approached photography from the perspective of capturing pixels rather than light?
+        </b>
+      </p>
+      <img src="../images/2pppp4p/image6.png"/>
+      <p>
+        That might sound redundant - everything on your computer monitor is, after all, made of pixels.  A video game that involves taking pictures is, naturally, capturing pixels on 
+        your screen.  But what I want to suggest is that perhaps games could be designed with cameras that are more <b>aware</b> of this fact.
+      </p>
+      <p>
+        For example, as I began programming my camera, I wanted to see if I could replicate a fisheye lens effect.  There are many built-in game engine tools that allow me to do this: 
+        a lens warping effect paired with vignette and a change in a field of view (FOV) property, in this case.  The FOV in particular can also be a handy property when you want to 
+        replicate camera “zoom”.  The real fun comes in though, when you realize just how much a video game will let you adjust that FOV.  In my game, I set no limits on it, and 
+        allowed the player to adjust the FOV/Camera zoom as much as the game engine would let them.  The result is a captured image you couldn’t really get in any place other than a video game.
+      </p>
+      <img src="../images/2pppp4p/image1.png"/>
+      <p>
+        Another important decision I made involved collision.  When games are programmed, especially platformers like Super Mario, the game has to know what to do when objects 
+        collide with each other.  Mario has to be programmed to stand on solid ground when he touches it, otherwise he would fall right through.  What if our camera, however, 
+        deliberately ignored such programming, and just simply flew through the game world as is, fully exposing the unintentional beauty of the game world to the photographer 
+        as they explore it.
+      </p>
+      <img src="../images/2pppp4p/image4.png"/>
+      <p>
+        Computer games rely on rules and logic, strictly implemented by a developer to make sure it all holds together as tightly as possible.  Cameras, too, are carefully 
+        and deliberately crafted to ensure they do their job well as capturers of light.  However, some of the most playful and experimental photographers in history discovered 
+        brand new techniques by seeing how far they could push the limits of a camera’s mechanisms and of light itself.  Light painting, vaseline on the lens, even double 
+        exposure photography were unintentional affordances of cameras that pushed new boundaries of what an image could be.  Why can’t game developers follow the same 
+        approach in their experimentation with video game cameras?  Where is the digital vaseline for my screen?
+      </p>
+      <p>
+        I’ll end this with one last key example.  A friend of mine, Jonny Hopkins, released a tool last year called <a href="https://jwhop.itch.io/open-world-shutter" target="_blank">Open World Shutter</a>.  
+        It’s a piece of software that acts like a camera with an adjustable shutter speed, capturing dozens of images on your computer screen over the 
+        time frame that you specify.  It then generates a new image by taking the average, max, and minimum color values it detects in each of these images, 
+        and creates a new one from them.  The result is something that feels other worldly, and impossible to replicate anywhere else.
+      </p>
+      <img src="../images/2pppp4p/image3.png"/>
+      <p style="text-align: center;">
+        <i>The game Ape Out, captured with Open World Shutter.</i>
+      </p>
+      <p>
+        There’s entire universes within our computers, and perhaps our tools to capture them would be better off if they embraced the digital contexts we use them in, 
+        rather than try to replicate the ones we use in the real world.
+      </p>
+
+      
+      
+    <div id="nextprev"></div>
+    </div> <!-- end of div id="content" -->
+    <div id="footer"></div>
+    </div> <!-- end of div id="container" -->
+  <!-- Here's the link to our JavaScript! -->
+  <script src="../script.js"></script>
+  </body>
+</html>
