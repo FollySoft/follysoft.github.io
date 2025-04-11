@@ -44,7 +44,8 @@ let postsArray = [
   ["posts/2024-07-25-Altocubulus-Release.html"],
   ["posts/2024-08-03-OWS-Dump.html"],
   ["posts/2024-08-13-RE-A-Theology-of-Play.html"],
-  [ "posts/2025-01-31-Relections-On-2PPPP4P.html"]
+  [ "posts/2025-01-31-Relections-On-2PPPP4P.html"],
+  [ "posts/2025-04-11-The-Factory-Reset-Jam-and-GDC.html"],
 ];
 
 //-----------------------------
