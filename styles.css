@@ -340,9 +340,9 @@ img{
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
-    background-color: transparent;
-    text-shadow: 2px 2px #2b2b2b; 
-    color: white;
+    background-color: white;
+    /* text-shadow: 2px 2px #2b2b2b;  */
+    color: #402415;
     padding: 4px;
     font-size: calc(8px + 0.75vw);
     /* font-size: min(5vw, 18px); */
