@@ -182,6 +182,7 @@
                         <br>
                         <dt><b>2025</b> <hr></dt>
                             <dd class="works-option" value="skipper-25" data-show=".skipper-25-text"><a>Skipper '25</a></dd>
+                            <dd class="works-option" value="watering-hole" data-show=".watering-hole-text"><a>Watering Hole</a></dd>
                             <dd class="works-option" value="egs-gdc" data-show=".egs-gdc-text"><a>Experimental Games Showcase (GDC)</a></dd>
                             <dd class="works-option" value="imagine" data-show=".imagine-text"><a>Imagine the Characters</a></dd>
                         <br>
@@ -227,7 +228,11 @@
                     - -->
                     <a class="works-option" value="2PPPP4P" data-show=".2PPPP4P-text"><b>2PPPP4P</b></a>  
                     -
+                    <a class="works-option" value="skipper-25" data-show=".skipper-25-text"><b>Skipper '25</b></a>  
+                    -
                     <a class="works-option" value="egs-gdc" data-show=".egs-gdc-text"><b>Experimental Games Showcase (GDC)</b></a>
+                    -
+                    <a class="works-option" value="watering-hole" data-show=".watering-hole-text"><b>Watering Hole</b></a> 
                     -
                     <a class="works-option" value="imagine" data-show=".imagine-text"><b>Imagine the Characters</b></a>                                          
                     -
@@ -327,6 +332,23 @@
                                 <source src="./photos/screenshots/skipper-sample.mp3" type="audio/mp3"/>
                             </audio>
                         </p>
+                    </div>
+                    <div id="watering-hole" class="work-content watering-hole-text hide">
+                        <h2>
+                            Watering Hole
+                            <div class="works-links">
+                                <Button class="works-button" onclick="window.open('https://jwest.itch.io/factory-reset-zine-spring-summer-2025', '_blank')" class="home-button">PLAY↗</Button>                        
+                            </div>
+                        </h2>
+                        <p>
+                            A small game I made for the fouth <a href="https://itch.io/jam/factory-reset-jam-4" target="_blank">Factory Reset Jam.</a>  Players
+                            gather around a single phone with a camera active.  The game starts once the camera timer is activated, and each player takes a turn leaning over the phone
+                            to take a drink, making a slurping sound to indicate the quenching of their thirst.  Whoever is captured by the camera's timer has fallen into the watering hole,
+                            and is eliminated.
+                        </p>
+                        <div class="content-images">
+                            <img id="img-watering-hole" src="./photos/screenshots/watering-hole.png" onclick="openModal(this.id)"/>
+                        </div>
                     </div>
                     <div id="egs-gdc" class="work-content egs-gdc-text hide">
                         <h2>
@@ -661,10 +683,10 @@
                             A manifesto written for the 2022 Manifesto Jam.  I created it with the help of a close friend, Mackenzie Ito, as an exploration into my own creative motivations and practices, and what it means to be "foolish" in your work.
                         </p>                      
                         <p>
-                           The writing came as a result of years of dipping into a variety of readings and studies based around the broader concepts of "play", in both practical and spiritual perspectives.  
-                           In reflecting on my work, and trying to understand the reasons for the decisions I made in designing and developing a game, I found that many of my motivations (or even lack-thereof) closely resembled that of a fool,
-                           both in a historical and more modern context.  In many ways, I still feel as though the manifesto only scratched the surface of my thoughts on this, but it was definitely helpful
-                           in connecting some of those dots in my head.
+                            The writing came as a result of years of dipping into a variety of readings and studies based around the broader concepts of "play", in both practical and spiritual perspectives.  
+                            In reflecting on my work, and trying to understand the reasons for the decisions I made in designing and developing a game, I found that many of my motivations (or even lack-thereof) closely resembled that of a fool,
+                            both in a historical and more modern context.  In many ways, I still feel as though the manifesto only scratched the surface of my thoughts on this, but it was definitely helpful
+                            in connecting some of those dots in my head.
                         </p>                
                     </div>
                     <div id="hexaguessimal" class="work-content hexaguessimal-text hide">
