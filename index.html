@@ -1032,6 +1032,11 @@
         $("#youtube-droppingin").attr("src","");
         $("#youtube-droppingin").attr("src",video);
         
+        // Stop Audio
+        $('audio').each(function(){
+            this.pause(); // Stop playing
+            this.currentTime = 0; // Reset time
+        }); 
     });
 </script>
 
@@ -1074,6 +1079,30 @@
             document.getElementById('works-button').classList.remove('current-button');
             document.getElementById('blog-page-content').style.display = 'none';
             document.getElementById('blog-button').classList.remove('current-button');
+
+            // REALOAD ALLLL THE VIDEOS
+            let video;
+            video = $("#youtube-shuriken").attr("src");
+            $("#youtube-shuriken").attr("src","");
+            $("#youtube-shuriken").attr("src",video);
+            video = $("#youtube-sustenance").attr("src");
+            $("#youtube-sustenance").attr("src","");
+            $("#youtube-sustenance").attr("src",video);
+            video = $("#youtube-pleasehold").attr("src");
+            $("#youtube-pleasehold").attr("src","");
+            $("#youtube-pleasehold").attr("src",video);
+            video = $("#youtube-themountain").attr("src");
+            $("#youtube-themountain").attr("src","");
+            $("#youtube-themountain").attr("src",video);
+            video = $("#youtube-droppingin").attr("src");
+            $("#youtube-droppingin").attr("src","");
+            $("#youtube-droppingin").attr("src",video);
+            
+            // Stop Audio
+            $('audio').each(function(){
+                this.pause(); // Stop playing
+                this.currentTime = 0; // Reset time
+            }); 
     }
     function showWork() {
             document.getElementById('works-page-content').style.display = 'block';
@@ -1090,6 +1119,30 @@
             document.getElementById('about-button').classList.remove('current-button');
             document.getElementById('works-page-content').style.display = 'none';
             document.getElementById('works-button').classList.remove('current-button');
+
+            // REALOAD ALLLL THE VIDEOS
+            let video;
+            video = $("#youtube-shuriken").attr("src");
+            $("#youtube-shuriken").attr("src","");
+            $("#youtube-shuriken").attr("src",video);
+            video = $("#youtube-sustenance").attr("src");
+            $("#youtube-sustenance").attr("src","");
+            $("#youtube-sustenance").attr("src",video);
+            video = $("#youtube-pleasehold").attr("src");
+            $("#youtube-pleasehold").attr("src","");
+            $("#youtube-pleasehold").attr("src",video);
+            video = $("#youtube-themountain").attr("src");
+            $("#youtube-themountain").attr("src","");
+            $("#youtube-themountain").attr("src",video);
+            video = $("#youtube-droppingin").attr("src");
+            $("#youtube-droppingin").attr("src","");
+            $("#youtube-droppingin").attr("src",video);
+            
+            // Stop Audio
+            $('audio').each(function(){
+                this.pause(); // Stop playing
+                this.currentTime = 0; // Reset time
+            }); 
     }
 </script>
 
