@@ -78,90 +78,6 @@ async function init(e) {
 document.querySelector('#showVideo').addEventListener('click', e => init(e));
 
 
-// function startDrag(e) {
-//   // determine event object
-//   if (!e) {
-//     var e = window.event;
-//   }
-
-//   // IE uses srcElement, others use target
-//   var targ = e.target ? e.target : e.srcElement;
-
-//   if (targ.className != 'draggable') {return};
-//   // calculate event X, Y coordinates
-//     offsetX = e.clientX;
-//     offsetY = e.clientY;
-
-//   // assign default values for top and left properties
-//   if(!targ.style.left) { targ.style.left='0px'};
-//   if (!targ.style.top) { targ.style.top='0px'};
-
-//   // calculate integer values for top and left 
-//   // properties
-//   coordX = parseInt(targ.style.left);
-//   coordY = parseInt(targ.style.top);
-//   drag = true;
-//   // move div element
-//   console.log("moving");
-//   document.onpointermove=dragDiv;
-
-//   return false;
-// }
-
-// function dragDiv(e) {
-//   if (!drag) {return};
-//   if (!e) { var e= window.event};
-//   e.stopPropagation();
-//   var targ=e.target?e.target:e.srcElement;
-//   // var bound = document.getElementById("video-container").offsetWidth-document.getElementById("overlay").offsetWidth;    
-//   // if((coordX>=0)&&(coordX<bound)&&(coordY>=0)&&(coordY<bound)){
-//   //   // move div element
-//   //   targ.style.left=coordX+e.clientX-offsetX+'px';
-//   //   targ.style.top=coordY+e.clientY-offsetY+'px';
-//   // }
-//   // else {
-//   //   document.onmousemove = null;
-//   //   document.onmouseup();
-//   //   console.log("MOUSEUP")
-//   //   //stopDrag();
-//   // }
-//   targ.style.left=coordX+e.clientX-offsetX+'px';
-//   targ.style.top=coordY+e.clientY-offsetY+'px';
-//   return false;
-// }
-// function stopDrag() {
-//   drag=false;
-// }
-// window.onload = function() {
-//   document.onpointerdown = startDrag;
-//   document.onpointerup = stopDrag;
-// }
-
-
-//Creating dynamic link that automatically click
-
-function downloadURI(uri, name) {
-  var link = document.createElement("a");
-  link.download = name;
-  link.href = uri;
-  link.click();
-  //after creating link you should delete dynamic link
-  //clearDynamicLink(link); 
-}
-
-//Your modified code.
-function printToFile() {
-  html2canvas(document.getElementById("video-container"), {
-      onrendered: function (canvas) {
-          var myImage = canvas.toDataURL("image/png");
-          //create your own dialog with warning before saving file
-          //beforeDownloadReadMessage();
-          //Then download file
-          downloadURI("data:" + myImage, "yourImage.png");
-      }
-  });
-}
-
 function downloadImage() {
   var link = document.createElement('a');
   link.download = 'filename.png';
@@ -198,6 +114,9 @@ let height = 480; // This will be computed based on the input stream
     canvas.height = height;
     context.imageSmoothingEnabled = true;
     context.drawImage(video, 0, 0, video.width, video.height);
+
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = 'high';
 
     // Set logo
     var img = new Image();

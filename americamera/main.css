@@ -40,6 +40,7 @@ body {
   word-break: break-word;
   align-content: center;
   display: flex;
+  background-color: #222;
 }
 
 button {
@@ -53,8 +54,21 @@ button {
   padding: 0.5em 0.7em 0.6em 0.7em;
 }
 
-button#takePhoto {
+button#openCamera {
   background-color: #4dd838;
+  width: 100%;
+  height: 40px;
+}
+
+button#takePhoto {
+  background-color: #4080f7;
+  width: 80%;
+  height: 40px;
+}
+button#savePhoto {
+  background-color: #8a8a8a;
+  width: 18%;
+  height: 40px;
 }
 
 button:active {
@@ -79,15 +93,20 @@ canvas {
   object-fit: cover;
 }
 
+#button-container {
+  margin-top: 4px;
+  
+}
+
 code {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
 div#container {
-  margin: 0 auto 0 auto;
-  /* max-width: 60em; */
-  /* padding: 1em 1.5em 1.3em 1.5em; */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 480px;
 }
 
 div#links {
@@ -251,13 +270,10 @@ textarea {
 
 video {
   background: #222;
-  margin: 0 0 20px 0;
-  /* --width: 100%;
-  width: var(--width);
-  height: calc(var(--width) * 0.75); */
   object-fit: cover;
-  /* width: 520px;
-  height: 520px; */
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 ul {
@@ -275,6 +291,12 @@ fieldset > select {
 #video-container {
   display: inline-flex;
   position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  border: #ccc;
+  border-width: 4px;
+  border-style: dotted;
 }
 
 .crop{
@@ -284,9 +306,16 @@ fieldset > select {
   height: 300px;
 }
 
+/* #overlay {
+  position: absolute;
+} */
+
 #overlay {
   position: absolute;
+  max-width: 60%;
+  height: auto;
 }
+
 .draggable{
   /* position:relative; */
   cursor: move;
