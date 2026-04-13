@@ -52,11 +52,7 @@ function handleError(error) {
 }
 
 function errorMsg(msg, error) {
-  const errorElement = document.querySelector('#errorMsg');
-  errorElement.innerHTML += `<p>${msg}</p>`;
-  if (typeof error !== 'undefined') {
-    console.error(error);
-  }
+  alert(error);
 }
 
 async function init(e) {
@@ -67,8 +63,9 @@ async function init(e) {
     e.target.disabled = true;
     //document.getElementById("video-container").style.display = "flex";
     //document.getElementById("video-containter").style.visibility = "hidden";
-    document.getElementById("canvas").style.display = "none";
-    document.getElementById('#showVideo').disabled = false;
+    //document.getElementById("canvas").style.display = "none";
+    document.getElementById('button-container').style.display = "none";
+    document.getElementById('active-buttons').style.display = "grid";
 
   } catch (e) {
     handleError(e);
@@ -107,32 +104,44 @@ let height = 480; // This will be computed based on the input stream
   // drawing that to the screen, we can change its size and/or apply
   // other changes before drawing it.
 
-  function takepicture() {
-    const context = canvas.getContext("2d");
-    //height = video.videoHeight / (video.videoWidth / width);
-    canvas.width = width;
-    canvas.height = height;
-    context.imageSmoothingEnabled = true;
-    context.drawImage(video, 0, 0, video.width, video.height);
+function takepicture() {
+  const canvas = document.getElementById("canvas");
+  const context = canvas.getContext("2d");
+  const video = document.getElementById("gum-local");
+  const overlay = document.getElementById("overlay");
+  const preview = document.getElementById("video-container");
 
-    context.imageSmoothingEnabled = true;
-    context.imageSmoothingQuality = 'high';
+  canvas.width = width;
+  canvas.height = height;
 
-    // Set logo
-    var img = new Image();
-    img.src = "./amfoo-whitelogo.png";
-    var logo = document.getElementById('overlay'); 
-    
-    //context.drawImage(img, width - (width * 0.60), height - (height * 0.80), logo.width, logo.height);
-    context.drawImage(img, width - logo.width, height - (height * 0.8), logo.width, logo.height);
+  context.imageSmoothingEnabled = true;
+  context.imageSmoothingQuality = "high";
 
-    document.getElementById("video-container").style.display = "none";
-    //document.getElementById("video-containter").style.visibility = "hidden";
-    document.getElementById("canvas").style.display = "block";
-    
-    const data = canvas.toDataURL("image/png");
-    photo.setAttribute("src", data);
+  // Draw the video to fill the output canvas.
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    document.getElementById('#showVideo').disabled = false;
+  // Measure how the preview is actually rendered on screen.
+  const previewRect = preview.getBoundingClientRect();
+  const overlayRect = overlay.getBoundingClientRect();
 
-  }
+  // Convert preview-space pixels into canvas-space pixels.
+  const scaleX = canvas.width / previewRect.width;
+  const scaleY = canvas.height / previewRect.height;
+
+  // Overlay position relative to the preview container.
+  const drawX = (overlayRect.left - previewRect.left) * scaleX;
+  const drawY = (overlayRect.top - previewRect.top) * scaleY;
+  const drawWidth = overlayRect.width * scaleX;
+  const drawHeight = overlayRect.height * scaleY;
+
+  context.drawImage(overlay, drawX, drawY, drawWidth, drawHeight);
+
+  document.getElementById("video-container").style.display = "none";
+  document.getElementById("canvas").style.display = "block";
+
+  const data = canvas.toDataURL("image/png");
+  photo.setAttribute("src", data);
+
+  document.getElementById('#showVideo').disabled = false;
+}
+
