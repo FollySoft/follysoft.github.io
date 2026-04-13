@@ -21,11 +21,9 @@ let video = document.getElementById("gum-local");
 const constraints = window.constraints = {
   audio: false,
   video: {
-    facingMode: 'environment',
-    width: 480,
-    height: 480,
-    crossOrigin: "Anonymous"
-    // aspectRatio: 1,
+    facingMode: { ideal: "environment" },
+    width: { ideal: 1920 },
+    height: { ideal: 1920 }
   }
 };
 
@@ -94,6 +92,13 @@ let height = 480; // This will be computed based on the input stream
     context.fillStyle = "#AAA";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
+    document.getElementById("video-container").style.display = "block";
+    document.getElementById("canvas").style.display = "none";
+    document.getElementById("retakePhoto").style.display = "none";
+    document.getElementById("takePhoto").style.display = "block";
+    document.getElementById("savePhoto").disabled = true;
+    document.getElementById("savePhoto").style.backgroundColor = "#8a8a8a";
+
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
   }
@@ -111,37 +116,68 @@ function takepicture() {
   const overlay = document.getElementById("overlay");
   const preview = document.getElementById("video-container");
 
-  canvas.width = width;
-  canvas.height = height;
+  const sourceWidth = video.videoWidth;
+  const sourceHeight = video.videoHeight;
+
+  if (!sourceWidth || !sourceHeight) {
+    return;
+  }
+
+  // Crop the camera frame to a square using the largest centered square.
+  const cropSize = Math.min(sourceWidth, sourceHeight);
+  const cropX = (sourceWidth - cropSize) / 2;
+  const cropY = (sourceHeight - cropSize) / 2;
+
+  // Keep the final image square, but at the camera's real resolution.
+  canvas.width = cropSize;
+  canvas.height = cropSize;
 
   context.imageSmoothingEnabled = true;
   context.imageSmoothingQuality = "high";
 
-  // Draw the video to fill the output canvas.
-  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  // Draw a high-resolution square crop from the video feed.
+  context.drawImage(
+    video,
+    cropX,
+    cropY,
+    cropSize,
+    cropSize,
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
 
-  // Measure how the preview is actually rendered on screen.
   const previewRect = preview.getBoundingClientRect();
   const overlayRect = overlay.getBoundingClientRect();
 
-  // Convert preview-space pixels into canvas-space pixels.
-  const scaleX = canvas.width / previewRect.width;
-  const scaleY = canvas.height / previewRect.height;
+  const previewWidth = preview.clientWidth;
+  const previewHeight = preview.clientHeight;
+  const borderLeft = preview.clientLeft;
+  const borderTop = preview.clientTop;
 
-  // Overlay position relative to the preview container.
-  const drawX = (overlayRect.left - previewRect.left) * scaleX;
-  const drawY = (overlayRect.top - previewRect.top) * scaleY;
+  const scaleX = canvas.width / previewWidth;
+  const scaleY = canvas.height / previewHeight;
+
+  const drawX = (overlayRect.left - previewRect.left - borderLeft) * scaleX;
+  const drawY = (overlayRect.top - previewRect.top - borderTop) * scaleY;
   const drawWidth = overlayRect.width * scaleX;
   const drawHeight = overlayRect.height * scaleY;
 
+
+  // Draw the logo at the same relative size/position as the preview.
   context.drawImage(overlay, drawX, drawY, drawWidth, drawHeight);
 
   document.getElementById("video-container").style.display = "none";
   document.getElementById("canvas").style.display = "block";
 
-  const data = canvas.toDataURL("image/png");
-  photo.setAttribute("src", data);
+  // const data = canvas.toDataURL("image/png");
+  // photo.setAttribute("src", data);
 
-  document.getElementById('#showVideo').disabled = false;
+  document.getElementById("takePhoto").style.display = "none";
+  document.getElementById("retakePhoto").style.display = "block";
+  document.getElementById("savePhoto").disabled = false;
+  document.getElementById("savePhoto").style.backgroundColor = "#4dd838";
+
 }
 

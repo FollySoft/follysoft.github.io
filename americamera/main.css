@@ -64,6 +64,11 @@ button#takePhoto {
   background-color: #4080f7;
   grid-column: 1;
 }
+button#retakePhoto {
+  display: none;
+  background-color: #4080f7;
+  grid-column: 1;
+}
 button#savePhoto {
   background-color: #8a8a8a;
   grid-column: 2;
@@ -89,6 +94,10 @@ canvas {
   background-color: #ccc;
   max-width: 100%;
   object-fit: cover;
+  border: #ccc;
+  border-width: 4px;
+  border-style: solid;
+  box-sizing: border-box;
 }
 #active-buttons {
   padding-top: 4px;
@@ -332,6 +341,7 @@ fieldset > select {
   position: absolute;
   max-width: 60%;
   height: auto;
+  box-sizing: border-box;
 }
 
 .draggable{

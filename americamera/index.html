@@ -21,7 +21,7 @@
 
     <base target="_blank">
 
-    <title>getUserMedia</title>
+    <title>AmeriCamera</title>
 
     <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
@@ -44,11 +44,12 @@
       <img id="photo"/>
     </div> -->
     <div id="button-container">
-      <button id="showVideo">Open camera</button>
+      <button id="showVideo">Open Camera</button>
     </div>
     <div id="active-buttons">
       <button id="takePhoto" onclick="takepicture()">Capture</button>
-      <button id="savePhoto" onclick="downloadImage()">Download</button>
+      <button id="retakePhoto" onclick="clearphoto()">Retake</button>
+      <button id="savePhoto" onclick="downloadImage()" disabled="true">Download</button>
     </div>    
 </div>
 
