@@ -42,15 +42,13 @@ function handleError(error) {
     const v = constraints.video;
     errorMsg(`The resolution ${v.width.exact}x${v.height.exact} px is not supported by your device.`);
   } else if (error.name === 'NotAllowedError') {
-    errorMsg('Permissions have not been granted to use your camera and ' +
-      'microphone, you need to allow the page access to your devices in ' +
-      'order for the demo to work.');
+    errorMsg('Permissions have not been granted to use your camera.');
   }
   errorMsg(`getUserMedia error: ${error.name}`, error);
 }
 
 function errorMsg(msg, error) {
-  alert(error);
+  alert(msg);
 }
 
 async function init(e) {
@@ -99,8 +97,8 @@ let height = 480; // This will be computed based on the input stream
     document.getElementById("savePhoto").disabled = true;
     document.getElementById("savePhoto").style.backgroundColor = "#8a8a8a";
 
-    const data = canvas.toDataURL("image/png");
-    photo.setAttribute("src", data);
+    // const data = canvas.toDataURL("image/png");
+    // photo.setAttribute("src", data);
   }
 
   // Capture a photo by fetching the current contents of the video
@@ -119,9 +117,6 @@ function takepicture() {
   const sourceWidth = video.videoWidth;
   const sourceHeight = video.videoHeight;
 
-  if (!sourceWidth || !sourceHeight) {
-    return;
-  }
 
   // Crop the camera frame to a square using the largest centered square.
   const cropSize = Math.min(sourceWidth, sourceHeight);
